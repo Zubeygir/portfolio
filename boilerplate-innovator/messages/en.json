@@ -1,0 +1,136 @@
+{
+  "Site": {
+    "brand": "STUDIO/BASE",
+    "status": "Available worldwide",
+    "navigation": {
+      "work": "Work",
+      "services": "Services",
+      "studio": "Studio",
+      "process": "Process"
+    },
+    "hero": {
+      "eyebrow": "Independent digital studio",
+      "title": "Proof,<br/>before <em>promises.</em>",
+      "description": "A sharp, content-first foundation for studios that want their own site to demonstrate the quality of their work.",
+      "seeWork": "See selected work",
+      "featured": "Featured / 01",
+      "strategy": "Strategy · Design · Build",
+      "replacePrompt": "Replace this scene with your strongest project.",
+      "flagship": "Flagship experience",
+      "flagshipTitle": "Atelier One"
+    },
+    "header": {
+      "startProject": "Start a project",
+      "menu": "Menu",
+      "navigation": "Navigation",
+      "jumpToSection": "Jump to a section of this page."
+    },
+    "projects": {
+      "viewCaseStudy": "View case study ↗",
+      "items": [
+        {
+          "number": "01",
+          "title": "Atelier One",
+          "category": "Hospitality · Digital flagship",
+          "year": "2026",
+          "summary": "A calm, tactile digital identity built around the craft behind an independent destination.",
+          "accent": "#1b2cff",
+          "tone": "dark",
+          "mark": "A"
+        },
+        {
+          "number": "02",
+          "title": "Signal / Archive",
+          "category": "Culture · Editorial platform",
+          "year": "2026",
+          "summary": "A living archive that lets a deep catalogue feel immediate, visual and easy to explore.",
+          "accent": "#dfff45",
+          "tone": "light",
+          "mark": "S"
+        },
+        {
+          "number": "03",
+          "title": "Field Notes",
+          "category": "Product · Research tool",
+          "year": "2025",
+          "summary": "A focused working surface that turns scattered observations into useful decisions.",
+          "accent": "#e05b35",
+          "tone": "dark",
+          "mark": "F"
+        }
+      ]
+    },
+    "services": {
+      "items": [
+        {
+          "number": "01",
+          "title": "Brand systems",
+          "description": "A clear visual and verbal foundation with enough structure to stay coherent as you grow.",
+          "deliverables": ["Positioning", "Identity", "Design direction"]
+        },
+        {
+          "number": "02",
+          "title": "Web experiences",
+          "description": "High-character marketing sites where the interaction supports the story and the work stays central.",
+          "deliverables": ["UX direction", "Interface design", "Development"]
+        },
+        {
+          "number": "03",
+          "title": "Digital products",
+          "description": "Useful, durable product interfaces shaped around real workflows rather than feature theatre.",
+          "deliverables": ["Product strategy", "Design systems", "Prototyping"]
+        }
+      ]
+    },
+    "process": {
+      "items": [
+        {
+          "number": "01",
+          "title": "Align",
+          "text": "Define the problem, the audience and what a strong outcome needs to prove."
+        },
+        {
+          "number": "02",
+          "title": "Shape",
+          "text": "Build the content hierarchy and visual direction together, then test the key moments early."
+        },
+        {
+          "number": "03",
+          "title": "Ship",
+          "text": "Develop the full experience, validate the details and leave behind a system you can own."
+        }
+      ]
+    },
+    "footer": {
+      "backToTop": "Back to top ↑",
+      "copyright": "Creative studio boilerplate · Replace with your details"
+    },
+    "sections": {
+      "work": {
+        "index": "01 / Selected work",
+        "title": "Start with the work people should remember.",
+        "description": "Use a large, varied media rhythm instead of forcing every case study into the same card. These placeholders are deliberately easy to replace."
+      },
+      "studio": {
+        "index": "02 / Point of view",
+        "title": "A studio site should be a working sample of the studio itself.",
+        "copy": "Keep the language short. Make the hierarchy obvious. Let a few well-directed interactions carry the character without hiding the content.",
+        "howWeWork": "How we work"
+      },
+      "capabilities": {
+        "index": "03 / Capabilities",
+        "title": "A focused offer, not a catalogue.",
+        "description": "Keep only the services you can demonstrate with real work. The structure below supports a clear promise, supporting detail and concrete deliverables."
+      },
+      "processSection": {
+        "index": "04 / Process",
+        "title": "Enough structure to move with confidence."
+      },
+      "contact": {
+        "index": "05 / Start something useful",
+        "title": "Have a project that should feel unmistakably yours?",
+        "email": "hello@example.com"
+      }
+    }
+  }
+}

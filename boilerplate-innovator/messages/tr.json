@@ -1,0 +1,136 @@
+{
+  "Site": {
+    "brand": "STUDIO/BASE",
+    "status": "Tüm dünyada hizmete açık",
+    "navigation": {
+      "work": "İşler",
+      "services": "Hizmetler",
+      "studio": "Stüdyo",
+      "process": "Süreç"
+    },
+    "hero": {
+      "eyebrow": "Bağımsız dijital stüdyo",
+      "title": "Sözlerden önce,<br/><em>kanıtlar.</em>",
+      "description": "Kendi sitelerinin kalitelerini göstermesini isteyen stüdyolar için içerik odaklı, sağlam bir temel.",
+      "seeWork": "Seçilmiş işleri incele",
+      "featured": "Öne Çıkan / 01",
+      "strategy": "Strateji · Tasarım · Geliştirme",
+      "replacePrompt": "Bu sahneyi en güçlü projenizle değiştirin.",
+      "flagship": "Amiral gemisi deneyimi",
+      "flagshipTitle": "Atelier One"
+    },
+    "header": {
+      "startProject": "Projeye Başla",
+      "menu": "Menü",
+      "navigation": "Navigasyon",
+      "jumpToSection": "Sayfanın bir bölümüne atlayın."
+    },
+    "projects": {
+      "viewCaseStudy": "Vaka analizini incele ↗",
+      "items": [
+        {
+          "number": "01",
+          "title": "Atelier One",
+          "category": "Konaklama · Dijital amiral gemisi",
+          "year": "2026",
+          "summary": "Bağımsız bir destinasyonun arkasındaki zanaatin etrafında inşa edilmiş sakin, dokunsal bir dijital kimlik.",
+          "accent": "#1b2cff",
+          "tone": "dark",
+          "mark": "A"
+        },
+        {
+          "number": "02",
+          "title": "Signal / Archive",
+          "category": "Kültür · Editoryal platform",
+          "year": "2026",
+          "summary": "Derin bir kataloğun anında, görsel ve keşfetmesi kolay hissetmesini sağlayan yaşayan bir arşiv.",
+          "accent": "#dfff45",
+          "tone": "light",
+          "mark": "S"
+        },
+        {
+          "number": "03",
+          "title": "Field Notes",
+          "category": "Ürün · Araştırma aracı",
+          "year": "2025",
+          "summary": "Dağınık gözlemleri faydalı kararlara dönüştüren odaklanmış bir çalışma yüzeyi.",
+          "accent": "#e05b35",
+          "tone": "dark",
+          "mark": "F"
+        }
+      ]
+    },
+    "services": {
+      "items": [
+        {
+          "number": "01",
+          "title": "Marka sistemleri",
+          "description": "Büyürken tutarlı kalmaya yetecek yapıya sahip net, görsel ve sözel bir temel.",
+          "deliverables": ["Konumlandırma", "Kimlik", "Tasarım yönetimi"]
+        },
+        {
+          "number": "02",
+          "title": "Web deneyimleri",
+          "description": "Etkileşimin hikayeyi desteklediği ve çalışmanın merkezde kaldığı yüksek karakterli pazarlama siteleri.",
+          "deliverables": ["UX yönetimi", "Arayüz tasarımı", "Geliştirme"]
+        },
+        {
+          "number": "03",
+          "title": "Dijital ürünler",
+          "description": "Özellik gösterisinden ziyade gerçek iş akışlarına göre şekillendirilmiş faydalı, dayanıklı ürün arayüzleri.",
+          "deliverables": ["Ürün stratejisi", "Tasarım sistemleri", "Prototipleme"]
+        }
+      ]
+    },
+    "process": {
+      "items": [
+        {
+          "number": "01",
+          "title": "Uyumlanma",
+          "text": "Problemi, hedef kitleyi ve güçlü bir sonucun neyi kanıtlaması gerektiğini tanımlayın."
+        },
+        {
+          "number": "02",
+          "title": "Şekillendirme",
+          "text": "İçerik hiyerarşisini ve görsel yönü birlikte oluşturun, ardından önemli anları erkenden test edin."
+        },
+        {
+          "number": "03",
+          "title": "Teslim",
+          "text": "Tüm deneyimi geliştirin, detayları doğrulayın ve sahip olabileceğiniz bir sistem bırakın."
+        }
+      ]
+    },
+    "footer": {
+      "backToTop": "Yukarı dön ↑",
+      "copyright": "Yaratıcı stüdyo şablonu · Kendi bilgilerinizle değiştirin"
+    },
+    "sections": {
+      "work": {
+        "index": "01 / Seçilmiş işler",
+        "title": "İnsanların hatırlaması gereken işlerle başlayın.",
+        "description": "Her vaka analizini aynı karta zorlamak yerine geniş ve çeşitli bir medya ritmi kullanın. Bu yer tutucular bilerek kolay değiştirilebilir şekilde tasarlandı."
+      },
+      "studio": {
+        "index": "02 / Bakış açısı",
+        "title": "Bir stüdyo sitesi, stüdyonun kendisinin çalışan bir örneği olmalıdır.",
+        "copy": "Dili kısa tutun. Hiyerarşiyi belirgin hale getirin. İçeriği gizlemeden karakteri yansıtacak birkaç iyi yönlendirilmiş etkileşime izin verin.",
+        "howWeWork": "Nasıl çalışıyoruz"
+      },
+      "capabilities": {
+        "index": "03 / Yetkinlikler",
+        "title": "Bir katalog değil, odaklanmış bir teklif.",
+        "description": "Yalnızca gerçek çalışmalarla gösterebileceğiniz hizmetleri sunun. Aşağıdaki yapı net bir sözü, destekleyici detayları ve somut çıktıları destekler."
+      },
+      "processSection": {
+        "index": "04 / Süreç",
+        "title": "Güvenle ilerlemek için güvenilir bir yapı."
+      },
+      "contact": {
+        "index": "05 / Faydalı bir şeye başla",
+        "title": "Size ait hissettirecek bir projeniz mi var?",
+        "email": "hello@example.com"
+      }
+    }
+  }
+}

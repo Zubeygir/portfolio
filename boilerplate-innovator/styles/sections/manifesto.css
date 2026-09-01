@@ -1,0 +1,59 @@
+.manifesto-section {
+  padding-block: clamp(7rem, 13vw, 13rem);
+  background: var(--foreground);
+  color: white;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: end;
+}
+
+.manifesto-grid h2 {
+  max-width: 17ch;
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 6.6rem);
+  font-weight: 530;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.manifesto-copy p {
+  margin: 0 0 2.5rem;
+  color: rgb(255 255 255 / 0.64);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.outline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgb(255 255 255 / 0.48);
+  padding: 0.9rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.outline-link::before {
+  background: var(--accent);
+}
+
+.outline-link svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+@media (max-width: 980px) {
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-copy {
+    max-width: 35rem;
+  }
+}
