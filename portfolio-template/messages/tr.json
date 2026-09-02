@@ -1,136 +1,157 @@
 {
   "Site": {
-    "brand": "STUDIO/BASE",
-    "status": "Tüm dünyada hizmete açık",
+    "brand": "ZÜBEY/DEV",
     "navigation": {
-      "work": "İşler",
-      "services": "Hizmetler",
-      "studio": "Stüdyo",
-      "process": "Süreç"
-    },
-    "hero": {
-      "eyebrow": "Bağımsız dijital stüdyo",
-      "title": "Sözlerden önce,<br/><em>kanıtlar.</em>",
-      "description": "Kendi sitelerinin kalitelerini göstermesini isteyen stüdyolar için içerik odaklı, sağlam bir temel.",
-      "seeWork": "Seçilmiş işleri incele",
-      "featured": "Öne Çıkan / 01",
-      "strategy": "Strateji · Tasarım · Geliştirme",
-      "replacePrompt": "Bu sahneyi en güçlü projenizle değiştirin.",
-      "flagship": "Amiral gemisi deneyimi",
-      "flagshipTitle": "Atelier One"
+      "about": "Hakkımda",
+      "work": "Projeler",
+      "capabilities": "Yetkinlikler",
+      "journey": "Yolculuk",
+      "contact": "İletişim"
     },
     "header": {
-      "startProject": "Projeye Başla",
+      "contact": "İletişim",
       "menu": "Menü",
       "navigation": "Navigasyon",
-      "jumpToSection": "Sayfanın bir bölümüne atlayın."
+      "jumpToSection": "Bu sayfadaki bir bölüme geçin."
+    },
+    "hero": {
+      "eyebrow": "Software Developer",
+      "title": "Merhaba, ben Zübey.",
+      "description": "Düşünceli arayüzler, sağlam kod ve küçük ama akılda kalan etkileşimlerle dijital deneyimler geliştiriyorum.",
+      "enter": "Portfolyoyu keşfet",
+      "characterLabel": "Zübey'i temsil eden, gözleri imleci takip eden üç boyutlu karakter",
+      "characterNote": "Fareyi hareket ettir — gözler seni takip ediyor.",
+      "location": "Türkiye · UTC+3",
+      "status": "Yeni fikirlere açık"
+    },
+    "about": {
+      "index": "01 / Hakkımda",
+      "title": "Hakkımda",
+      "intro": "Ben Zübey, Software Developer.",
+      "lead": "Bir fikri anlaşılır bir yapıya dönüştürmeyi, sonra onu çalışan ve özenli bir ürüne çevirmeyi seviyorum.",
+      "body": "Şu anda odağım React, Next.js ve TypeScript ile web deneyimleri geliştirmek. Bu portfolio da yalnızca işlerimi sergilemek için değil; etkileşim, 3D web ve performans tarafında öğrendiklerimi uyguladığım yaşayan bir proje.",
+      "aside": "React · Next.js · TypeScript\nÖğrenirken üreten bir yaklaşım",
+      "technologyTitle": "Ana Teknolojiler",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Three.js"
+      ],
+      "skillsTitle": "Ana Beceriler",
+      "skills": [
+        "Responsive Arayüzler",
+        "Bileşen Mimarisi",
+        "API Entegrasyonu",
+        "Erişilebilirlik",
+        "Etkileşim Tasarımı"
+      ],
+      "toolsTitle": "Araçlar",
+      "tools": ["VS Code", "Git", "GitHub", "Figma", "Blockbench", "Vercel"]
     },
     "projects": {
-      "viewCaseStudy": "Vaka analizini incele ↗",
+      "index": "02 / Seçilmiş projeler",
+      "title": "Öne çıkan projeler",
+      "description": "Gerçek projeler geldikçe bu alan problem, kararlar, kullanılan teknolojiler ve sonuçları anlatan vaka çalışmalarına dönüşecek.",
+      "viewProject": "Projeyi aç",
       "items": [
         {
           "number": "01",
-          "title": "Atelier One",
-          "category": "Konaklama · Dijital amiral gemisi",
+          "title": "Kişisel Portfolio",
+          "category": "Kimlik · Web deneyimi",
           "year": "2026",
-          "summary": "Bağımsız bir destinasyonun arkasındaki zanaatin etrafında inşa edilmiş sakin, dokunsal bir dijital kimlik.",
-          "accent": "#1b2cff",
-          "tone": "dark",
-          "mark": "A"
+          "summary": "Blockbench ile oluşturulan kişisel 3D karakteri, imleci takip eden gözleri ve iki dilli içerik yapısını bir araya getiren bu sitenin kendisi.",
+          "technologies": ["Next.js", "TypeScript", "React Three Fiber"],
+          "status": "Geliştiriliyor",
+          "tone": "warm",
+          "mark": "Z"
         },
         {
           "number": "02",
-          "title": "Signal / Archive",
-          "category": "Kültür · Editoryal platform",
-          "year": "2026",
-          "summary": "Derin bir kataloğun anında, görsel ve keşfetmesi kolay hissetmesini sağlayan yaşayan bir arşiv.",
-          "accent": "#dfff45",
-          "tone": "light",
-          "mark": "S"
+          "title": "Sıradaki Vaka Çalışması",
+          "category": "Ürün · Arayüz",
+          "year": "Yakında",
+          "summary": "Sonraki gerçek proje; problem, kararlar, geliştirme süreci ve sonuçlarıyla burada belgelenecek.",
+          "technologies": ["React", "TypeScript", "UI Engineering"],
+          "status": "İçerik bekleniyor",
+          "tone": "dark",
+          "mark": "02"
         },
         {
           "number": "03",
-          "title": "Field Notes",
-          "category": "Ürün · Araştırma aracı",
-          "year": "2025",
-          "summary": "Dağınık gözlemleri faydalı kararlara dönüştüren odaklanmış bir çalışma yüzeyi.",
-          "accent": "#e05b35",
-          "tone": "dark",
-          "mark": "F"
+          "title": "Deney Alanı",
+          "category": "Etkileşim · Öğrenme",
+          "year": "Sürekli",
+          "summary": "Animasyon, 3D web ve yeni arayüz fikirlerinin küçük ama çalışan denemelere dönüştüğü açık uçlu alan.",
+          "technologies": ["WebGL", "Motion", "Creative Coding"],
+          "status": "Yakında",
+          "tone": "accent",
+          "mark": "03"
         }
       ]
     },
-    "services": {
+    "capabilities": {
+      "index": "03 / Yetkinlikler",
+      "title": "Görsel fikri çalışan ürüne bağlayan katmanlar.",
+      "description": "Kendimi yalnızca frontend etiketiyle sınırlamadan, bir web ürününün düşünülmesinden geliştirilmesine kadar farklı katmanlarıyla ilgileniyorum.",
       "items": [
         {
           "number": "01",
-          "title": "Marka sistemleri",
-          "description": "Büyürken tutarlı kalmaya yetecek yapıya sahip net, görsel ve sözel bir temel.",
-          "deliverables": ["Konumlandırma", "Kimlik", "Tasarım yönetimi"]
+          "title": "Arayüz geliştirme",
+          "description": "Farklı ekranlara uyum sağlayan, erişilebilir ve bileşen tabanlı arayüzler.",
+          "tools": ["React", "Next.js", "TypeScript", "CSS"]
         },
         {
           "number": "02",
-          "title": "Web deneyimleri",
-          "description": "Etkileşimin hikayeyi desteklediği ve çalışmanın merkezde kaldığı yüksek karakterli pazarlama siteleri.",
-          "deliverables": ["UX yönetimi", "Arayüz tasarımı", "Geliştirme"]
+          "title": "Ürün düşüncesi",
+          "description": "İçerik hiyerarşisi, kullanıcı akışı ve teknik kararları aynı problemin parçaları olarak ele alma.",
+          "tools": ["UX Akışları", "Prototipleme", "Tasarım Sistemleri"]
         },
         {
           "number": "03",
-          "title": "Dijital ürünler",
-          "description": "Özellik gösterisinden ziyade gerçek iş akışlarına göre şekillendirilmiş faydalı, dayanıklı ürün arayüzleri.",
-          "deliverables": ["Ürün stratejisi", "Tasarım sistemleri", "Prototipleme"]
+          "title": "Etkileşim ve 3D web",
+          "description": "Gösteriş için değil, kişilik ve yön duygusu oluşturmak için kullanılan ölçülü hareketler.",
+          "tools": ["Three.js", "React Three Fiber", "Blockbench"]
         }
       ]
     },
-    "process": {
+    "journey": {
+      "index": "04 / Şimdi ve sırada",
+      "title": "Öğrenme sürecini saklamayan bir yolculuk.",
       "items": [
         {
           "number": "01",
-          "title": "Uyumlanma",
-          "text": "Problemi, hedef kitleyi ve güçlü bir sonucun neyi kanıtlaması gerektiğini tanımlayın."
+          "period": "Şimdi",
+          "title": "Kişisel kimliği kurmak",
+          "description": "Portfolio altyapısını, özgün karakteri ve iki dilli içerik sistemini birlikte geliştiriyorum."
         },
         {
           "number": "02",
-          "title": "Şekillendirme",
-          "text": "İçerik hiyerarşisini ve görsel yönü birlikte oluşturun, ardından önemli anları erkenden test edin."
+          "period": "Odak",
+          "title": "Daha güçlü ürünler geliştirmek",
+          "description": "Kod kalitesi, erişilebilirlik, performans ve arayüz kararları arasındaki bağı güçlendiriyorum."
         },
         {
           "number": "03",
-          "title": "Teslim",
-          "text": "Tüm deneyimi geliştirin, detayları doğrulayın ve sahip olabileceğiniz bir sistem bırakın."
+          "period": "Sırada",
+          "title": "Gerçek vaka çalışmalarını eklemek",
+          "description": "Yeni projeleri yalnızca görsellerle değil, problem ve karar süreçleriyle birlikte anlatacağım."
         }
       ]
+    },
+    "contact": {
+      "index": "03 / İletişim",
+      "kicker": "Birlikte bir şey üretelim.",
+      "title": "Aklında bir fikir, proje veya sadece güzel bir sohbet varsa yaz.",
+      "email": "hello@example.com",
+      "note": "Bu e-posta şimdilik yer tutucu; kişisel adresinle değiştirilecek."
     },
     "footer": {
-      "backToTop": "Yukarı dön ↑",
-      "copyright": "Yaratıcı stüdyo şablonu · Kendi bilgilerinizle değiştirin"
-    },
-    "sections": {
-      "work": {
-        "index": "01 / Seçilmiş işler",
-        "title": "İnsanların hatırlaması gereken işlerle başlayın.",
-        "description": "Her vaka analizini aynı karta zorlamak yerine geniş ve çeşitli bir medya ritmi kullanın. Bu yer tutucular bilerek kolay değiştirilebilir şekilde tasarlandı."
-      },
-      "studio": {
-        "index": "02 / Bakış açısı",
-        "title": "Bir stüdyo sitesi, stüdyonun kendisinin çalışan bir örneği olmalıdır.",
-        "copy": "Dili kısa tutun. Hiyerarşiyi belirgin hale getirin. İçeriği gizlemeden karakteri yansıtacak birkaç iyi yönlendirilmiş etkileşime izin verin.",
-        "howWeWork": "Nasıl çalışıyoruz"
-      },
-      "capabilities": {
-        "index": "03 / Yetkinlikler",
-        "title": "Bir katalog değil, odaklanmış bir teklif.",
-        "description": "Yalnızca gerçek çalışmalarla gösterebileceğiniz hizmetleri sunun. Aşağıdaki yapı net bir sözü, destekleyici detayları ve somut çıktıları destekler."
-      },
-      "processSection": {
-        "index": "04 / Süreç",
-        "title": "Güvenle ilerlemek için güvenilir bir yapı."
-      },
-      "contact": {
-        "index": "05 / Faydalı bir şeye başla",
-        "title": "Size ait hissettirecek bir projeniz mi var?",
-        "email": "hello@example.com"
-      }
+      "backToTop": "Karaktere dön ↑",
+      "copyright": "Kişisel portfolio · 2026"
     }
   }
 }

@@ -7,11 +7,11 @@
  */
 export const siteConfig = {
   /** Default site name — overridden by Sanity siteSettings.brand when available */
-  name: 'Boilerplate Innovator',
+  name: 'Zübey — Software Developer',
 
   /** Default meta description */
   description:
-    'Production-ready starter for modern client websites built with Next.js, Sanity, TypeScript and next-intl.',
+    'Software developer portfolio focused on thoughtful interfaces, practical engineering and interactive web experiences.',
 
   /** Canonical URL — set via NEXT_PUBLIC_SITE_URL env var */
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',

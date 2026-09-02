@@ -8,7 +8,9 @@ export function SiteFooter({ brand }: { brand: string }) {
       <div className="shell footer-grid">
         <p className="footer-wordmark">{brand}</p>
         <p>{tFooter('copyright')}</p>
-        <a href="#top">{tFooter('backToTop')}</a>
+        <a className="footer-top-link" href="#top">
+          {tFooter('backToTop')}
+        </a>
       </div>
     </footer>
   );

@@ -3,6 +3,7 @@
 export interface SanityImageSource {
   _type: 'image';
   asset: { _ref: string; _type: 'reference' };
+  alt?: string;
   hotspot?: { x: number; y: number; height: number; width: number };
   crop?: { top: number; bottom: number; left: number; right: number };
 }
@@ -37,7 +38,7 @@ export interface SocialLink {
   url: string;
 }
 
-// ─── Demo / site-specific types (replace per client project) ─────────────────
+// ─── Portfolio content types ─────────────────────────────────────────────────
 
 export interface Project {
   _id?: string;
@@ -46,23 +47,24 @@ export interface Project {
   category: string;
   year: string;
   summary: string;
-  accent: string;
-  tone: 'light' | 'dark';
+  technologies: string[];
+  status: string;
+  tone: 'warm' | 'dark' | 'accent';
   mark: string;
+  href?: string;
   image?: SanityImageSource;
 }
 
-export interface Service {
-  _id?: string;
+export interface Capability {
   number: string;
   title: string;
   description: string;
-  deliverables: string[];
+  tools: string[];
 }
 
-export interface ProcessStep {
-  _id?: string;
+export interface JourneyItem {
   number: string;
+  period: string;
   title: string;
-  text: string;
+  description: string;
 }

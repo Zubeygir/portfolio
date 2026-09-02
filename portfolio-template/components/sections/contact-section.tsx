@@ -1,21 +1,23 @@
-/**
- * Site-specific section — DEMO / EXAMPLE.
- * Replace or modify for your client project.
- */
 import { ArrowUpRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export function ContactSection({ contactEmail }: { contactEmail: string }) {
-  const tSections = useTranslations('Site.sections');
+  const t = useTranslations('Site.contact');
 
   return (
-    <section id="contact" className="contact-section shell" aria-labelledby="contact-title">
-      <p className="section-index">{tSections('contact.index')}</p>
+    <section
+      id="contact"
+      className="contact-section shell"
+      aria-labelledby="contact-title"
+    >
+      <p className="section-index">{t('index')}</p>
       <div>
-        <h2 id="contact-title">{tSections('contact.title')}</h2>
+        <p className="contact-kicker">{t('kicker')}</p>
+        <h2 id="contact-title">{t('title')}</h2>
         <a href={`mailto:${contactEmail}`} className="contact-link">
           {contactEmail} <ArrowUpRight aria-hidden="true" />
         </a>
+        <p className="contact-note">{t('note')}</p>
       </div>
     </section>
   );

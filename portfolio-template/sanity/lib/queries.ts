@@ -15,10 +15,10 @@ export const siteSettingsQuery = defineQuery(
     seoTitle,
     seoDescription,
     socialLinks[] { platform, url }
-  }`
+  }`,
 );
 
-// ─── Site-specific queries (demo — replace per client project) ───────────────
+// ─── Portfolio queries ───────────────────────────────────────────────────────
 
 /** Projects — filtered by locale, ordered */
 export const projectsQuery = defineQuery(
@@ -29,33 +29,12 @@ export const projectsQuery = defineQuery(
     category,
     year,
     summary,
-    accent,
+    technologies,
+    status,
     tone,
     mark,
-    image,
+    href,
+    image { ..., alt },
     order
-  }`
-);
-
-/** Services — filtered by locale, ordered */
-export const servicesQuery = defineQuery(
-  `*[_type == "service" && language == $lang] | order(order asc) {
-    _id,
-    number,
-    title,
-    description,
-    deliverables,
-    order
-  }`
-);
-
-/** Process Steps — filtered by locale, ordered */
-export const processStepsQuery = defineQuery(
-  `*[_type == "processStep" && language == $lang] | order(order asc) {
-    _id,
-    number,
-    title,
-    text,
-    order
-  }`
+  }`,
 );

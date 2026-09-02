@@ -17,7 +17,13 @@ function Brand({ name }: { name: string }) {
 
   return (
     <a className="wordmark" href="#top" aria-label={`${name} home`}>
-      {first}<span>/</span>{second}
+      {first}
+      {second ? (
+        <>
+          <span>/</span>
+          {second}
+        </>
+      ) : null}
     </a>
   );
 }
@@ -27,10 +33,9 @@ export function SiteHeader() {
   const tHeader = useTranslations('Site.header');
 
   const navigation = [
+    { label: t('navigation.about'), href: '#about' },
     { label: t('navigation.work'), href: '#work' },
-    { label: t('navigation.services'), href: '#services' },
-    { label: t('navigation.studio'), href: '#studio' },
-    { label: t('navigation.process'), href: '#process' },
+    { label: t('navigation.contact'), href: '#contact' },
   ];
 
   const brand = t('brand');
@@ -50,7 +55,7 @@ export function SiteHeader() {
       <div className="flex items-center gap-4 justify-self-end">
         <LocaleSwitcher />
         <a className="header-cta fill-link" href="#contact">
-          {tHeader('startProject')}
+          {tHeader('contact')}
           <ArrowUpRight aria-hidden="true" />
         </a>
       </div>
@@ -60,11 +65,7 @@ export function SiteHeader() {
           <Menu aria-hidden="true" />
           <span>{tHeader('menu')}</span>
         </SheetTrigger>
-        <SheetContent
-          className="mobile-menu"
-          side="right"
-          showCloseButton
-        >
+        <SheetContent className="mobile-menu" side="right" showCloseButton>
           <SheetTitle className="sr-only">{tHeader('navigation')}</SheetTitle>
           <SheetDescription className="sr-only">
             {tHeader('jumpToSection')}
@@ -77,7 +78,13 @@ export function SiteHeader() {
             {navigation.map((item, index) => (
               <SheetClose
                 key={item.href}
-                render={<a className="mobile-nav-link" href={item.href} />}
+                render={
+                  <a
+                    className="mobile-nav-link"
+                    href={item.href}
+                    aria-label={item.label}
+                  />
+                }
               >
                 <span>0{index + 1}</span>
                 {item.label}
@@ -86,9 +93,15 @@ export function SiteHeader() {
             ))}
           </nav>
           <SheetClose
-            render={<a className="mobile-menu-cta fill-link" href="#contact" />}
+            render={
+              <a
+                className="mobile-menu-cta fill-link"
+                href="#contact"
+                aria-label={tHeader('contact')}
+              />
+            }
           >
-            {tHeader('startProject')}
+            {tHeader('contact')}
             <ArrowUpRight aria-hidden="true" />
           </SheetClose>
         </SheetContent>

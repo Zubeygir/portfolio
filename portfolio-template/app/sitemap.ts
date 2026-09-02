@@ -2,17 +2,12 @@ import { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site.config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/studio'];
-
-  // Combine default routes with all locales
-  const sitemapEntries = routes.map((route) => {
+  return siteConfig.locales.map((locale) => {
     return {
-      url: `${siteConfig.url}${route}`,
+      url: `${siteConfig.url}/${locale}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
-      priority: route === '' ? 1 : 0.5,
+      priority: 1,
     };
   });
-
-  return sitemapEntries;
 }

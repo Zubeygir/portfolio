@@ -27,7 +27,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  
+
   let settings: SiteSettings | null = null;
   try {
     settings = await sanityFetch<SiteSettings>({ query: siteSettingsQuery });
@@ -43,10 +43,13 @@ export async function generateMetadata({
     ? urlFor(settings.ogImage)?.width(1200).height(630).url()
     : new URL('/og.png', siteUrl).toString();
 
-  const alternatesLanguages = routing.locales.reduce((acc, l) => {
-    acc[l] = `/${l}`;
-    return acc;
-  }, {} as Record<string, string>);
+  const alternatesLanguages = routing.locales.reduce(
+    (acc, l) => {
+      acc[l] = `/${l}`;
+      return acc;
+    },
+    {} as Record<string, string>,
+  );
 
   return {
     metadataBase: siteUrl,
@@ -66,7 +69,7 @@ export async function generateMetadata({
       url: siteUrl,
       siteName: title,
       locale,
-      alternateLocale: routing.locales.filter(l => l !== locale),
+      alternateLocale: routing.locales.filter((l) => l !== locale),
       images: [
         {
           url: ogImageUrl || '',
@@ -86,21 +89,21 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.some((supportedLocale) => supportedLocale === locale)) {
     notFound();
   }
-  
+
   setRequestLocale(locale);
   const messages = await getMessages();
 

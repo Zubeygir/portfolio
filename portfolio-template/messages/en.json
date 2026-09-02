@@ -1,136 +1,157 @@
 {
   "Site": {
-    "brand": "STUDIO/BASE",
-    "status": "Available worldwide",
+    "brand": "ZÜBEY/DEV",
     "navigation": {
-      "work": "Work",
-      "services": "Services",
-      "studio": "Studio",
-      "process": "Process"
-    },
-    "hero": {
-      "eyebrow": "Independent digital studio",
-      "title": "Proof,<br/>before <em>promises.</em>",
-      "description": "A sharp, content-first foundation for studios that want their own site to demonstrate the quality of their work.",
-      "seeWork": "See selected work",
-      "featured": "Featured / 01",
-      "strategy": "Strategy · Design · Build",
-      "replacePrompt": "Replace this scene with your strongest project.",
-      "flagship": "Flagship experience",
-      "flagshipTitle": "Atelier One"
+      "about": "About",
+      "work": "Projects",
+      "capabilities": "Capabilities",
+      "journey": "Journey",
+      "contact": "Contact"
     },
     "header": {
-      "startProject": "Start a project",
+      "contact": "Contact",
       "menu": "Menu",
       "navigation": "Navigation",
       "jumpToSection": "Jump to a section of this page."
     },
+    "hero": {
+      "eyebrow": "Software Developer",
+      "title": "Hi, I’m Zübey.",
+      "description": "I build digital experiences with thoughtful interfaces, reliable code and small interactions that leave a lasting impression.",
+      "enter": "Explore the portfolio",
+      "characterLabel": "A three-dimensional character representing Zübey whose eyes follow the pointer",
+      "characterNote": "Move your pointer — the eyes are following you.",
+      "location": "Türkiye · UTC+3",
+      "status": "Open to new ideas"
+    },
+    "about": {
+      "index": "01 / About",
+      "title": "About Me",
+      "intro": "I’m Zübey, a Software Developer.",
+      "lead": "I enjoy turning an idea into a clear structure, then shaping that structure into a working and carefully made product.",
+      "body": "My current focus is building web experiences with React, Next.js and TypeScript. This portfolio is not only a place to show work; it is a living project where I apply what I learn about interaction, 3D web and performance.",
+      "aside": "React · Next.js · TypeScript\nA build-while-learning mindset",
+      "technologyTitle": "Main Technologies",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Three.js"
+      ],
+      "skillsTitle": "Main Skills",
+      "skills": [
+        "Responsive Interfaces",
+        "Component Architecture",
+        "API Integration",
+        "Accessibility",
+        "Interaction Design"
+      ],
+      "toolsTitle": "Tools",
+      "tools": ["VS Code", "Git", "GitHub", "Figma", "Blockbench", "Vercel"]
+    },
     "projects": {
-      "viewCaseStudy": "View case study ↗",
+      "index": "02 / Selected projects",
+      "title": "Featured Projects",
+      "description": "As real projects arrive, this area will grow into case studies covering the problem, decisions, technologies and outcomes.",
+      "viewProject": "Open project",
       "items": [
         {
           "number": "01",
-          "title": "Atelier One",
-          "category": "Hospitality · Digital flagship",
+          "title": "Personal Portfolio",
+          "category": "Identity · Web experience",
           "year": "2026",
-          "summary": "A calm, tactile digital identity built around the craft behind an independent destination.",
-          "accent": "#1b2cff",
-          "tone": "dark",
-          "mark": "A"
+          "summary": "This site brings together a personal Blockbench character, pointer-tracking eyes and a bilingual content system.",
+          "technologies": ["Next.js", "TypeScript", "React Three Fiber"],
+          "status": "In progress",
+          "tone": "warm",
+          "mark": "Z"
         },
         {
           "number": "02",
-          "title": "Signal / Archive",
-          "category": "Culture · Editorial platform",
-          "year": "2026",
-          "summary": "A living archive that lets a deep catalogue feel immediate, visual and easy to explore.",
-          "accent": "#dfff45",
-          "tone": "light",
-          "mark": "S"
+          "title": "Next Case Study",
+          "category": "Product · Interface",
+          "year": "Soon",
+          "summary": "The next real project will be documented here with its problem, decisions, development process and outcomes.",
+          "technologies": ["React", "TypeScript", "UI Engineering"],
+          "status": "Awaiting content",
+          "tone": "dark",
+          "mark": "02"
         },
         {
           "number": "03",
-          "title": "Field Notes",
-          "category": "Product · Research tool",
-          "year": "2025",
-          "summary": "A focused working surface that turns scattered observations into useful decisions.",
-          "accent": "#e05b35",
-          "tone": "dark",
-          "mark": "F"
+          "title": "Experiment Log",
+          "category": "Interaction · Learning",
+          "year": "Ongoing",
+          "summary": "An open-ended space where animation, 3D web and interface ideas become small but working experiments.",
+          "technologies": ["WebGL", "Motion", "Creative Coding"],
+          "status": "Coming soon",
+          "tone": "accent",
+          "mark": "03"
         }
       ]
     },
-    "services": {
+    "capabilities": {
+      "index": "03 / Capabilities",
+      "title": "The layers connecting a visual idea to a working product.",
+      "description": "Without limiting myself to a frontend label, I care about the different layers of a web product from shaping the idea to building it.",
       "items": [
         {
           "number": "01",
-          "title": "Brand systems",
-          "description": "A clear visual and verbal foundation with enough structure to stay coherent as you grow.",
-          "deliverables": ["Positioning", "Identity", "Design direction"]
+          "title": "Interface development",
+          "description": "Accessible, component-based interfaces that adapt cleanly across different screens.",
+          "tools": ["React", "Next.js", "TypeScript", "CSS"]
         },
         {
           "number": "02",
-          "title": "Web experiences",
-          "description": "High-character marketing sites where the interaction supports the story and the work stays central.",
-          "deliverables": ["UX direction", "Interface design", "Development"]
+          "title": "Product thinking",
+          "description": "Treating content hierarchy, user flow and technical decisions as parts of the same problem.",
+          "tools": ["UX Flows", "Prototyping", "Design Systems"]
         },
         {
           "number": "03",
-          "title": "Digital products",
-          "description": "Useful, durable product interfaces shaped around real workflows rather than feature theatre.",
-          "deliverables": ["Product strategy", "Design systems", "Prototyping"]
+          "title": "Interaction and 3D web",
+          "description": "Measured motion used to create personality and direction, not movement for its own sake.",
+          "tools": ["Three.js", "React Three Fiber", "Blockbench"]
         }
       ]
     },
-    "process": {
+    "journey": {
+      "index": "04 / Now and next",
+      "title": "A journey that does not hide the learning process.",
       "items": [
         {
           "number": "01",
-          "title": "Align",
-          "text": "Define the problem, the audience and what a strong outcome needs to prove."
+          "period": "Now",
+          "title": "Building a personal identity",
+          "description": "I am developing the portfolio foundation, original character and bilingual content system together."
         },
         {
           "number": "02",
-          "title": "Shape",
-          "text": "Build the content hierarchy and visual direction together, then test the key moments early."
+          "period": "Focus",
+          "title": "Building stronger products",
+          "description": "I am strengthening the connection between code quality, accessibility, performance and interface decisions."
         },
         {
           "number": "03",
-          "title": "Ship",
-          "text": "Develop the full experience, validate the details and leave behind a system you can own."
+          "period": "Next",
+          "title": "Adding real case studies",
+          "description": "New projects will be explained through their problems and decisions, not only through polished visuals."
         }
       ]
+    },
+    "contact": {
+      "index": "03 / Contact",
+      "kicker": "Let’s make something together.",
+      "title": "If you have an idea, a project or simply a good conversation in mind, write to me.",
+      "email": "hello@example.com",
+      "note": "This email is a temporary placeholder and will be replaced with your personal address."
     },
     "footer": {
-      "backToTop": "Back to top ↑",
-      "copyright": "Creative studio boilerplate · Replace with your details"
-    },
-    "sections": {
-      "work": {
-        "index": "01 / Selected work",
-        "title": "Start with the work people should remember.",
-        "description": "Use a large, varied media rhythm instead of forcing every case study into the same card. These placeholders are deliberately easy to replace."
-      },
-      "studio": {
-        "index": "02 / Point of view",
-        "title": "A studio site should be a working sample of the studio itself.",
-        "copy": "Keep the language short. Make the hierarchy obvious. Let a few well-directed interactions carry the character without hiding the content.",
-        "howWeWork": "How we work"
-      },
-      "capabilities": {
-        "index": "03 / Capabilities",
-        "title": "A focused offer, not a catalogue.",
-        "description": "Keep only the services you can demonstrate with real work. The structure below supports a clear promise, supporting detail and concrete deliverables."
-      },
-      "processSection": {
-        "index": "04 / Process",
-        "title": "Enough structure to move with confidence."
-      },
-      "contact": {
-        "index": "05 / Start something useful",
-        "title": "Have a project that should feel unmistakably yours?",
-        "email": "hello@example.com"
-      }
+      "backToTop": "Back to the character ↑",
+      "copyright": "Personal portfolio · 2026"
     }
   }
 }

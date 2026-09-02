@@ -30,22 +30,22 @@ export function LocaleSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger
         disabled={isPending}
-        className="inline-flex items-center gap-2 border border-[var(--foreground)] px-3 py-2 text-[0.62rem] font-mono uppercase tracking-widest hover:bg-[var(--primary)] transition-colors focus:outline-none"
+        className="locale-trigger"
         aria-label="Select language"
       >
         <Globe className="w-3 h-3" />
         <span>{label}</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[120px] rounded-none border border-[var(--foreground)] bg-[var(--background)] shadow-none p-0">
-        <DropdownMenuItem 
+      <DropdownMenuContent align="end" className="locale-menu">
+        <DropdownMenuItem
           onClick={() => onLocaleChange('tr')}
-          className={`font-mono text-[0.62rem] uppercase tracking-widest rounded-none py-2 px-3 ${locale === 'tr' ? 'bg-[var(--primary)]' : ''} cursor-pointer hover:bg-[var(--primary)]`}
+          className={`locale-option ${locale === 'tr' ? 'is-active' : ''}`}
         >
           Türkçe (TR)
         </DropdownMenuItem>
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={() => onLocaleChange('en')}
-          className={`font-mono text-[0.62rem] uppercase tracking-widest rounded-none py-2 px-3 ${locale === 'en' ? 'bg-[var(--primary)]' : ''} cursor-pointer hover:bg-[var(--primary)]`}
+          className={`locale-option ${locale === 'en' ? 'is-active' : ''}`}
         >
           English (EN)
         </DropdownMenuItem>

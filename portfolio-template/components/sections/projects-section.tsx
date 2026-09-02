@@ -1,30 +1,30 @@
-/**
- * Site-specific section — DEMO / EXAMPLE.
- * Replace or modify for your client project.
- */
+import { useTranslations } from 'next-intl';
 import { SectionHeading } from '@/components/shared/section-heading';
 import { ProjectCard } from './project-card';
-import { useTranslations } from 'next-intl';
 import type { Project } from '@/lib/types';
 
 export function ProjectsSection({ projects }: { projects: Project[] }) {
-  const tSections = useTranslations('Site.sections');
+  const t = useTranslations('Site.projects');
 
   return (
-    <section id="work" className="work-section shell" aria-labelledby="work-title">
+    <section
+      id="work"
+      className="work-section shell"
+      aria-labelledby="work-title"
+    >
       <SectionHeading
-        index={tSections('work.index')}
+        index={t('index')}
         id="work-title"
-        title={tSections('work.title')}
-        description={tSections('work.description')}
+        title={t('title')}
+        description={t('description')}
       />
-
       <div className="project-layout">
         {projects.map((project, index) => (
           <ProjectCard
-            key={project.title}
+            key={`${project.number}-${project.title}`}
             project={project}
             featured={index === 0}
+            viewLabel={t('viewProject')}
           />
         ))}
       </div>
