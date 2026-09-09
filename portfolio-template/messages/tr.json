@@ -60,6 +60,13 @@
       "title": "Öne çıkan projeler",
       "description": "Akademik tez çalışmasından kurumsal üretime, mobil uygulamalardan 3D web deneyimlerine kadar farklı ölçeklerde geliştirdiğim projeler.",
       "viewProject": "Projeyi aç",
+      "deskLabels": {
+        "projectPrefix": "PROJE",
+        "clickForDetails": "DETAYLAR İÇİN TIKLA ↗",
+        "clickToInspect": "İncelemek için tıkla ↗",
+        "instruction": "Masa üzerindeki belgelere veya projelere tıklayarak inceleyebilirsiniz.",
+        "loading": "3D Proje Masası Hazırlanıyor..."
+      },
       "modalLabels": {
         "role": "Rol",
         "technologies": "Kullanılan Teknolojiler",

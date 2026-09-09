@@ -53,13 +53,31 @@
         "Clean Code & OOP"
       ],
       "toolsTitle": "Tools",
-      "tools": ["VS Code", "Git", "GitHub", "Postman", "Docker", "MySQL Workbench", "Firebase", "Figma", "Blockbench", "Vercel"]
+      "tools": [
+        "VS Code",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Docker",
+        "MySQL Workbench",
+        "Firebase",
+        "Figma",
+        "Blockbench",
+        "Vercel"
+      ]
     },
     "projects": {
       "index": "02 / Selected projects",
       "title": "Featured Projects",
       "description": "Projects I've built across different scales — from academic thesis work to enterprise production, mobile apps to 3D web experiences.",
       "viewProject": "Open project",
+      "deskLabels": {
+        "projectPrefix": "PROJECT",
+        "clickForDetails": "CLICK FOR DETAILS ↗",
+        "clickToInspect": "Click to inspect ↗",
+        "instruction": "Click on documents on the desk or projects below to explore.",
+        "loading": "Preparing 3D Project Desk..."
+      },
       "modalLabels": {
         "role": "Role",
         "technologies": "Technologies Used",
@@ -82,14 +100,21 @@
             "Personalized development plan generation",
             "Model comparison and hyperparameter optimization"
           ],
-          "technologies": ["Python", "LightGBM", "XGBoost", "Pandas", "NumPy", "Scikit-learn"],
+          "technologies": [
+            "Python",
+            "LightGBM",
+            "XGBoost",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn"
+          ],
           "status": "Completed",
           "tone": "warm",
           "mark": "AI"
         },
         {
           "number": "02",
-          "title": "Kombin AI / Yakın Dostum",
+          "title": "Best Friend App",
           "category": "Mobile App · AI",
           "year": "2025",
           "summary": "An AI-powered mobile app providing outfit suggestions and emotional support.",
@@ -102,7 +127,13 @@
             "RESTful API architecture for cross-platform communication",
             "Outfit recommendation algorithm and NLP module"
           ],
-          "technologies": ["SwiftUI", ".NET", "Python", "REST API", "iOS"],
+          "technologies": [
+            "SwiftUI",
+            ".NET",
+            "Python",
+            "REST API",
+            "iOS"
+          ],
           "status": "Completed",
           "tone": "dark",
           "mark": "KD"
@@ -122,7 +153,13 @@
             "Enterprise-scale performance optimization",
             "Responsive and accessible interface design"
           ],
-          "technologies": ["React", "TypeScript", "SSE", "React Query", "CSS"],
+          "technologies": [
+            "React",
+            "TypeScript",
+            "SSE",
+            "React Query",
+            "CSS"
+          ],
           "status": "Completed",
           "tone": "accent",
           "mark": "RT"
@@ -142,7 +179,13 @@
             "English / Turkish bilingual content system with next-intl",
             "Modern page structure and SEO with Next.js App Router"
           ],
-          "technologies": ["Next.js", "TypeScript", "React Three Fiber", "Three.js", "Blockbench"],
+          "technologies": [
+            "Next.js",
+            "TypeScript",
+            "React Three Fiber",
+            "Three.js",
+            "Blockbench"
+          ],
           "status": "In progress",
           "tone": "warm",
           "mark": "Z"
@@ -162,7 +205,12 @@
             "RESTful API integration with Node.js backend",
             "Mobile-compatible responsive design"
           ],
-          "technologies": ["React", "TypeScript", "Node.js", "REST API"],
+          "technologies": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "REST API"
+          ],
           "status": "Completed",
           "tone": "dark",
           "mark": "AW"
@@ -182,7 +230,13 @@
             "Business logic layer and data validation with C#",
             "Passenger registration and ticket inquiry systems"
           ],
-          "technologies": [".NET", "C#", "Razor Pages", "SQL", "Entity Framework"],
+          "technologies": [
+            ".NET",
+            "C#",
+            "Razor Pages",
+            "SQL",
+            "Entity Framework"
+          ],
           "status": "Completed",
           "tone": "accent",
           "mark": "BT"
@@ -198,19 +252,32 @@
           "number": "01",
           "title": "Interface development",
           "description": "Accessible, component-based interfaces that adapt cleanly across different screens.",
-          "tools": ["React", "Next.js", "TypeScript", "CSS"]
+          "tools": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "CSS"
+          ]
         },
         {
           "number": "02",
           "title": "Product thinking",
           "description": "Treating content hierarchy, user flow and technical decisions as parts of the same problem.",
-          "tools": ["UX Flows", "Prototyping", "Design Systems"]
+          "tools": [
+            "UX Flows",
+            "Prototyping",
+            "Design Systems"
+          ]
         },
         {
           "number": "03",
           "title": "Interaction and 3D web",
           "description": "Measured motion used to create personality and direction, not movement for its own sake.",
-          "tools": ["Three.js", "React Three Fiber", "Blockbench"]
+          "tools": [
+            "Three.js",
+            "React Three Fiber",
+            "Blockbench"
+          ]
         }
       ]
     },
