@@ -1,6 +1,6 @@
 {
   "Site": {
-    "brand": "ZÜBEY/DEV",
+    "brand": "Zübeyir Ali Demir",
     "navigation": {
       "about": "About",
       "work": "Projects",
@@ -16,80 +16,176 @@
     },
     "hero": {
       "eyebrow": "Software Developer",
-      "title": "Hi, I’m Zübey.",
+      "title": "Hi, I'm Zübeyir.",
       "description": "I build digital experiences with thoughtful interfaces, reliable code and small interactions that leave a lasting impression.",
       "enter": "Explore the portfolio",
-      "characterLabel": "A three-dimensional character representing Zübey whose eyes follow the pointer",
-      "characterNote": "Move your pointer — the eyes are following you.",
-      "location": "Türkiye · UTC+3",
+      "characterLabel": "A three-dimensional draggable character representing Zübeyir that tracks your pointer",
+      "characterNote": "Drag to spin the character — release to snap back.",
+      "location": "Istanbul, Türkiye · UTC+3",
       "status": "Open to new ideas"
     },
     "about": {
       "index": "01 / About",
       "title": "About Me",
-      "intro": "I’m Zübey, a Software Developer.",
-      "lead": "I enjoy turning an idea into a clear structure, then shaping that structure into a working and carefully made product.",
-      "body": "My current focus is building web experiences with React, Next.js and TypeScript. This portfolio is not only a place to show work; it is a living project where I apply what I learn about interaction, 3D web and performance.",
-      "aside": "React · Next.js · TypeScript\nA build-while-learning mindset",
+      "intro": "I'm Zübeyir Ali Demir, a Software Developer.",
+      "lead": "I graduated in Computer Engineering from Istanbul University-Cerrahpaşa. I enjoy turning an idea into a clear structure, then shaping that structure into a working and carefully made product.",
+      "body": "I build modern web experiences with React, Next.js and TypeScript. Alongside that, I develop projects across different platforms using .NET, SwiftUI and Python. I've gained experience ranging from AI-powered applications to real-time enterprise solutions.",
+      "aside": "React · Next.js · TypeScript · .NET · Python\nA build-while-learning mindset",
       "technologyTitle": "Main Technologies",
       "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "TypeScript",
         "React",
         "Next.js",
-        "Three.js"
+        "TypeScript",
+        "JavaScript",
+        ".NET / C#",
+        "SwiftUI",
+        "Python",
+        "SQL",
+        "HTML / CSS"
       ],
       "skillsTitle": "Main Skills",
       "skills": [
         "Responsive Interfaces",
-        "Component Architecture",
-        "API Integration",
-        "Accessibility",
-        "Interaction Design"
+        "Component-Based UI Architecture",
+        "REST API Integration",
+        "Server-Sent Events (SSE)",
+        "State Management",
+        "Clean Code & OOP"
       ],
       "toolsTitle": "Tools",
-      "tools": ["VS Code", "Git", "GitHub", "Figma", "Blockbench", "Vercel"]
+      "tools": ["VS Code", "Git", "GitHub", "Postman", "Docker", "MySQL Workbench", "Firebase", "Figma", "Blockbench", "Vercel"]
     },
     "projects": {
       "index": "02 / Selected projects",
       "title": "Featured Projects",
-      "description": "As real projects arrive, this area will grow into case studies covering the problem, decisions, technologies and outcomes.",
+      "description": "Projects I've built across different scales — from academic thesis work to enterprise production, mobile apps to 3D web experiences.",
       "viewProject": "Open project",
+      "modalLabels": {
+        "role": "Role",
+        "technologies": "Technologies Used",
+        "highlights": "Key Highlights",
+        "close": "Close"
+      },
       "items": [
         {
           "number": "01",
-          "title": "Personal Portfolio",
-          "category": "Identity · Web experience",
+          "title": "360° Performance Evaluation System",
+          "category": "Artificial Intelligence · Thesis",
+          "year": "2025",
+          "summary": "A performance prediction and personalized development planning system powered by LightGBM and XGBoost.",
+          "description": "Developed as an undergraduate thesis, this project evaluates employee performance from multiple perspectives (360°) and predicts future performance using machine learning models. It combines manager, peer, and self-assessment data to generate individualized development plans. Model training and comparison were conducted using the Python ecosystem.",
+          "role": "Project Owner & Developer",
+          "highlights": [
+            "Performance prediction with LightGBM and XGBoost models",
+            "Data preprocessing and feature engineering with Pandas and NumPy",
+            "360° evaluation metrics: manager, peer, self-assessment",
+            "Personalized development plan generation",
+            "Model comparison and hyperparameter optimization"
+          ],
+          "technologies": ["Python", "LightGBM", "XGBoost", "Pandas", "NumPy", "Scikit-learn"],
+          "status": "Completed",
+          "tone": "warm",
+          "mark": "AI"
+        },
+        {
+          "number": "02",
+          "title": "Kombin AI / Yakın Dostum",
+          "category": "Mobile App · AI",
+          "year": "2025",
+          "summary": "An AI-powered mobile app providing outfit suggestions and emotional support.",
+          "description": "An AI-powered mobile application consisting of two main modules. The Kombin AI module analyzes the user's wardrobe and suggests outfit combinations based on weather, event type, and personal style. The Yakın Dostum module provides emotional support and daily motivation through natural language processing. The iOS interface was built with SwiftUI, the backend with .NET, and AI services with Python.",
+          "role": "Full-Stack Developer",
+          "highlights": [
+            "Native iOS user interface development with SwiftUI",
+            ".NET backend API design and implementation",
+            "Python-based AI service integration",
+            "RESTful API architecture for cross-platform communication",
+            "Outfit recommendation algorithm and NLP module"
+          ],
+          "technologies": ["SwiftUI", ".NET", "Python", "REST API", "iOS"],
+          "status": "Completed",
+          "tone": "dark",
+          "mark": "KD"
+        },
+        {
+          "number": "03",
+          "title": "Enterprise Real-Time Web Solution",
+          "category": "Enterprise · Frontend",
+          "year": "2025",
+          "summary": "An enterprise web application delivering real-time data streams via Server-Sent Events.",
+          "description": "A frontend application developed to manage live data streams in an enterprise environment. Server-Sent Events (SSE) protocol enables one-way real-time data transmission from server to client. React Query handles server state management, combined with a component-based architecture and TypeScript for type safety.",
+          "role": "Frontend Developer",
+          "highlights": [
+            "Real-time data streaming with Server-Sent Events (SSE)",
+            "Server state management and caching with React Query",
+            "Type-safe component architecture with TypeScript",
+            "Enterprise-scale performance optimization",
+            "Responsive and accessible interface design"
+          ],
+          "technologies": ["React", "TypeScript", "SSE", "React Query", "CSS"],
+          "status": "Completed",
+          "tone": "accent",
+          "mark": "RT"
+        },
+        {
+          "number": "04",
+          "title": "Personal 3D Web Portfolio",
+          "category": "Identity · Web Experience",
           "year": "2026",
           "summary": "This site brings together a personal Blockbench character, pointer-tracking eyes and a bilingual content system.",
-          "technologies": ["Next.js", "TypeScript", "React Three Fiber"],
+          "description": "An interactive portfolio site developed to best represent personal brand identity in the digital space. A custom 3D character modeled in Blockbench was brought to the browser via React Three Fiber with pointer-tracking eye animation. A bilingual English-Turkish content system was built with Next.js App Router and next-intl.",
+          "role": "Designer & Developer",
+          "highlights": [
+            "Custom 3D character modeling with Blockbench",
+            "In-browser 3D scene management with React Three Fiber",
+            "Pointer-tracking eye animation and interactive character",
+            "English / Turkish bilingual content system with next-intl",
+            "Modern page structure and SEO with Next.js App Router"
+          ],
+          "technologies": ["Next.js", "TypeScript", "React Three Fiber", "Three.js", "Blockbench"],
           "status": "In progress",
           "tone": "warm",
           "mark": "Z"
         },
         {
-          "number": "02",
-          "title": "Next Case Study",
-          "category": "Product · Interface",
-          "year": "Soon",
-          "summary": "The next real project will be documented here with its problem, decisions, development process and outcomes.",
-          "technologies": ["React", "TypeScript", "UI Engineering"],
-          "status": "Awaiting content",
+          "number": "05",
+          "title": "Airline Website",
+          "category": "Automation · Web Project",
+          "year": "2024",
+          "summary": "A comprehensive web automation project covering airline ticket sales, flight management and customer operations.",
+          "description": "A comprehensive web automation project digitizing airline operations. It includes flight search, ticket purchasing, reservation management, and customer profile operations. A modern and responsive user interface was built with React and TypeScript, while Node.js powered the backend API services.",
+          "role": "Frontend Developer",
+          "highlights": [
+            "Flight search, filtering, and ticket purchase flows",
+            "Component-based and reusable UI with React",
+            "Type-safe development process with TypeScript",
+            "RESTful API integration with Node.js backend",
+            "Mobile-compatible responsive design"
+          ],
+          "technologies": ["React", "TypeScript", "Node.js", "REST API"],
+          "status": "Completed",
           "tone": "dark",
-          "mark": "02"
+          "mark": "AW"
         },
         {
-          "number": "03",
-          "title": "Experiment Log",
-          "category": "Interaction · Learning",
-          "year": "Ongoing",
-          "summary": "An open-ended space where animation, 3D web and interface ideas become small but working experiments.",
-          "technologies": ["WebGL", "Motion", "Creative Coding"],
-          "status": "Coming soon",
+          "number": "06",
+          "title": "BusTicketWebRazor",
+          "category": "Web App · Backend",
+          "year": "2024",
+          "summary": "A .NET Razor-based web application for bus ticket sales and route management.",
+          "description": "Built with .NET Razor Pages architecture, this web application brings bus company operations — route planning, ticket sales, and passenger management — into the digital space. Full CRUD (create, read, update, delete) operations are supported with SQL database integration. Server-side rendering ensures fast page load times.",
+          "role": "Full-Stack Developer",
+          "highlights": [
+            "Server-side web application with .NET Razor Pages",
+            "SQL database design and full CRUD operations",
+            "Route planning and ticket sales management panel",
+            "Business logic layer and data validation with C#",
+            "Passenger registration and ticket inquiry systems"
+          ],
+          "technologies": [".NET", "C#", "Razor Pages", "SQL", "Entity Framework"],
+          "status": "Completed",
           "tone": "accent",
-          "mark": "03"
+          "mark": "BT"
         }
       ]
     },
@@ -144,14 +240,14 @@
     },
     "contact": {
       "index": "03 / Contact",
-      "kicker": "Let’s make something together.",
+      "kicker": "Let's make something together.",
       "title": "If you have an idea, a project or simply a good conversation in mind, write to me.",
-      "email": "hello@example.com",
-      "note": "This email is a temporary placeholder and will be replaced with your personal address."
+      "email": "zubeyirad@gmail.com",
+      "note": "Email is the fastest way to reach me. You can also connect on LinkedIn."
     },
     "footer": {
       "backToTop": "Back to the character ↑",
-      "copyright": "Personal portfolio · 2026"
+      "copyright": "Zübeyir Ali Demir · 2026"
     }
   }
 }

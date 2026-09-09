@@ -47,6 +47,9 @@ export interface Project {
   category: string;
   year: string;
   summary: string;
+  description?: string;
+  role?: string;
+  highlights?: string[];
   technologies: string[];
   status: string;
   tone: 'warm' | 'dark' | 'accent';

@@ -1,6 +1,6 @@
 {
   "Site": {
-    "brand": "ZÜBEY/DEV",
+    "brand": "Zübeyir Ali Demir",
     "navigation": {
       "about": "Hakkımda",
       "work": "Projeler",
@@ -16,80 +16,176 @@
     },
     "hero": {
       "eyebrow": "Software Developer",
-      "title": "Merhaba, ben Zübey.",
+      "title": "Merhaba, ben Zübeyir.",
       "description": "Düşünceli arayüzler, sağlam kod ve küçük ama akılda kalan etkileşimlerle dijital deneyimler geliştiriyorum.",
       "enter": "Portfolyoyu keşfet",
-      "characterLabel": "Zübey'i temsil eden, gözleri imleci takip eden üç boyutlu karakter",
-      "characterNote": "Fareyi hareket ettir — gözler seni takip ediyor.",
-      "location": "Türkiye · UTC+3",
+      "characterLabel": "Zübeyir'i temsil eden, sürüklenebilen ve hareketlerinizi kafasıyla takip eden üç boyutlu karakter",
+      "characterNote": "Karakteri çevirmek için sürükle — bırakınca geri döner.",
+      "location": "İstanbul, Türkiye · UTC+3",
       "status": "Yeni fikirlere açık"
     },
     "about": {
       "index": "01 / Hakkımda",
       "title": "Hakkımda",
-      "intro": "Ben Zübey, Software Developer.",
-      "lead": "Bir fikri anlaşılır bir yapıya dönüştürmeyi, sonra onu çalışan ve özenli bir ürüne çevirmeyi seviyorum.",
-      "body": "Şu anda odağım React, Next.js ve TypeScript ile web deneyimleri geliştirmek. Bu portfolio da yalnızca işlerimi sergilemek için değil; etkileşim, 3D web ve performans tarafında öğrendiklerimi uyguladığım yaşayan bir proje.",
-      "aside": "React · Next.js · TypeScript\nÖğrenirken üreten bir yaklaşım",
+      "intro": "Ben Zübeyir Ali Demir, Software Developer.",
+      "lead": "İstanbul Üniversitesi-Cerrahpaşa Bilgisayar Mühendisliği mezunuyum. Bir fikri anlaşılır bir yapıya dönüştürmeyi, sonra onu çalışan ve özenli bir ürüne çevirmeyi seviyorum.",
+      "body": "React, Next.js ve TypeScript ile modern web deneyimleri geliştiriyorum. Bunun yanında .NET, SwiftUI ve Python ile farklı platformlarda projeler üretiyorum. Yapay zekâ destekli uygulamalardan gerçek zamanlı kurumsal çözümlere kadar geniş bir yelpazede deneyim edindim.",
+      "aside": "React · Next.js · TypeScript · .NET · Python\nÖğrenirken üreten bir yaklaşım",
       "technologyTitle": "Ana Teknolojiler",
       "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "TypeScript",
         "React",
         "Next.js",
-        "Three.js"
+        "TypeScript",
+        "JavaScript",
+        ".NET / C#",
+        "SwiftUI",
+        "Python",
+        "SQL",
+        "HTML / CSS"
       ],
       "skillsTitle": "Ana Beceriler",
       "skills": [
         "Responsive Arayüzler",
-        "Bileşen Mimarisi",
-        "API Entegrasyonu",
-        "Erişilebilirlik",
-        "Etkileşim Tasarımı"
+        "Bileşen Tabanlı UI Mimarisi",
+        "REST API Entegrasyonu",
+        "Server-Sent Events (SSE)",
+        "State Management",
+        "Temiz Kod & OOP"
       ],
       "toolsTitle": "Araçlar",
-      "tools": ["VS Code", "Git", "GitHub", "Figma", "Blockbench", "Vercel"]
+      "tools": ["VS Code", "Git", "GitHub", "Postman", "Docker", "MySQL Workbench", "Firebase", "Figma", "Blockbench", "Vercel"]
     },
     "projects": {
       "index": "02 / Seçilmiş projeler",
       "title": "Öne çıkan projeler",
-      "description": "Gerçek projeler geldikçe bu alan problem, kararlar, kullanılan teknolojiler ve sonuçları anlatan vaka çalışmalarına dönüşecek.",
+      "description": "Akademik tez çalışmasından kurumsal üretime, mobil uygulamalardan 3D web deneyimlerine kadar farklı ölçeklerde geliştirdiğim projeler.",
       "viewProject": "Projeyi aç",
+      "modalLabels": {
+        "role": "Rol",
+        "technologies": "Kullanılan Teknolojiler",
+        "highlights": "Öne Çıkanlar",
+        "close": "Kapat"
+      },
       "items": [
         {
           "number": "01",
-          "title": "Kişisel Portfolio",
-          "category": "Kimlik · Web deneyimi",
+          "title": "360° Performans Değerlendirme Sistemi",
+          "category": "Yapay Zekâ · Lisans Tezi",
+          "year": "2025",
+          "summary": "LightGBM ve XGBoost ile çalışan performans tahminleme ve kişiselleştirilmiş gelişim planlama sistemi.",
+          "description": "Lisans tezi olarak geliştirilen bu proje, çalışan performansını çok yönlü (360°) olarak değerlendiren ve makine öğrenmesi modelleriyle gelecek performansı tahmin eden bir sistemdir. Yönetici, akran ve öz değerlendirme verilerini birleştirerek her çalışana özel gelişim planları oluşturur. Model eğitimi ve karşılaştırma süreçleri Python ekosistemiyle yürütülmüştür.",
+          "role": "Proje Sahibi & Geliştirici",
+          "highlights": [
+            "LightGBM ve XGBoost modelleriyle performans tahmini",
+            "Pandas ve NumPy ile veri ön işleme ve özellik mühendisliği",
+            "360° değerlendirme metrikleri: yönetici, akran, öz değerlendirme",
+            "Kişiselleştirilmiş gelişim planı üretimi",
+            "Model karşılaştırma ve hiperparametre optimizasyonu"
+          ],
+          "technologies": ["Python", "LightGBM", "XGBoost", "Pandas", "NumPy", "Scikit-learn"],
+          "status": "Tamamlandı",
+          "tone": "warm",
+          "mark": "AI"
+        },
+        {
+          "number": "02",
+          "title": "Kombin AI / Yakın Dostum",
+          "category": "Mobil Uygulama · Yapay Zekâ",
+          "year": "2025",
+          "summary": "Yapay zekâ destekli kıyafet önerisi ve duygusal destek sağlayan mobil uygulama.",
+          "description": "İki ana modülden oluşan yapay zekâ destekli mobil uygulama. Kombin AI modülü, kullanıcının gardırobunu analiz ederek hava durumu, etkinlik türü ve kişisel tarza göre kıyafet kombinleri önerir. Yakın Dostum modülü ise doğal dil işleme ile duygusal destek ve günlük motivasyon sağlar. iOS arayüzü SwiftUI ile, backend .NET ile, AI servisleri Python ile geliştirilmiştir.",
+          "role": "Full-Stack Geliştirici",
+          "highlights": [
+            "SwiftUI ile native iOS kullanıcı arayüzü geliştirme",
+            ".NET backend API tasarımı ve implementasyonu",
+            "Python tabanlı yapay zekâ servis entegrasyonu",
+            "RESTful API mimarisi ile platform arası iletişim",
+            "Kıyafet öneri algoritması ve doğal dil işleme modülü"
+          ],
+          "technologies": ["SwiftUI", ".NET", "Python", "REST API", "iOS"],
+          "status": "Tamamlandı",
+          "tone": "dark",
+          "mark": "KD"
+        },
+        {
+          "number": "03",
+          "title": "Kurumsal Gerçek Zamanlı Web Çözümü",
+          "category": "Kurumsal · Frontend",
+          "year": "2025",
+          "summary": "Server-Sent Events ile gerçek zamanlı veri akışı sağlayan kurumsal web uygulaması.",
+          "description": "Kurumsal ortamda canlı veri akışlarını yönetmek için geliştirilen frontend uygulaması. Server-Sent Events (SSE) protokolü üzerinden sunucudan istemciye tek yönlü gerçek zamanlı veri iletimi sağlanır. React Query ile sunucu durumu yönetimi, bileşen tabanlı mimari ve TypeScript ile tip güvenliği birlikte kullanılmıştır.",
+          "role": "Frontend Geliştirici",
+          "highlights": [
+            "Server-Sent Events (SSE) ile gerçek zamanlı veri akışı",
+            "React Query ile sunucu durumu yönetimi ve önbellekleme",
+            "TypeScript ile tip güvenli bileşen mimarisi",
+            "Kurumsal ölçekte performans optimizasyonu",
+            "Responsive ve erişilebilir arayüz tasarımı"
+          ],
+          "technologies": ["React", "TypeScript", "SSE", "React Query", "CSS"],
+          "status": "Tamamlandı",
+          "tone": "accent",
+          "mark": "RT"
+        },
+        {
+          "number": "04",
+          "title": "Kişisel 3D Web Portfolyosu",
+          "category": "Kimlik · Web Deneyimi",
           "year": "2026",
           "summary": "Blockbench ile oluşturulan kişisel 3D karakteri, imleci takip eden gözleri ve iki dilli içerik yapısını bir araya getiren bu sitenin kendisi.",
-          "technologies": ["Next.js", "TypeScript", "React Three Fiber"],
+          "description": "Kişisel marka kimliğini dijital ortamda en iyi şekilde yansıtmak için geliştirilen interaktif portfolio sitesi. Blockbench'te modellenen özgün 3D karakter, React Three Fiber ile tarayıcıya taşınmış ve fare takipli göz animasyonu eklenmiştir. Next.js App Router ve next-intl ile İngilizce-Türkçe iki dilli içerik yapısı kurulmuştur.",
+          "role": "Tasarımcı & Geliştirici",
+          "highlights": [
+            "Blockbench ile özgün 3D karakter modelleme",
+            "React Three Fiber ile tarayıcı içi 3D sahne yönetimi",
+            "Fare takipli göz animasyonu ve etkileşimli karakter",
+            "next-intl ile İngilizce / Türkçe iki dilli içerik sistemi",
+            "Next.js App Router ile modern sayfa yapısı ve SEO"
+          ],
+          "technologies": ["Next.js", "TypeScript", "React Three Fiber", "Three.js", "Blockbench"],
           "status": "Geliştiriliyor",
           "tone": "warm",
           "mark": "Z"
         },
         {
-          "number": "02",
-          "title": "Sıradaki Vaka Çalışması",
-          "category": "Ürün · Arayüz",
-          "year": "Yakında",
-          "summary": "Sonraki gerçek proje; problem, kararlar, geliştirme süreci ve sonuçlarıyla burada belgelenecek.",
-          "technologies": ["React", "TypeScript", "UI Engineering"],
-          "status": "İçerik bekleniyor",
+          "number": "05",
+          "title": "Airline Website",
+          "category": "Otomasyon · Web Projesi",
+          "year": "2024",
+          "summary": "Havayolu bilet satışı, uçuş yönetimi ve müşteri işlemlerini kapsayan tam kapsamlı web otomasyon projesi.",
+          "description": "Havayolu şirketi operasyonlarını dijitalleştiren kapsamlı web otomasyon projesi. Uçuş arama, bilet satın alma, rezervasyon yönetimi ve müşteri profili işlemlerini içerir. React ve TypeScript ile modern ve responsive bir kullanıcı arayüzü, Node.js ile backend API servisleri geliştirilmiştir.",
+          "role": "Frontend Geliştirici",
+          "highlights": [
+            "Uçuş arama, filtreleme ve bilet satın alma akışları",
+            "React ile bileşen tabanlı ve yeniden kullanılabilir UI",
+            "TypeScript ile tip güvenli geliştirme süreci",
+            "Node.js backend ile RESTful API entegrasyonu",
+            "Responsive tasarım ile mobil uyumluluk"
+          ],
+          "technologies": ["React", "TypeScript", "Node.js", "REST API"],
+          "status": "Tamamlandı",
           "tone": "dark",
-          "mark": "02"
+          "mark": "AW"
         },
         {
-          "number": "03",
-          "title": "Deney Alanı",
-          "category": "Etkileşim · Öğrenme",
-          "year": "Sürekli",
-          "summary": "Animasyon, 3D web ve yeni arayüz fikirlerinin küçük ama çalışan denemelere dönüştüğü açık uçlu alan.",
-          "technologies": ["WebGL", "Motion", "Creative Coding"],
-          "status": "Yakında",
+          "number": "06",
+          "title": "BusTicketWebRazor",
+          "category": "Web Uygulaması · Backend",
+          "year": "2024",
+          "summary": "Otobüs bilet satışı ve sefer yönetimi için geliştirilen .NET Razor tabanlı web uygulaması.",
+          "description": ".NET Razor Pages mimarisiyle geliştirilen bu web uygulaması, otobüs firmalarının sefer planlaması, bilet satışı ve yolcu yönetimi işlemlerini dijital ortama taşır. SQL veritabanı ile tam CRUD (oluşturma, okuma, güncelleme, silme) işlemleri desteklenir. Sunucu taraflı render ile hızlı sayfa yükleme sağlanmıştır.",
+          "role": "Full-Stack Geliştirici",
+          "highlights": [
+            ".NET Razor Pages ile sunucu taraflı web uygulaması",
+            "SQL veritabanı tasarımı ve tam CRUD işlemleri",
+            "Sefer planlaması ve bilet satış yönetim paneli",
+            "C# ile iş mantığı katmanı ve veri doğrulama",
+            "Yolcu kayıt ve bilet sorgulama sistemleri"
+          ],
+          "technologies": [".NET", "C#", "Razor Pages", "SQL", "Entity Framework"],
+          "status": "Tamamlandı",
           "tone": "accent",
-          "mark": "03"
+          "mark": "BT"
         }
       ]
     },
@@ -146,12 +242,12 @@
       "index": "03 / İletişim",
       "kicker": "Birlikte bir şey üretelim.",
       "title": "Aklında bir fikir, proje veya sadece güzel bir sohbet varsa yaz.",
-      "email": "hello@example.com",
-      "note": "Bu e-posta şimdilik yer tutucu; kişisel adresinle değiştirilecek."
+      "email": "zubeyirad@gmail.com",
+      "note": "Geri dönüş için en hızlı yol e-posta. LinkedIn üzerinden de ulaşabilirsin."
     },
     "footer": {
       "backToTop": "Karaktere dön ↑",
-      "copyright": "Kişisel portfolio · 2026"
+      "copyright": "Zübeyir Ali Demir · 2026"
     }
   }
 }

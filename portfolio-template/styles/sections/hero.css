@@ -179,7 +179,11 @@
   inset: 0;
   z-index: 2;
   margin: 0;
-  cursor: crosshair;
+  cursor: grab;
+}
+
+.character-stage:active {
+  cursor: grabbing;
 }
 
 .character-stage canvas {

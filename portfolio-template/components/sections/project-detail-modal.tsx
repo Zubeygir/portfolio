@@ -2,22 +2,23 @@
 
 import { useEffect } from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { SanityImage } from '@/components/shared/sanity-image';
 import type { Project } from '@/lib/types';
 
 interface ProjectDetailModalProps {
   project: Project | null;
   onClose: () => void;
-  closeLabel?: string;
   viewProjectLabel?: string;
 }
 
 export function ProjectDetailModal({
   project,
   onClose,
-  closeLabel = 'Kapat',
   viewProjectLabel = 'Projeyi İncele',
 }: ProjectDetailModalProps) {
+  const t = useTranslations('Site.projects.modalLabels');
+
   useEffect(() => {
     if (!project) return;
 
@@ -52,7 +53,7 @@ export function ProjectDetailModal({
           className="project-modal-close"
           onClick={onClose}
           type="button"
-          aria-label={closeLabel}
+          aria-label={t('close')}
         >
           <X aria-hidden="true" />
         </button>
@@ -85,10 +86,30 @@ export function ProjectDetailModal({
             <h2 id="modal-project-title">{project.title}</h2>
           </div>
 
-          <p className="project-modal-summary">{project.summary}</p>
+          {project.role ? (
+            <div className="project-modal-role">
+              <p className="project-modal-label">{t('role')}</p>
+              <p className="project-modal-role-value">{project.role}</p>
+            </div>
+          ) : null}
+
+          <p className="project-modal-summary">
+            {project.description || project.summary}
+          </p>
+
+          {project.highlights && project.highlights.length > 0 ? (
+            <div className="project-modal-highlights">
+              <p className="project-modal-label">{t('highlights')}</p>
+              <ul className="project-modal-highlight-list">
+                {project.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
 
           <div className="project-modal-toolkit">
-            <p className="project-modal-label">Kullanılan Teknolojiler</p>
+            <p className="project-modal-label">{t('technologies')}</p>
             <ul className="project-modal-tags">
               {project.technologies.map((tech) => (
                 <li key={tech}>{tech}</li>

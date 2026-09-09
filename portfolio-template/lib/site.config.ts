@@ -7,11 +7,11 @@
  */
 export const siteConfig = {
   /** Default site name — overridden by Sanity siteSettings.brand when available */
-  name: 'Zübey — Software Developer',
+  name: 'Zübeyir Ali Demir — Software Developer',
 
   /** Default meta description */
   description:
-    'Software developer portfolio focused on thoughtful interfaces, practical engineering and interactive web experiences.',
+    'Software developer portfolio by Zübeyir Ali Demir — focused on thoughtful interfaces, practical engineering and interactive web experiences.',
 
   /** Canonical URL — set via NEXT_PUBLIC_SITE_URL env var */
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
