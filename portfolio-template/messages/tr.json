@@ -16,7 +16,7 @@
       "eyebrow": "Software Developer",
       "title": "Merhaba, ben Zübeyir.",
       "description": "Düşünceli arayüzler, sağlam kod ve küçük ama akılda kalan etkileşimlerle dijital deneyimler geliştiriyorum.",
-      "enter": "Portfolyoyu keşfet",
+      "enter": "Projeleri keşfet",
       "characterLabel": "Zübeyir'i temsil eden, sürüklenebilen ve hareketlerinizi kafasıyla takip eden üç boyutlu karakter",
       "characterNote": "Karakteri çevirmek için sürükle — bırakınca geri döner.",
       "location": "İstanbul, Türkiye · UTC+3",
@@ -25,9 +25,62 @@
     "about": {
       "title": "Hakkımda",
       "intro": "Ben Zübeyir Ali Demir, Software Developer.",
-      "lead": "İstanbul Üniversitesi-Cerrahpaşa Bilgisayar Mühendisliği mezunuyum. Bir fikri anlaşılır bir yapıya dönüştürmeyi, sonra onu çalışan ve özenli bir ürüne çevirmeyi seviyorum.",
-      "body": "React, Next.js ve TypeScript ile modern web deneyimleri geliştiriyorum. Bunun yanında .NET, SwiftUI ve Python ile farklı platformlarda projeler üretiyorum. Yapay zekâ destekli uygulamalardan gerçek zamanlı kurumsal çözümlere kadar geniş bir yelpazede deneyim edindim.",
-      "aside": "React · Next.js · TypeScript · .NET · Python\nÖğrenirken üreten bir yaklaşım",
+      "downloadCv": "CV İndir",
+      "lead": "Bilgisayar Mühendisliği okumadan önce bir süre Tıp Fakültesi'ndeydim — galiba en başından beri detaylara takılan biriydim, sadece alanı değiştirdim. Şu an İstanbul Üniversitesi-Cerrahpaşa'da Bilgisayar Mühendisliği okuyorum ve freelance yazılım geliştiriyorum.",
+      "body": "Baykar'da gerçek zamanlı veri akışları kurdum, Vakıfbank'ta bankacılık altyapısını, Uyumsoft'ta ERP sistemlerini içeriden gördüm. React'tan SwiftUI'a, LightGBM'den .NET'e uzanan geniş bir yelpazede çalışıyorum; en çok da bir arayüzün arkasındaki kararların kullanıcıya nasıl hissettirdiğiyle ilgileniyorum.",
+      "experienceTitle": "Deneyim",
+      "experience": [
+        {
+          "role": "Uzun Dönem Stajyer Frontend Developer",
+          "company": "Baykar Teknoloji",
+          "period": "Şub 2026 – Haz 2026",
+          "highlights": [
+            "React ve TypeScript tabanlı web uygulamalarında gerçek zamanlı veri akışı için Server-Sent Events (SSE) entegrasyonu yaptım.",
+            "PWA odaklı frontend iyileştirmeleriyle mobil kullanılabilirlik, responsive davranış ve app-like deneyimi geliştirdim.",
+            "Type-safe API iletişimi ve frontend-backend uyumu için otomatik üretilen TypeScript API client yapılarını entegre ettim.",
+            "React Query ile server-state, cache yönetimi ve asenkron API akışlarını daha tutarlı hale getirdim."
+          ]
+        },
+        {
+          "role": "İnternet Bankacılığı Altyapı Stajyeri",
+          "company": "Vakıfbank",
+          "period": "Ağu 2025 – Eyl 2025",
+          "highlights": [
+            "İnternet Bankacılığı ve uçtan uca şifreli POS sistemlerinde işlem akışları, servis iletişimi ve production altyapı süreçlerini inceledim.",
+            "Kurumsal bankacılık ortamında kritik dijital servislerin izleme, bakım ve troubleshooting süreçlerini gözlemledim.",
+            "Sistem güvenilirliği ve servis sürekliliğini anlamak için altyapı analiz ve hata giderme çalışmalarına destek verdim.",
+            "FinTech sistemlerinde kullanılan güvenli, ölçeklenebilir ve yüksek erişilebilirlikli altyapı pratiklerini öğrendim."
+          ]
+        },
+        {
+          "role": "Yazılım Mühendisliği Stajyeri",
+          "company": "Uyumsoft",
+          "period": "Tem 2025 – Ağu 2025",
+          "highlights": [
+            "ERP odaklı yazılım geliştirme süreçlerinde iş akışları, modüler yapı ve kurumsal uygulama mantığı üzerine çalıştım.",
+            "Staj final projesi olarak .NET Razor ve veritabanı işlemleri içeren BusTicketWebRazor uygulamasını tamamladım."
+          ]
+        },
+        {
+          "role": "Finans Direktörü",
+          "company": "İÜC Bilgisayar Bilimleri Kulübü",
+          "period": "Tem 2023 – Oca 2024",
+          "highlights": [
+            "Kulüp etkinlikleri, atölyeler ve öğrenci girişimleri için finansal planlama ve bütçe yönetimini yürüttüm.",
+            "Yönetim kurulu ile birlikte etkinlik fizibilitesi, bütçe optimizasyonu ve finansman önceliklendirmesi yaptım."
+          ]
+        },
+        {
+          "role": "Ortak",
+          "company": "Parker's Family",
+          "period": "Tem 2020 – Oca 2023",
+          "highlights": [
+            "7 kurucu ortak tarafından hayata geçirilen Parker's Family eğitim girişiminin kuruluş sürecinde yer aldım; lokasyon seçimi, beş katlı eğitim binasının kiralanması ve operasyonel altyapının oluşturulmasına katkı sağladım.",
+            "Eğitim operasyonlarının planlanması, akademik takvimin oluşturulması, deneme sınavlarının organizasyonu ve öğrenci süreçlerinin yönetiminde aktif sorumluluk üstlendim.",
+            "Kurucu ekip ile birlikte organizasyonel karar alma, ekip koordinasyonu ve günlük operasyonların yürütülmesinde görev aldım."
+          ]
+        }
+      ],
       "technologyTitle": "Ana Teknolojiler",
       "technologies": [
         "React",
@@ -193,14 +246,15 @@
       ]
     },
     "contact": {
-      "kicker": "Birlikte bir şey üretelim.",
-      "title": "Aklında bir fikir, proje veya sadece güzel bir sohbet varsa yaz.",
+      "title": "Şu an freelance olarak yeni projelere açığım, aklında bir fikir varsa yaz, konuşalım.",
       "email": "zubeyirad@gmail.com",
-      "note": "Geri dönüş için en hızlı yol e-posta. LinkedIn üzerinden de ulaşabilirsin."
+      "linkedinLabel": "LinkedIn",
+      "githubLabel": "GitHub",
+      "cvLabel": "CV indir"
     },
     "footer": {
       "backToTop": "Karaktere dön ↑",
-      "copyright": "Zübeyir Ali Demir · 2026"
+      "copyright": "© 2026"
     }
   }
 }

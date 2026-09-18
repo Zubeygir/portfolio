@@ -1,19 +1,25 @@
 'use client';
 
 import { useEffect } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { ArrowUpRight, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { SanityImage } from '@/components/shared/sanity-image';
 import type { Project } from '@/lib/types';
+import type { MorphOrigin } from '@/components/projects/project-desk-model';
 
 interface ProjectDetailModalProps {
   project: Project | null;
+  origin?: MorphOrigin | null;
   onClose: () => void;
   viewProjectLabel?: string;
 }
 
+const MORPH_EASE = [0.16, 1, 0.3, 1] as const;
+
 export function ProjectDetailModal({
   project,
+  origin,
   onClose,
   viewProjectLabel = 'Projeyi İncele',
 }: ProjectDetailModalProps) {
@@ -35,20 +41,39 @@ export function ProjectDetailModal({
     };
   }, [project, onClose]);
 
-  if (!project) return null;
+  // Offset (px) from viewport center to the clicked paper, so the modal appears
+  // to grow out of the spot on the desk it was opened from.
+  const originOffset =
+    origin && typeof window !== 'undefined'
+      ? { x: origin.x - window.innerWidth / 2, y: origin.y - window.innerHeight / 2 }
+      : null;
+
+  const contentInitial = originOffset
+    ? { x: originOffset.x, y: originOffset.y, scale: 0.15, opacity: 0 }
+    : { x: 0, y: 16, scale: 0.95, opacity: 0 };
 
   return (
-    <div
-      className="project-modal-backdrop"
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-project-title"
-    >
-      <div
-        className="project-modal-content"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <AnimatePresence>
+      {project ? (
+        <motion.div
+          className="project-modal-backdrop"
+          onClick={onClose}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-project-title"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.22, ease: MORPH_EASE }}
+        >
+          <motion.div
+            className="project-modal-content"
+            onClick={(e) => e.stopPropagation()}
+            initial={contentInitial}
+            animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+            exit={contentInitial}
+            transition={{ duration: 0.5, ease: MORPH_EASE }}
+          >
         <button
           className="project-modal-close"
           onClick={onClose}
@@ -131,7 +156,9 @@ export function ProjectDetailModal({
             </div>
           ) : null}
         </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
   );
 }

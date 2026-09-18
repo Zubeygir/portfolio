@@ -16,7 +16,7 @@
       "eyebrow": "Software Developer",
       "title": "Hi, I'm Zübeyir.",
       "description": "I build digital experiences with thoughtful interfaces, reliable code and small interactions that leave a lasting impression.",
-      "enter": "Explore the portfolio",
+      "enter": "Explore the projects",
       "characterLabel": "A three-dimensional draggable character representing Zübeyir that tracks your pointer",
       "characterNote": "Drag to spin the character — release to snap back.",
       "location": "Istanbul, Türkiye · UTC+3",
@@ -25,9 +25,62 @@
     "about": {
       "title": "About Me",
       "intro": "I'm Zübeyir Ali Demir, a Software Developer.",
-      "lead": "I graduated in Computer Engineering from Istanbul University-Cerrahpaşa. I enjoy turning an idea into a clear structure, then shaping that structure into a working and carefully made product.",
-      "body": "I build modern web experiences with React, Next.js and TypeScript. Alongside that, I develop projects across different platforms using .NET, SwiftUI and Python. I've gained experience ranging from AI-powered applications to real-time enterprise solutions.",
-      "aside": "React · Next.js · TypeScript · .NET · Python\nA build-while-learning mindset",
+      "downloadCv": "Download CV",
+      "lead": "Before Computer Engineering, I spent a couple of years in medical school — I suppose I've always been someone who gets caught up in details, I just changed the field. I'm currently studying Computer Engineering at Istanbul University-Cerrahpaşa and working as a freelance developer.",
+      "body": "I built real-time data pipelines at Baykar, saw banking infrastructure up close at Vakıfbank, and ERP systems from the inside at Uyumsoft. I work across a wide range — from React to SwiftUI, LightGBM to .NET — but what interests me most is how the decisions behind an interface end up feeling to the person using it.",
+      "experienceTitle": "Experience",
+      "experience": [
+        {
+          "role": "Long-Term Intern Frontend Developer",
+          "company": "Baykar Teknoloji",
+          "period": "Feb 2026 – Jun 2026",
+          "highlights": [
+            "Integrated Server-Sent Events (SSE) for real-time data flow in React and TypeScript-based web applications.",
+            "Improved mobile usability, responsive behavior and app-like experience through PWA-focused frontend work.",
+            "Integrated auto-generated TypeScript API client structures for type-safe API communication and frontend-backend consistency.",
+            "Made server-state, cache management and async API flows more consistent with React Query."
+          ]
+        },
+        {
+          "role": "Internet Banking Infrastructure Intern",
+          "company": "Vakıfbank",
+          "period": "Aug 2025 – Sep 2025",
+          "highlights": [
+            "Studied transaction flows, service communication and production infrastructure processes in Internet Banking and end-to-end encrypted POS systems.",
+            "Observed monitoring, maintenance and troubleshooting processes for critical digital services in a corporate banking environment.",
+            "Supported infrastructure analysis and issue-resolution work to understand system reliability and service continuity.",
+            "Learned secure, scalable and highly available infrastructure practices used in FinTech systems."
+          ]
+        },
+        {
+          "role": "Software Engineering Intern",
+          "company": "Uyumsoft",
+          "period": "Jul 2025 – Aug 2025",
+          "highlights": [
+            "Worked on business workflows, modular structure and enterprise application logic in ERP-focused software development.",
+            "Completed BusTicketWebRazor, a .NET Razor application with database operations, as my internship's final project."
+          ]
+        },
+        {
+          "role": "Finance Director",
+          "company": "IUC Computer Science Club",
+          "period": "Jul 2023 – Jan 2024",
+          "highlights": [
+            "Managed financial planning and budgeting for club events, workshops and student initiatives.",
+            "Worked with the board on event feasibility, budget optimization and funding prioritization."
+          ]
+        },
+        {
+          "role": "Partner",
+          "company": "Parker's Family",
+          "period": "Jul 2020 – Jan 2023",
+          "highlights": [
+            "Took part in founding Parker's Family, an education initiative launched by 7 co-founders — contributed to location selection, leasing a five-story education building, and building the operational infrastructure.",
+            "Took active responsibility in planning education operations, building the academic calendar, organizing mock exams and managing student processes.",
+            "Worked with the founding team on organizational decision-making, team coordination and running day-to-day operations."
+          ]
+        }
+      ],
       "technologyTitle": "Main Technologies",
       "technologies": [
         "React",
@@ -240,14 +293,15 @@
       ]
     },
     "contact": {
-      "kicker": "Let's make something together.",
-      "title": "If you have an idea, a project or simply a good conversation in mind, write to me.",
+      "title": "I'm currently freelancing and open to new projects, so if you've got an idea, write to me.",
       "email": "zubeyirad@gmail.com",
-      "note": "Email is the fastest way to reach me. You can also connect on LinkedIn."
+      "linkedinLabel": "LinkedIn",
+      "githubLabel": "GitHub",
+      "cvLabel": "Download CV"
     },
     "footer": {
       "backToTop": "Back to the character ↑",
-      "copyright": "Zübeyir Ali Demir · 2026"
+      "copyright": "© 2026"
     }
   }
 }

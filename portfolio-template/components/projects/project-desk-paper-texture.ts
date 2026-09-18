@@ -7,6 +7,33 @@ export interface PaperTextureLabels {
   brand?: string;
 }
 
+// Shared paper-grain tile (one small noise canvas, reused as a repeating pattern by all papers).
+let grainTileCache: HTMLCanvasElement | null = null;
+function getGrainTile(): HTMLCanvasElement | null {
+  if (typeof window === 'undefined') return null;
+  if (grainTileCache) return grainTileCache;
+
+  const size = 160;
+  const tile = window.document.createElement('canvas');
+  tile.width = size;
+  tile.height = size;
+  const tctx = tile.getContext('2d');
+  if (!tctx) return null;
+
+  const imageData = tctx.createImageData(size, size);
+  for (let i = 0; i < imageData.data.length; i += 4) {
+    const shade = 150 + Math.floor(Math.random() * 90);
+    imageData.data[i] = shade;
+    imageData.data[i + 1] = shade - 6;
+    imageData.data[i + 2] = shade - 16;
+    imageData.data[i + 3] = Math.random() * 40;
+  }
+  tctx.putImageData(imageData, 0, 0);
+
+  grainTileCache = tile;
+  return grainTileCache;
+}
+
 export function createPaperTexture(
   project: Project,
   isHovered = false,
@@ -29,46 +56,49 @@ export function createPaperTexture(
   const w = canvas.width;
   const h = canvas.height;
 
-  // Background color - sleek dark paper dossier
-  ctx.fillStyle = isHovered ? '#1a1e2e' : '#12141d';
+  // Background — warm ivory paper, not a dark UI card
+  const bgColor = isHovered ? '#f8f1de' : '#efe6cf';
+  ctx.fillStyle = bgColor;
   ctx.beginPath();
-  ctx.roundRect(0, 0, w, h, 28);
+  ctx.roundRect(0, 0, w, h, 6);
   ctx.fill();
 
-  // Subtle grid lines
-  ctx.strokeStyle = isHovered ? 'rgba(212, 175, 55, 0.12)' : 'rgba(255, 255, 255, 0.04)';
-  ctx.lineWidth = 1;
-  const step = 48;
-  for (let x = step; x < w; x += step) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, h);
-    ctx.stroke();
-  }
-  for (let y = step; y < h; y += step) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(w, y);
-    ctx.stroke();
+  // Faint paper-fiber grain, multiplied over the base so it darkens instead of washing out
+  const grainTile = getGrainTile();
+  if (grainTile) {
+    const pattern = ctx.createPattern(grainTile, 'repeat');
+    if (pattern) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.roundRect(0, 0, w, h, 6);
+      ctx.clip();
+      ctx.globalCompositeOperation = 'multiply';
+      ctx.globalAlpha = 0.55;
+      ctx.fillStyle = pattern;
+      ctx.fillRect(0, 0, w, h);
+      ctx.restore();
+    }
   }
 
-  // Border outline
-  ctx.strokeStyle = isHovered ? '#f2d488' : '#2b3145';
-  ctx.lineWidth = isHovered ? 6 : 4;
+  // Soft vignette toward the edges, like light falling off a physical sheet
+  const vignette = ctx.createRadialGradient(w / 2, h / 2, h * 0.35, w / 2, h / 2, h * 0.85);
+  vignette.addColorStop(0, 'rgba(0, 0, 0, 0)');
+  vignette.addColorStop(1, 'rgba(60, 48, 24, 0.10)');
+  ctx.fillStyle = vignette;
   ctx.beginPath();
-  ctx.roundRect(10, 10, w - 20, h - 20, 24);
+  ctx.roundRect(0, 0, w, h, 6);
+  ctx.fill();
+
+  // Top header accent line — thin ink-gold rule, not a bright gradient bar
+  ctx.strokeStyle = '#a8823a';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(48, 40);
+  ctx.lineTo(w - 48, 40);
   ctx.stroke();
 
-  // Top header accent line
-  const accentGradient = ctx.createLinearGradient(30, 0, w - 30, 0);
-  accentGradient.addColorStop(0, '#d4af37');
-  accentGradient.addColorStop(0.5, '#f5e4ab');
-  accentGradient.addColorStop(1, '#a8892d');
-  ctx.fillStyle = accentGradient;
-  ctx.fillRect(36, 32, w - 72, 6);
-
   // Project Number / Kicker
-  ctx.fillStyle = '#f2d488';
+  ctx.fillStyle = '#7d5f22';
   ctx.font = '600 34px "Geist Mono", monospace, sans-serif';
   ctx.fillText(`${projectPrefix} ${project.number}`, 48, 86);
 
@@ -77,19 +107,19 @@ export function createPaperTexture(
     const badgeText = `${project.status || 'PROJECT'} · ${project.year || '2025'}`;
     ctx.font = '500 24px "Geist Mono", monospace, sans-serif';
     const badgeW = ctx.measureText(badgeText).width + 36;
-    ctx.fillStyle = 'rgba(212, 175, 55, 0.14)';
+    ctx.fillStyle = 'rgba(33, 29, 22, 0.05)';
     ctx.beginPath();
-    ctx.roundRect(w - 48 - badgeW, 58, badgeW, 38, 19);
+    ctx.roundRect(w - 48 - badgeW, 58, badgeW, 38, 3);
     ctx.fill();
-    ctx.strokeStyle = 'rgba(212, 175, 55, 0.35)';
+    ctx.strokeStyle = 'rgba(33, 29, 22, 0.28)';
     ctx.lineWidth = 1.5;
     ctx.stroke();
-    ctx.fillStyle = '#f5e4ab';
+    ctx.fillStyle = 'rgba(33, 29, 22, 0.85)';
     ctx.fillText(badgeText, w - 48 - badgeW + 18, 85);
   }
 
   // Divider line
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+  ctx.strokeStyle = 'rgba(33, 29, 22, 0.22)';
   ctx.lineWidth = 1.5;
   ctx.beginPath();
   ctx.moveTo(48, 120);
@@ -97,7 +127,7 @@ export function createPaperTexture(
   ctx.stroke();
 
   // Project Title (with wrapping)
-  ctx.fillStyle = '#ffffff';
+  ctx.fillStyle = '#201c14';
   ctx.font = 'bold 50px Inter, system-ui, sans-serif';
   const titleWords = project.title.split(' ');
   let line = '';
@@ -122,12 +152,12 @@ export function createPaperTexture(
 
   // Role / Category badge
   const roleText = project.role || project.category || 'Software Developer';
-  ctx.fillStyle = '#f2d488';
+  ctx.fillStyle = '#6f5420';
   ctx.font = '500 28px "Geist Mono", monospace, sans-serif';
   ctx.fillText(`◆ ${roleText}`, 48, lineY + 65);
 
   // Summary / Description Snippet
-  ctx.fillStyle = 'rgba(210, 215, 230, 0.75)';
+  ctx.fillStyle = 'rgba(33, 29, 22, 0.82)';
   ctx.font = 'normal 26px Inter, system-ui, sans-serif';
   const summary = project.summary || (project.description ? project.description.slice(0, 110) + '...' : '');
   const words = summary.split(' ');
@@ -157,31 +187,40 @@ export function createPaperTexture(
     ctx.font = '500 22px "Geist Mono", monospace, sans-serif';
     project.technologies.slice(0, 3).forEach((tech: string) => {
       const tagWidth = ctx.measureText(tech).width + 24;
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
+      ctx.fillStyle = 'rgba(33, 29, 22, 0.09)';
       ctx.beginPath();
-      ctx.roundRect(tagX, tagY, tagWidth, 34, 8);
+      ctx.roundRect(tagX, tagY, tagWidth, 34, 3);
       ctx.fill();
-      ctx.fillStyle = 'rgba(220, 225, 240, 0.85)';
+      ctx.fillStyle = 'rgba(33, 29, 22, 0.84)';
       ctx.fillText(tech, tagX + 12, tagY + 24);
       tagX += tagWidth + 12;
     });
   }
 
   // Bottom action bar
-  ctx.fillStyle = isHovered ? '#f5e4ab' : '#d4af37';
+  ctx.fillStyle = isHovered ? '#5f4a1c' : '#7d5f22';
   ctx.font = '600 28px "Geist Mono", monospace, sans-serif';
   ctx.fillText(clickForDetails, w - ctx.measureText(clickForDetails).width - 48, h - 50);
 
   // Subtle watermark in bottom left
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+  ctx.fillStyle = 'rgba(33, 29, 22, 0.4)';
   ctx.font = '500 20px "Geist Mono", monospace, sans-serif';
   ctx.fillText(brand, 48, h - 50);
 
   const texture = new THREE.CanvasTexture(canvas);
+  // Canvas 2D always draws in sRGB — without this the renderer treats the
+  // pixels as linear and re-applies sRGB encoding on top, which washes out
+  // the ink/cream contrast (was masked before by the old near-black/white palette).
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.generateMipmaps = true;
   texture.minFilter = THREE.LinearMipmapLinearFilter;
   texture.magFilter = THREE.LinearFilter;
   texture.anisotropy = 16;
+  // Desk model is rotated 180° on the Y axis (see DESK_BASE_ROTATION_Y in
+  // project-desk-model.tsx) to face the camera correctly — that flips the
+  // paper planes' UV orientation too, so counter-rotate the texture itself.
+  texture.center.set(0.5, 0.5);
+  texture.rotation = Math.PI;
   texture.needsUpdate = true;
   return texture;
 }

@@ -11,28 +11,29 @@
 
 .contact-section::after {
   position: absolute;
-  right: -10%;
-  bottom: -20%;
-  width: 55vw;
-  height: 55vw;
+  right: -15%;
+  bottom: -25%;
+  width: 68vw;
+  height: 68vw;
   content: '';
   pointer-events: none;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 65%);
+  transition:
+    transform 900ms var(--ease-portfolio),
+    opacity 900ms var(--ease-portfolio);
+  transform: scale(0.85);
+  opacity: 0.7;
   z-index: 0;
+}
+
+.contact-section.is-visible::after {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .contact-section > * {
   position: relative;
   z-index: 1;
-}
-
-.contact-kicker {
-  margin: 0 0 1.5rem;
-  color: var(--primary);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .contact-section h2 {
@@ -46,13 +47,10 @@
 }
 
 .contact-link {
-  display: inline-flex;
-  align-items: center;
   gap: 1.1rem;
   margin-top: clamp(3.5rem, 6vw, 5.5rem);
   padding: 1.1rem 1.8rem;
   border: 0;
-  border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
   font-size: clamp(1.05rem, 1.5vw, 1.4rem);
@@ -68,8 +66,6 @@
 }
 
 .contact-link:hover {
-  background: #d4af37;
-  color: #08090c;
   box-shadow: 0 16px 50px rgba(212, 175, 55, 0.4);
   transform: translateY(-4px);
 }
@@ -84,16 +80,43 @@
   transform: translate(0.25rem, -0.25rem);
 }
 
-.contact-note {
-  max-width: 48ch;
+.contact-channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
   margin: 1.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-channels a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   color: var(--muted-foreground);
-  font-size: 0.85rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  transition: color 220ms ease;
+}
+
+.contact-channels a:hover {
+  color: var(--primary);
+}
+
+.contact-channels svg {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 @media (max-width: 980px) {
   .contact-section {
     gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-section {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
   }
 }

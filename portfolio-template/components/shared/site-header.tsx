@@ -54,7 +54,7 @@ export function SiteHeader() {
 
       <div className="flex items-center gap-4 justify-self-end">
         <LocaleSwitcher />
-        <a className="header-cta fill-link" href="#contact">
+        <a className="header-cta pill-button fill-link" href="#contact">
           {tHeader('contact')}
           <ArrowUpRight aria-hidden="true" />
         </a>
@@ -94,7 +94,7 @@ export function SiteHeader() {
           <SheetClose
             render={
               <a
-                className="mobile-menu-cta fill-link"
+                className="mobile-menu-cta pill-button fill-link"
                 href="#contact"
                 aria-label={tHeader('contact')}
               />

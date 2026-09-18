@@ -16,7 +16,7 @@ export function HeroSection() {
   }, []);
 
   function enterPortfolio() {
-    const target = document.querySelector('#about');
+    const target = document.querySelector('#work');
     if (!target) return;
 
     const reducedMotion = window.matchMedia(
@@ -51,7 +51,7 @@ export function HeroSection() {
           </p>
           <h1 id="hero-title">{t('title')}</h1>
           <p className="hero-description">{t('description')}</p>
-          <button className="hero-enter" type="button" onClick={enterPortfolio}>
+          <button className="hero-enter pill-button" type="button" onClick={enterPortfolio}>
             <span>{t('enter')}</span>
             <ArrowDown aria-hidden="true" />
           </button>

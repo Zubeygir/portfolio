@@ -39,21 +39,176 @@
   color: #f7f7f9;
 }
 
-.about-details div {
+.about-details-lead {
+  display: grid;
+  align-content: start;
+  gap: 1.75rem;
+}
+
+.about-cv-link {
+  justify-self: start;
+  gap: 0.6rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.08);
+  color: #f7f7f5;
+  font-size: 0.72rem;
+  font-weight: 620;
+  letter-spacing: 0.02em;
+  transition:
+    background 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+.about-cv-link svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.about-details-body {
   display: grid;
   gap: 1.5rem;
 }
 
 .about-details p {
+  max-width: 62ch;
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.25vw, 1.12rem);
   line-height: 1.76;
 }
 
+.about-experience {
+  margin-top: clamp(2rem, 3.5vw, 3.5rem);
+}
+
+.about-experience h3 {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-foreground);
+}
+
+.experience-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-glass);
+}
+
+.experience-item {
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.5fr) minmax(0, 1.3fr) minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  width: 100%;
+  padding: 1.1rem 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 180ms ease;
+}
+
+.experience-row:hover {
+  opacity: 0.8;
+}
+
+.experience-period {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  letter-spacing: 0.02em;
+}
+
+.experience-role {
+  font-size: 0.95rem;
+  font-weight: 520;
+  color: #f7f7f9;
+}
+
+.experience-company {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.experience-chevron {
+  align-self: center;
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted-foreground);
+  transition: transform 260ms var(--ease-portfolio);
+}
+
+.experience-row[aria-expanded='true'] .experience-chevron {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.experience-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms var(--ease-portfolio);
+}
+
+.experience-detail.is-open {
+  grid-template-rows: 1fr;
+}
+
+.experience-detail-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.experience-highlights {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0 0 1.4rem;
+  list-style: none;
+}
+
+.experience-highlights li {
+  position: relative;
+  padding-left: 1.1rem;
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.experience-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-detail,
+  .experience-chevron {
+    transition: none;
+  }
+}
+
 .about-toolkit {
   display: grid;
-  gap: 3rem;
-  margin-top: clamp(4.5rem, 8vw, 8rem);
+  gap: 2rem;
+  margin-top: clamp(2.5rem, 4.5vw, 4.5rem);
 }
 
 .toolkit-group {
@@ -74,33 +229,106 @@
   color: var(--muted-foreground);
 }
 
-.toolkit-group ul {
+.toolkit-marquee {
+  /* Exactly as wide as one full set of chips (count × chip + gaps) — not the
+     stretched grid column — so the loop reads as a tight row, not a wide gap. */
+  width: calc(var(--marquee-count, 1) * 3.5rem - 0.75rem);
+  max-width: 100%;
+  /* Taller than the chip row itself so the hover tooltip has headroom above the
+     chip without poking past this box — overflow:hidden (needed for the loop)
+     would otherwise clip it. Chips sit at the bottom of this box. */
+  height: 5.1rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  align-items: flex-end;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
-.toolkit-group li {
-  padding: 0.6rem 1rem;
-  border: 0;
+.toolkit-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: toolkit-marquee-scroll var(--marquee-duration, 42s) linear infinite;
+}
+
+.toolkit-marquee-track.is-reverse {
+  animation-direction: reverse;
+}
+
+.toolkit-marquee:hover .toolkit-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes toolkit-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.toolkit-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
   border-radius: 0.6rem;
   background: rgba(255, 255, 255, 0.04);
-  color: #d8dce6;
-  font-size: 0.8rem;
-  letter-spacing: -0.01em;
   transition:
     background 200ms ease,
-    color 200ms ease,
     transform 200ms ease;
 }
 
-.toolkit-group li:hover {
+.toolkit-chip:hover {
   background: rgba(212, 175, 55, 0.14);
-  color: #ffffff;
   transform: translateY(-2px);
+}
+
+.toolkit-chip::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 0.4rem;
+  background: rgba(12, 15, 22, 0.95);
+  color: #f7f7f9;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  z-index: 5;
+}
+
+.toolkit-chip:hover::after,
+.toolkit-chip:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.toolkit-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #d4af37;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toolkit-marquee-track {
+    animation: none;
+  }
 }
 
 @media (max-width: 880px) {
@@ -112,5 +340,39 @@
   .toolkit-group {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .experience-row {
+    grid-template-columns: minmax(6rem, 0.5fr) minmax(0, 1fr) auto;
+  }
+
+  .experience-company {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    position: relative;
+    padding-right: 1.75rem;
+  }
+
+  .experience-company {
+    grid-column: 1;
+  }
+
+  .experience-chevron {
+    position: absolute;
+    top: 1.2rem;
+    right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }

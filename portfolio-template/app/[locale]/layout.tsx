@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -19,6 +20,27 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const cabinetGrotesk = localFont({
+  variable: '--font-cabinet-grotesk',
+  src: [
+    {
+      path: '../../public/fonts/CabinetGrotesk-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/CabinetGrotesk-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/CabinetGrotesk-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
 });
 
 export async function generateMetadata({
@@ -109,7 +131,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${cabinetGrotesk.variable}`}
+      >
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
