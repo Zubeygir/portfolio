@@ -1,16 +1,11 @@
 .about-section {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(8rem, 0.75fr) minmax(0, 3fr);
+  grid-template-columns: 1fr;
   gap: clamp(2.5rem, 6vw, 7rem);
   padding-top: clamp(8rem, 14vw, 15rem);
   padding-bottom: clamp(8rem, 14vw, 15rem);
   color: var(--foreground);
-}
-
-.about-section .section-index {
-  color: var(--primary);
-  opacity: 0.85;
 }
 
 .about-copy h2 {
@@ -18,7 +13,7 @@
   font-size: clamp(3rem, 5.5vw, 5.5rem);
   font-weight: 520;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   color: #ffffff;
 }
 
@@ -40,7 +35,7 @@
   font-size: clamp(2rem, 3.6vw, 3.8rem);
   font-weight: 500;
   line-height: 1.08;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   color: #f7f7f9;
 }
 
@@ -56,7 +51,6 @@
 }
 
 .about-toolkit {
-  grid-column: 2;
   display: grid;
   gap: 3rem;
   margin-top: clamp(4.5rem, 8vw, 8rem);
@@ -110,14 +104,6 @@
 }
 
 @media (max-width: 880px) {
-  .about-section {
-    grid-template-columns: 1fr;
-  }
-
-  .about-toolkit {
-    grid-column: 1;
-  }
-
   .about-details {
     grid-template-columns: 1fr;
     gap: 2rem;

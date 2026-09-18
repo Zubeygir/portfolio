@@ -81,12 +81,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
       className="work-section shell"
       aria-labelledby="work-title"
     >
-      <SectionHeading
-        index={t('index')}
-        id="work-title"
-        title={t('title')}
-        description={t('description')}
-      />
+      <SectionHeading id="work-title" title={t('title')} description={t('description')} />
 
       <div className="project-desk-section-container">
         {/* 3D Interactive Project Desk */}

@@ -75,7 +75,7 @@ export function SiteHeader() {
             <LocaleSwitcher />
           </div>
           <nav aria-label="Mobile navigation">
-            {navigation.map((item, index) => (
+            {navigation.map((item) => (
               <SheetClose
                 key={item.href}
                 render={
@@ -86,7 +86,6 @@ export function SiteHeader() {
                   />
                 }
               >
-                <span>0{index + 1}</span>
                 {item.label}
                 <ArrowUpRight aria-hidden="true" />
               </SheetClose>

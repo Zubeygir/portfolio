@@ -1,5 +1,4 @@
 type SectionHeadingProps = {
-  index: string;
   title: string;
   description?: string;
   id: string;
@@ -7,7 +6,6 @@ type SectionHeadingProps = {
 };
 
 export function SectionHeading({
-  index,
   title,
   description,
   id,
@@ -15,7 +13,6 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={`section-heading ${inverted ? 'is-inverted' : ''}`}>
-      <p className="section-index">{index}</p>
       <div>
         <h2 id={id}>{title}</h2>
         {description ? <p className="section-description">{description}</p> : null}

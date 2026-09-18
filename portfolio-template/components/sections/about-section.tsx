@@ -12,7 +12,6 @@ export function AboutSection() {
       className="about-section shell"
       aria-labelledby="about-title"
     >
-      <p className="section-index">{t('index')}</p>
       <div className="about-copy">
         <h2 id="about-title">{t('title')}</h2>
         <div className="about-details">

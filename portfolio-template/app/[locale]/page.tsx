@@ -62,8 +62,8 @@ function HomeContent({
     <main>
       <SiteHeader />
       <HeroSection />
-      <AboutSection />
       <ProjectsSection projects={projects} />
+      <AboutSection />
       <ContactSection contactEmail={contactEmail} />
       <SiteFooter brand={brand} />
     </main>

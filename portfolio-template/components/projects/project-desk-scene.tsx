@@ -40,8 +40,8 @@ function ResponsiveDeskCamera() {
 
     // Calculate required distance to fit the full desk horizontally
     const requiredDistH = targetWidth / (2 * tanHalfFov * Math.max(aspect, 0.35));
-    // Default comfortable desktop distance
-    const baseDist = 1.75;
+    // Default comfortable desktop distance — pulled back to show full desk
+    const baseDist = 3.5;
     const finalDist = Math.max(requiredDistH, baseDist);
 
     // Maintain pleasant isometric pitch angle (~46 degrees from horizontal)

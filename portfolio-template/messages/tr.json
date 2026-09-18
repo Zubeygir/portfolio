@@ -4,8 +4,6 @@
     "navigation": {
       "about": "Hakkımda",
       "work": "Projeler",
-      "capabilities": "Yetkinlikler",
-      "journey": "Yolculuk",
       "contact": "İletişim"
     },
     "header": {
@@ -25,7 +23,6 @@
       "status": "Yeni fikirlere açık"
     },
     "about": {
-      "index": "01 / Hakkımda",
       "title": "Hakkımda",
       "intro": "Ben Zübeyir Ali Demir, Software Developer.",
       "lead": "İstanbul Üniversitesi-Cerrahpaşa Bilgisayar Mühendisliği mezunuyum. Bir fikri anlaşılır bir yapıya dönüştürmeyi, sonra onu çalışan ve özenli bir ürüne çevirmeyi seviyorum.",
@@ -56,7 +53,6 @@
       "tools": ["VS Code", "Git", "GitHub", "Postman", "Docker", "MySQL Workbench", "Firebase", "Figma", "Blockbench", "Vercel"]
     },
     "projects": {
-      "index": "02 / Seçilmiş projeler",
       "title": "Öne çıkan projeler",
       "description": "Akademik tez çalışmasından kurumsal üretime, mobil uygulamalardan 3D web deneyimlerine kadar farklı ölçeklerde geliştirdiğim projeler.",
       "viewProject": "Projeyi aç",
@@ -196,57 +192,7 @@
         }
       ]
     },
-    "capabilities": {
-      "index": "03 / Yetkinlikler",
-      "title": "Görsel fikri çalışan ürüne bağlayan katmanlar.",
-      "description": "Kendimi yalnızca frontend etiketiyle sınırlamadan, bir web ürününün düşünülmesinden geliştirilmesine kadar farklı katmanlarıyla ilgileniyorum.",
-      "items": [
-        {
-          "number": "01",
-          "title": "Arayüz geliştirme",
-          "description": "Farklı ekranlara uyum sağlayan, erişilebilir ve bileşen tabanlı arayüzler.",
-          "tools": ["React", "Next.js", "TypeScript", "CSS"]
-        },
-        {
-          "number": "02",
-          "title": "Ürün düşüncesi",
-          "description": "İçerik hiyerarşisi, kullanıcı akışı ve teknik kararları aynı problemin parçaları olarak ele alma.",
-          "tools": ["UX Akışları", "Prototipleme", "Tasarım Sistemleri"]
-        },
-        {
-          "number": "03",
-          "title": "Etkileşim ve 3D web",
-          "description": "Gösteriş için değil, kişilik ve yön duygusu oluşturmak için kullanılan ölçülü hareketler.",
-          "tools": ["Three.js", "React Three Fiber", "Blockbench"]
-        }
-      ]
-    },
-    "journey": {
-      "index": "04 / Şimdi ve sırada",
-      "title": "Öğrenme sürecini saklamayan bir yolculuk.",
-      "items": [
-        {
-          "number": "01",
-          "period": "Şimdi",
-          "title": "Kişisel kimliği kurmak",
-          "description": "Portfolio altyapısını, özgün karakteri ve iki dilli içerik sistemini birlikte geliştiriyorum."
-        },
-        {
-          "number": "02",
-          "period": "Odak",
-          "title": "Daha güçlü ürünler geliştirmek",
-          "description": "Kod kalitesi, erişilebilirlik, performans ve arayüz kararları arasındaki bağı güçlendiriyorum."
-        },
-        {
-          "number": "03",
-          "period": "Sırada",
-          "title": "Gerçek vaka çalışmalarını eklemek",
-          "description": "Yeni projeleri yalnızca görsellerle değil, problem ve karar süreçleriyle birlikte anlatacağım."
-        }
-      ]
-    },
     "contact": {
-      "index": "03 / İletişim",
       "kicker": "Birlikte bir şey üretelim.",
       "title": "Aklında bir fikir, proje veya sadece güzel bir sohbet varsa yaz.",
       "email": "zubeyirad@gmail.com",

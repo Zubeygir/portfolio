@@ -4,8 +4,6 @@
     "navigation": {
       "about": "About",
       "work": "Projects",
-      "capabilities": "Capabilities",
-      "journey": "Journey",
       "contact": "Contact"
     },
     "header": {
@@ -25,7 +23,6 @@
       "status": "Open to new ideas"
     },
     "about": {
-      "index": "01 / About",
       "title": "About Me",
       "intro": "I'm Zübeyir Ali Demir, a Software Developer.",
       "lead": "I graduated in Computer Engineering from Istanbul University-Cerrahpaşa. I enjoy turning an idea into a clear structure, then shaping that structure into a working and carefully made product.",
@@ -67,7 +64,6 @@
       ]
     },
     "projects": {
-      "index": "02 / Selected projects",
       "title": "Featured Projects",
       "description": "Projects I've built across different scales — from academic thesis work to enterprise production, mobile apps to 3D web experiences.",
       "viewProject": "Open project",
@@ -243,70 +239,7 @@
         }
       ]
     },
-    "capabilities": {
-      "index": "03 / Capabilities",
-      "title": "The layers connecting a visual idea to a working product.",
-      "description": "Without limiting myself to a frontend label, I care about the different layers of a web product from shaping the idea to building it.",
-      "items": [
-        {
-          "number": "01",
-          "title": "Interface development",
-          "description": "Accessible, component-based interfaces that adapt cleanly across different screens.",
-          "tools": [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "CSS"
-          ]
-        },
-        {
-          "number": "02",
-          "title": "Product thinking",
-          "description": "Treating content hierarchy, user flow and technical decisions as parts of the same problem.",
-          "tools": [
-            "UX Flows",
-            "Prototyping",
-            "Design Systems"
-          ]
-        },
-        {
-          "number": "03",
-          "title": "Interaction and 3D web",
-          "description": "Measured motion used to create personality and direction, not movement for its own sake.",
-          "tools": [
-            "Three.js",
-            "React Three Fiber",
-            "Blockbench"
-          ]
-        }
-      ]
-    },
-    "journey": {
-      "index": "04 / Now and next",
-      "title": "A journey that does not hide the learning process.",
-      "items": [
-        {
-          "number": "01",
-          "period": "Now",
-          "title": "Building a personal identity",
-          "description": "I am developing the portfolio foundation, original character and bilingual content system together."
-        },
-        {
-          "number": "02",
-          "period": "Focus",
-          "title": "Building stronger products",
-          "description": "I am strengthening the connection between code quality, accessibility, performance and interface decisions."
-        },
-        {
-          "number": "03",
-          "period": "Next",
-          "title": "Adding real case studies",
-          "description": "New projects will be explained through their problems and decisions, not only through polished visuals."
-        }
-      ]
-    },
     "contact": {
-      "index": "03 / Contact",
       "kicker": "Let's make something together.",
       "title": "If you have an idea, a project or simply a good conversation in mind, write to me.",
       "email": "zubeyirad@gmail.com",

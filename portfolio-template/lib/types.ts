@@ -58,16 +58,3 @@ export interface Project {
   image?: SanityImageSource;
 }
 
-export interface Capability {
-  number: string;
-  title: string;
-  description: string;
-  tools: string[];
-}
-
-export interface JourneyItem {
-  number: string;
-  period: string;
-  title: string;
-  description: string;
-}

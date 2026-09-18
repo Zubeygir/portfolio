@@ -10,7 +10,6 @@ export function ContactSection({ contactEmail }: { contactEmail: string }) {
       className="contact-section shell"
       aria-labelledby="contact-title"
     >
-      <p className="section-index">{t('index')}</p>
       <div>
         <p className="contact-kicker">{t('kicker')}</p>
         <h2 id="contact-title">{t('title')}</h2>

@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 const MODEL_PATH = '/models/personal-character.glb';
-const MODEL_SCALE = 9.2;
+const MODEL_SCALE = 3.2;
 const INTRO_DURATION = 1.7;
 
 function easeOutQuart(value: number) {
@@ -116,6 +116,14 @@ export function CharacterModel() {
       'pupil_posX',
       'mouth_upper',
       'mouth_lower',
+      'nose',
+      'moustache',
+      'beard_chin',
+      'sideburn_left',
+      'sideburn_right',
+      'beard_side_left',
+      'beard_side_right',
+      'face_details',
     ];
 
     headPartNames.forEach((name) => {
