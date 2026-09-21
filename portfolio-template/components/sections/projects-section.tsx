@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useMemo } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { SectionHeading } from '@/components/shared/section-heading';
 import { ProjectDeskScene, type ProjectDeskLabels } from '@/components/projects/project-desk-scene';
@@ -37,7 +38,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
     [projectPrefix, clickForDetails, clickToInspect, instruction, loading]
   );
 
-  // Handle opening a project with paper fly animation
+  // Desk papers lift toward the camera, then the modal opens.
   const handleSelectPaper = useCallback(
     (index: number, origin?: MorphOrigin) => {
       const project = projects[index];
@@ -47,23 +48,23 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
       if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
 
       setMorphOrigin(origin ?? null);
+      setActivePaperIndex(index);
+      setIsInspecting(true);
 
-      if (index < 5) {
-        // Trigger 3D paper lift & zoom animation
-        setActivePaperIndex(index);
-        setIsInspecting(true);
-
-        // After paper reaches inspection distance, reveal the detail modal
-        openTimerRef.current = setTimeout(() => {
-          setSelectedProject(project);
-        }, 500);
-      } else {
-        // Direct modal open for projects beyond 5th
+      openTimerRef.current = setTimeout(() => {
         setSelectedProject(project);
-      }
+      }, 320);
     },
     [projects]
   );
+
+  // The project list opens the modal directly (keyboard and touch path).
+  const handleSelectFromList = useCallback((project: Project) => {
+    if (openTimerRef.current) clearTimeout(openTimerRef.current);
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setMorphOrigin(null);
+    setSelectedProject(project);
+  }, []);
 
   // Handle closing the detail modal with return animation
   const handleCloseModal = useCallback(() => {
@@ -103,6 +104,23 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
           {instruction}
         </p>
       </div>
+
+      <ul className="project-index" aria-labelledby="work-title">
+        {projects.map((project) => (
+          <li key={project._id ?? project.title}>
+            <button
+              type="button"
+              className="project-index-row"
+              onClick={() => handleSelectFromList(project)}
+            >
+              <span className="project-index-year">{project.year}</span>
+              <span className="project-index-title">{project.title}</span>
+              <span className="project-index-category">{project.category}</span>
+              <ArrowUpRight className="project-index-icon" aria-hidden="true" />
+            </button>
+          </li>
+        ))}
+      </ul>
 
       <ProjectDetailModal
         project={selectedProject}

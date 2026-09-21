@@ -3,11 +3,12 @@
 import { Canvas } from '@react-three/fiber';
 import { CharacterModel } from './character-model';
 
-export function CharacterScene() {
+export function CharacterScene({ active }: { active: boolean }) {
   return (
     <Canvas
+      frameloop={active ? 'always' : 'never'}
       camera={{ position: [0, 2.8, -16], fov: 30, near: 0.1, far: 100 }}
-      dpr={[1, 1.75]}
+      dpr={[1, 1.5]}
       gl={{ alpha: true, antialias: true }}
       onCreated={({ camera }) => camera.lookAt(0, 2.8, 0)}
     >

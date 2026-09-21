@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type CSSProperties } from 'react';
+import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { ChevronDown, Download } from 'lucide-react';
 import { ToolkitIcon } from '@/components/shared/toolkit-icon';
@@ -82,9 +82,9 @@ export function AboutSection() {
       </div>
 
       <div className="about-toolkit">
-        <ToolkitGroup title={t('technologyTitle')} items={technologies} duration={42} />
-        <ToolkitGroup title={t('skillsTitle')} items={skills} duration={34} reverse />
-        <ToolkitGroup title={t('toolsTitle')} items={tools} duration={48} />
+        <ToolkitGroup title={t('technologyTitle')} items={technologies} />
+        <ToolkitGroup title={t('skillsTitle')} items={skills} showIcons={false} />
+        <ToolkitGroup title={t('toolsTitle')} items={tools} />
       </div>
     </section>
   );
@@ -93,42 +93,23 @@ export function AboutSection() {
 function ToolkitGroup({
   title,
   items,
-  duration,
-  reverse = false,
+  showIcons = true,
 }: {
   title: string;
   items: string[];
-  duration: number;
-  reverse?: boolean;
+  showIcons?: boolean;
 }) {
   return (
     <div className="toolkit-group">
       <h3>{title}</h3>
-      <div
-        className="toolkit-marquee"
-        style={{ '--marquee-count': items.length } as CSSProperties}
-      >
-        <div
-          className={`toolkit-marquee-track${reverse ? ' is-reverse' : ''}`}
-          style={{ '--marquee-duration': `${duration}s` } as CSSProperties}
-        >
-          {items.map((item) => (
-            <span key={item} className="toolkit-chip" data-label={item} aria-label={item}>
-              <ToolkitIcon label={item} />
-            </span>
-          ))}
-          {items.map((item) => (
-            <span
-              key={`${item}-dup`}
-              className="toolkit-chip"
-              data-label={item}
-              aria-hidden="true"
-            >
-              <ToolkitIcon label={item} />
-            </span>
-          ))}
-        </div>
-      </div>
+      <ul className="toolkit-list">
+        {items.map((item) => (
+          <li key={item} className="toolkit-chip">
+            {showIcons ? <ToolkitIcon label={item} /> : null}
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

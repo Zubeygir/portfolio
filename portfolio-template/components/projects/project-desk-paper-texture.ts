@@ -34,6 +34,11 @@ function getGrainTile(): HTMLCanvasElement | null {
   return grainTileCache;
 }
 
+function getMonoFamily(): string {
+  const name = getComputedStyle(document.body).getPropertyValue('--font-mono-label').trim();
+  return name || 'monospace';
+}
+
 export function createPaperTexture(
   project: Project,
   isHovered = false,
@@ -43,6 +48,7 @@ export function createPaperTexture(
     return new THREE.Texture();
   }
 
+  const monoFamily = getMonoFamily();
   const projectPrefix = labels?.projectPrefix || 'PROJE';
   const clickForDetails = labels?.clickForDetails || 'DETAYLAR İÇİN TIKLA ↗';
   const brand = labels?.brand || 'ZUBEYIR ALI DEMIR // PORTFOLIO';
@@ -99,13 +105,13 @@ export function createPaperTexture(
 
   // Project Number / Kicker
   ctx.fillStyle = '#7d5f22';
-  ctx.font = '600 34px "Geist Mono", monospace, sans-serif';
+  ctx.font = `600 34px ${monoFamily}, monospace`;
   ctx.fillText(`${projectPrefix} ${project.number}`, 48, 86);
 
   // Status Badge on Top-Right
   if (project.status || project.year) {
     const badgeText = `${project.status || 'PROJECT'} · ${project.year || '2025'}`;
-    ctx.font = '500 24px "Geist Mono", monospace, sans-serif';
+    ctx.font = `500 24px ${monoFamily}, monospace`;
     const badgeW = ctx.measureText(badgeText).width + 36;
     ctx.fillStyle = 'rgba(33, 29, 22, 0.05)';
     ctx.beginPath();
@@ -153,7 +159,7 @@ export function createPaperTexture(
   // Role / Category badge
   const roleText = project.role || project.category || 'Software Developer';
   ctx.fillStyle = '#6f5420';
-  ctx.font = '500 28px "Geist Mono", monospace, sans-serif';
+  ctx.font = `500 28px ${monoFamily}, monospace`;
   ctx.fillText(`◆ ${roleText}`, 48, lineY + 65);
 
   // Summary / Description Snippet
@@ -184,7 +190,7 @@ export function createPaperTexture(
   if (project.technologies && project.technologies.length > 0) {
     let tagX = 48;
     const tagY = h - 130;
-    ctx.font = '500 22px "Geist Mono", monospace, sans-serif';
+    ctx.font = `500 22px ${monoFamily}, monospace`;
     project.technologies.slice(0, 3).forEach((tech: string) => {
       const tagWidth = ctx.measureText(tech).width + 24;
       ctx.fillStyle = 'rgba(33, 29, 22, 0.09)';
@@ -199,12 +205,12 @@ export function createPaperTexture(
 
   // Bottom action bar
   ctx.fillStyle = isHovered ? '#5f4a1c' : '#7d5f22';
-  ctx.font = '600 28px "Geist Mono", monospace, sans-serif';
+  ctx.font = `600 28px ${monoFamily}, monospace`;
   ctx.fillText(clickForDetails, w - ctx.measureText(clickForDetails).width - 48, h - 50);
 
   // Subtle watermark in bottom left
   ctx.fillStyle = 'rgba(33, 29, 22, 0.4)';
-  ctx.font = '500 20px "Geist Mono", monospace, sans-serif';
+  ctx.font = `500 20px ${monoFamily}, monospace`;
   ctx.fillText(brand, 48, h - 50);
 
   const texture = new THREE.CanvasTexture(canvas);

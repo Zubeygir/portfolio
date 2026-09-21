@@ -33,8 +33,8 @@ export function SiteHeader() {
   const tHeader = useTranslations('Site.header');
 
   const navigation = [
-    { label: t('navigation.about'), href: '#about' },
     { label: t('navigation.work'), href: '#work' },
+    { label: t('navigation.about'), href: '#about' },
     { label: t('navigation.contact'), href: '#contact' },
   ];
 

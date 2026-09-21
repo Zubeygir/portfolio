@@ -49,16 +49,7 @@
   justify-self: start;
   gap: 0.6rem;
   padding: 0.65rem 1.1rem;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  background: rgba(212, 175, 55, 0.08);
-  color: #f7f7f5;
   font-size: 0.72rem;
-  font-weight: 620;
-  letter-spacing: 0.02em;
-  transition:
-    background 220ms ease,
-    color 220ms ease,
-    border-color 220ms ease;
 }
 
 .about-cv-link svg {
@@ -84,11 +75,10 @@
 
 .about-experience h3 {
   margin: 0 0 1.5rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.65rem;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   color: var(--muted-foreground);
 }
 
@@ -125,7 +115,7 @@
 }
 
 .experience-period {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono-label), monospace;
   font-size: 0.75rem;
   color: var(--muted-foreground);
   letter-spacing: 0.02em;
@@ -216,106 +206,36 @@
   grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 2.3fr);
   gap: 2rem;
   padding-block: 0;
-  align-items: center;
+  align-items: start;
 }
 
 .toolkit-group h3 {
   margin: 0;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.65rem;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   color: var(--muted-foreground);
 }
 
-.toolkit-marquee {
-  /* Exactly as wide as one full set of chips (count × chip + gaps) — not the
-     stretched grid column — so the loop reads as a tight row, not a wide gap. */
-  width: calc(var(--marquee-count, 1) * 3.5rem - 0.75rem);
-  max-width: 100%;
-  /* Taller than the chip row itself so the hover tooltip has headroom above the
-     chip without poking past this box — overflow:hidden (needed for the loop)
-     would otherwise clip it. Chips sit at the bottom of this box. */
-  height: 5.1rem;
+.toolkit-list {
   display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-}
-
-.toolkit-marquee-track {
-  display: flex;
-  width: max-content;
-  gap: 0.75rem;
-  animation: toolkit-marquee-scroll var(--marquee-duration, 42s) linear infinite;
-}
-
-.toolkit-marquee-track.is-reverse {
-  animation-direction: reverse;
-}
-
-.toolkit-marquee:hover .toolkit-marquee-track {
-  animation-play-state: paused;
-}
-
-@keyframes toolkit-marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .toolkit-chip {
-  position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  flex-shrink: 0;
-  border-radius: 0.6rem;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.04);
-  transition:
-    background 200ms ease,
-    transform 200ms ease;
-}
-
-.toolkit-chip:hover {
-  background: rgba(212, 175, 55, 0.14);
-  transform: translateY(-2px);
-}
-
-.toolkit-chip::after {
-  content: attr(data-label);
-  position: absolute;
-  bottom: calc(100% + 0.5rem);
-  left: 50%;
-  transform: translate(-50%, 4px);
-  padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 0.4rem;
-  background: rgba(12, 15, 22, 0.95);
-  color: #f7f7f9;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    opacity 160ms ease,
-    transform 160ms ease;
-  z-index: 5;
-}
-
-.toolkit-chip:hover::after,
-.toolkit-chip:focus-visible::after {
-  opacity: 1;
-  transform: translate(-50%, 0);
+  color: var(--foreground);
+  font-size: 0.85rem;
 }
 
 .toolkit-icon {
@@ -323,12 +243,6 @@
   height: 18px;
   flex-shrink: 0;
   color: #d4af37;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .toolkit-marquee-track {
-    animation: none;
-  }
 }
 
 @media (max-width: 880px) {

@@ -54,7 +54,7 @@
   background: #0d0f16;
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: var(--muted-foreground);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono-label), monospace;
   font-size: 0.82rem;
 }
 
@@ -89,12 +89,8 @@
   gap: 0.85rem;
   padding: 0.65rem 1.4rem;
   border-radius: 999px;
-  background: rgba(12, 15, 22, 0.88);
-  backdrop-filter: blur(18px);
+  background: var(--card);
   border: 1px solid rgba(212, 175, 55, 0.45);
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.65),
-    0 0 8px rgba(212, 175, 55, 0.2);
   pointer-events: none;
   z-index: 10;
   animation: deskFadeUp 220ms ease;
@@ -113,7 +109,7 @@
 }
 
 .desk-pill-number {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono-label), monospace;
   font-size: 0.72rem;
   font-weight: 600;
   color: #f2d488;
@@ -133,17 +129,17 @@
 }
 
 .desk-pill-counter {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.62);
   letter-spacing: 0.04em;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .desk-pill-hint {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
   color: #f2d488;
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
@@ -156,14 +152,91 @@
 
 .project-desk-instruction {
   margin: 1.25rem 0 0;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.7rem;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.78rem;
   letter-spacing: 0.01em;
   color: var(--muted-foreground);
-  opacity: 0.75;
   text-align: center;
 }
 
+
+/* ─── Project index (keyboard and touch path to every project) ───── */
+
+.project-index {
+  width: 100%;
+  max-width: 72rem;
+  margin: clamp(2rem, 4vw, 3rem) auto 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-glass);
+}
+
+.project-index li {
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.project-index-row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  width: 100%;
+  padding: 1.1rem 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color 200ms var(--ease-portfolio);
+}
+
+.project-index-row:hover {
+  color: var(--primary);
+}
+
+.project-index-year {
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.project-index-title {
+  font-size: 1rem;
+  font-weight: 520;
+}
+
+.project-index-category {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.project-index-icon {
+  align-self: center;
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted-foreground);
+}
+
+.project-index-row:hover .project-index-icon {
+  color: var(--primary);
+}
+
+@media (max-width: 640px) {
+  .project-index-row {
+    grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+    gap: 0.35rem 1rem;
+  }
+
+  .project-index-category {
+    grid-column: 2;
+  }
+
+  .project-index-icon {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
 
 /* ─── Detail Modal ──────────────────────────────────────────────── */
 
@@ -201,8 +274,7 @@
   height: 2.5rem;
   border: 0;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(12px);
+  background: rgba(8, 9, 12, 0.85);
   color: #ffffff;
   cursor: pointer;
   transition: background 200ms ease, transform 200ms ease;
@@ -226,27 +298,50 @@
   overflow: hidden;
 }
 
-.is-modal-cover {
+.project-visual {
+  display: grid;
+  place-items: center;
   width: 100%;
   height: 100%;
-  position: relative;
+  background: var(--card);
+}
+
+.project-mark {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+}
+
+.project-status {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(8, 9, 12, 0.85);
+  color: var(--foreground);
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
 }
 
 .project-modal-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: clamp(0.6rem, 1.5vh, 1.1rem);
   padding: clamp(1.4rem, 3vw, 2.2rem);
-  overflow: hidden;
+  overflow: visible;
+  overflow-y: auto;
 }
 
 .project-modal-kicker {
   margin: 0 0 0.15rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.55rem, 0.7vw, 0.68rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
   color: var(--primary);
 }
 
@@ -262,16 +357,15 @@
 .project-modal-summary {
   margin: 0;
   color: var(--ink-soft);
-  font-size: clamp(0.78rem, 0.95vw, 0.88rem);
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
 .project-modal-label {
   margin: 0 0 0.4rem;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(0.52rem, 0.6vw, 0.6rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
   color: var(--muted-foreground);
 }
 
@@ -283,7 +377,7 @@
 .project-modal-role-value {
   margin: 0;
   color: var(--primary);
-  font-size: clamp(0.78rem, 0.9vw, 0.88rem);
+  font-size: 0.88rem;
   font-weight: 520;
   letter-spacing: -0.01em;
 }
@@ -305,7 +399,7 @@
   position: relative;
   padding-left: 1.1rem;
   color: var(--ink-soft);
-  font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+  font-size: 0.85rem;
   line-height: 1.45;
 }
 
@@ -335,7 +429,7 @@
   border-radius: 0.4rem;
   background: rgba(255, 255, 255, 0.05);
   color: #e2e5ec;
-  font-size: clamp(0.62rem, 0.72vw, 0.72rem);
+  font-size: 0.78rem;
 }
 
 .project-modal-actions {
@@ -354,13 +448,11 @@
   font-weight: 650;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition: background 200ms var(--ease-portfolio);
 }
 
 .project-modal-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(212, 175, 55, 0.5);
+  background: #e3c15a;
 }
 
 /* ─── Responsive ────────────────────────────────────────────────── */
@@ -390,7 +482,7 @@
   }
 
   .desk-pill-hint {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     padding: 0.2rem 0.5rem;
   }
 

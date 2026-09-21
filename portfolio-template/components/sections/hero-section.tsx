@@ -58,7 +58,6 @@ export function HeroSection() {
         </div>
 
         <div className="hero-character-wrap">
-          <div className="character-orbit" aria-hidden="true" />
           <CharacterStage label={t('characterLabel')} />
           <p className="character-note">{t('characterNote')}</p>
         </div>

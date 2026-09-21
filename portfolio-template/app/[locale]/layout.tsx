@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import {
+  Atkinson_Hyperlegible_Mono,
+  Atkinson_Hyperlegible_Next,
+} from 'next/font/google';
 import localFont from 'next/font/local';
 import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
@@ -12,14 +15,14 @@ import { siteSettingsQuery } from '@/sanity/lib/queries';
 import type { SiteSettings } from '@/lib/types';
 import { urlFor } from '@/sanity/image';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const bodyFont = Atkinson_Hyperlegible_Next({
+  variable: '--font-body',
+  subsets: ['latin', 'latin-ext'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const monoFont = Atkinson_Hyperlegible_Mono({
+  variable: '--font-mono-label',
+  subsets: ['latin', 'latin-ext'],
 });
 
 const cabinetGrotesk = localFont({
@@ -132,7 +135,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cabinetGrotesk.variable}`}
+        className={`${bodyFont.variable} ${monoFont.variable} ${cabinetGrotesk.variable}`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}

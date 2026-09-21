@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { ArrowUpRight, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -24,6 +24,7 @@ export function ProjectDetailModal({
   viewProjectLabel = 'Projeyi İncele',
 }: ProjectDetailModalProps) {
   const t = useTranslations('Site.projects.modalLabels');
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!project) return;
@@ -32,10 +33,13 @@ export function ProjectDetailModal({
       if (e.key === 'Escape') onClose();
     };
 
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
+      previouslyFocused?.focus?.();
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
@@ -75,6 +79,7 @@ export function ProjectDetailModal({
             transition={{ duration: 0.5, ease: MORPH_EASE }}
           >
         <button
+          ref={closeButtonRef}
           className="project-modal-close"
           onClick={onClose}
           type="button"
@@ -93,10 +98,7 @@ export function ProjectDetailModal({
               className="project-modal-image"
             />
           ) : (
-            <div className={`project-visual is-${project.tone} is-modal-cover`}>
-              <span className="project-grid" />
-              <span className="project-shape project-shape-one" />
-              <span className="project-shape project-shape-two" />
+            <div className="project-visual">
               <span className="project-mark">{project.mark}</span>
             </div>
           )}

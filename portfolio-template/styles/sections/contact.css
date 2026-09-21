@@ -39,7 +39,7 @@
 .contact-section h2 {
   max-width: 16ch;
   margin: 0;
-  font-size: clamp(3.25rem, 6.2vw, 6.8rem);
+  font-size: clamp(3.25rem, 6.2vw, 6rem);
   font-weight: 500;
   line-height: 0.98;
   letter-spacing: -0.04em;
@@ -50,24 +50,7 @@
   gap: 1.1rem;
   margin-top: clamp(3.5rem, 6vw, 5.5rem);
   padding: 1.1rem 1.8rem;
-  border: 0;
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
   font-size: clamp(1.05rem, 1.5vw, 1.4rem);
-  font-weight: 520;
-  letter-spacing: -0.01em;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  transition:
-    background 260ms ease,
-    color 260ms ease,
-    box-shadow 260ms ease,
-    transform 240ms ease;
-}
-
-.contact-link:hover {
-  box-shadow: 0 16px 50px rgba(212, 175, 55, 0.4);
-  transform: translateY(-4px);
 }
 
 .contact-link svg {

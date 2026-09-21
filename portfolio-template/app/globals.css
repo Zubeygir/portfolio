@@ -26,8 +26,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono-label);
   --font-display: var(--font-cabinet-grotesk);
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -76,20 +76,15 @@ body {
   margin: 0;
   overflow-x: hidden;
   background-color: var(--background);
-  background-image:
-    radial-gradient(circle at 75% 15%, rgba(212, 175, 55, 0.06), transparent 38%),
-    radial-gradient(circle at 15% 45%, rgba(68, 108, 190, 0.05), transparent 42%),
-    radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.04), transparent 40%);
-  background-attachment: fixed;
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--font-body), Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-display), var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--font-display), var(--font-body), Arial, sans-serif;
 }
 
 ::selection {
@@ -169,7 +164,16 @@ button {
 .pill-button {
   display: inline-flex;
   align-items: center;
+  border: 1px solid rgba(212, 175, 55, 0.45);
   border-radius: 999px;
+  background: rgba(212, 175, 55, 0.08);
+  color: #f7f7f5;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  transition:
+    background 220ms var(--ease-portfolio),
+    color 220ms var(--ease-portfolio),
+    border-color 220ms var(--ease-portfolio);
 }
 
 .pill-button:hover {
@@ -182,17 +186,8 @@ button {
   gap: 0.55rem;
   min-height: 2.55rem;
   padding: 0.7rem 0.9rem;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  background: rgba(212, 175, 55, 0.08);
-  color: #f7f7f5;
-  font-size: 0.68rem;
-  font-weight: 680;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition:
-    background 220ms ease,
-    color 220ms ease,
-    border-color 220ms ease;
 }
 
 .header-cta svg,
@@ -210,8 +205,8 @@ button {
   border: 0;
   background: transparent;
   color: inherit;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.62rem;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   cursor: pointer;
 }
@@ -222,27 +217,27 @@ button {
 }
 
 .locale-menu {
-  min-width: 9rem !important;
+  min-width: 9rem;
   overflow: hidden;
-  padding: 0.3rem !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 0.65rem !important;
-  background: var(--card) !important;
-  box-shadow: 0 8px 8px rgb(33 25 21 / 0.12) !important;
+  padding: 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  background: var(--card);
+  box-shadow: 0 8px 8px rgb(33 25 21 / 0.12);
 }
 
 .locale-option {
-  padding: 0.65rem 0.75rem !important;
-  border-radius: 0.4rem !important;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.62rem !important;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.4rem;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   cursor: pointer;
 }
 
 .locale-option.is-active {
-  background: var(--muted) !important;
+  background: var(--muted);
 }
 
 .section-heading {
@@ -292,10 +287,9 @@ button {
 .footer-grid p,
 .footer-grid a {
   margin: 0;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
   color: var(--muted-foreground);
 }
 
@@ -333,12 +327,12 @@ button {
   color: var(--primary);
 }
 
-.footer-wordmark {
-  font-family: var(--font-geist-sans), sans-serif !important;
-  font-size: clamp(1.7rem, 3vw, 3.25rem) !important;
+.footer-grid .footer-wordmark {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(1.7rem, 3vw, 3.25rem);
   font-weight: 640;
-  letter-spacing: -0.04em !important;
-  color: var(--foreground) !important;
+  letter-spacing: -0.04em;
+  color: var(--foreground);
 }
 
 .menu-trigger {
@@ -346,13 +340,12 @@ button {
 }
 
 .mobile-menu {
-  width: min(92vw, 34rem) !important;
-  max-width: none !important;
-  padding: 1.5rem !important;
-  border-left: 1px solid var(--border) !important;
-  background: #0d0f15 !important;
-  backdrop-filter: blur(24px) !important;
-  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6) !important;
+  width: min(92vw, 34rem);
+  max-width: none;
+  padding: 1.5rem;
+  border-left: 1px solid var(--border);
+  background: #0d0f15;
+  backdrop-filter: blur(24px);
 }
 
 .mobile-menu-brand {
@@ -380,12 +373,11 @@ button {
   font: inherit;
   font-size: clamp(1.4rem, 6vw, 2.25rem);
   text-align: left;
-  transition: color 200ms ease, padding-left 200ms ease;
+  transition: color 200ms var(--ease-portfolio);
 }
 
 .mobile-nav-link:hover {
   color: var(--primary);
-  padding-left: 0.5rem;
 }
 
 .mobile-nav-link svg,
@@ -401,15 +393,8 @@ button {
   width: 100%;
   margin-top: 2rem;
   padding: 1rem 1.4rem;
-  border: 1px solid var(--border-glass);
-  background: var(--surface-glass);
-  color: var(--foreground);
-  font: inherit;
   font-size: 0.7rem;
-  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: background 220ms ease, border-color 220ms ease;
 }
 
 @media (max-width: 980px) {
@@ -431,9 +416,8 @@ button {
     border-radius: 999px;
     background: transparent;
     font: inherit;
-    font-family: var(--font-geist-mono), monospace;
-    font-size: 0.6rem;
-    text-transform: uppercase;
+    font-family: var(--font-mono-label), monospace;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
     color: #f7f7f5;
   }

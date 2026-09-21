@@ -1,6 +1,7 @@
 'use client';
 
 import { Suspense, useSyncExternalStore, useEffect, useRef, type RefObject } from 'react';
+import { useInView } from '@/hooks/use-in-view';
 import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { Project } from '@/lib/types';
@@ -103,6 +104,7 @@ export function ProjectDeskScene({
   );
 
   const wrapRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(wrapRef, mounted);
   const scrollProgress = useRef(0.5);
 
   useEffect(() => {
@@ -147,13 +149,14 @@ export function ProjectDeskScene({
   return (
     <div className="project-desk-canvas-wrap" ref={wrapRef}>
       <Canvas
+        frameloop={inView ? 'always' : 'never'}
         camera={{
           position: [0, 1.68, 1.47],
           fov: 36,
           near: 0.1,
           far: 50,
         }}
-        dpr={[1, 1.8]}
+        dpr={[1, 1.5]}
         gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
         onCreated={({ camera }) => {
           camera.lookAt(0, 0.16, 0);

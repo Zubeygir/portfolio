@@ -23,7 +23,7 @@ Token kaynağı: `app/globals.css` `:root`. Yeni renk **eklenmeyecek**, mevcut t
 
 ## 2. Tipografi
 
-- **Gövde metni + mono etiketler**: Geist Sans / Geist Mono (`--font-geist-sans`, `--font-geist-mono`) — değişmiyor.
+- **Gövde metni + mono etiketler**: Atkinson Hyperlegible Next / Atkinson Hyperlegible Mono (`--font-body`, `--font-mono-label`). Geist (Next.js starter varsayılanı) bilinçli olarak bırakıldı.
 - **Başlıklar (h1–h3, display boyutlar)**: **Cabinet Grotesk** (Fontshare, self-hosted) — genel bakış kararı, uygulanacak.
 - **Letter-spacing tabanı**: `-0.04em`'in altına inilmeyecek. Mevcut `-0.05em` ile `-0.085em` arası ihlaller (`hero.css:95`, `about.css:21,43`, `contact.css:49` vb.) `-0.02em`–`-0.04em` aralığına çekilecek.
 - **Satır uzunluğu**: body/paragraf metni 65–75ch tavan (mevcut `max-width: Nch` kullanımı korunacak, yeni metin blokları da bu kurala uyacak).
