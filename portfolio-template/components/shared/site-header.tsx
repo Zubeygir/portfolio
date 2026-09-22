@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { ArrowUpRight, Menu } from 'lucide-react';
 import {
   Sheet,
@@ -13,17 +14,9 @@ import { useTranslations } from 'next-intl';
 import { LocaleSwitcher } from './locale-switcher';
 
 function Brand({ name }: { name: string }) {
-  const [first, second] = name.split('/');
-
   return (
     <a className="wordmark" href="#top" aria-label={`${name} home`}>
-      {first}
-      {second ? (
-        <>
-          <span>/</span>
-          {second}
-        </>
-      ) : null}
+      <img src="/logo.png" alt="" width={56} height={56} />
     </a>
   );
 }
@@ -31,17 +24,24 @@ function Brand({ name }: { name: string }) {
 export function SiteHeader() {
   const t = useTranslations('Site');
   const tHeader = useTranslations('Site.header');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrolled = () => setIsScrolled(window.scrollY > 24);
+    updateScrolled();
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+    return () => window.removeEventListener('scroll', updateScrolled);
+  }, []);
 
   const navigation = [
     { label: t('navigation.work'), href: '#work' },
     { label: t('navigation.about'), href: '#about' },
-    { label: t('navigation.contact'), href: '#contact' },
   ];
 
   const brand = t('brand');
 
   return (
-    <header className="site-header">
+    <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
       <Brand name={brand} />
 
       <nav className="desktop-nav" aria-label="Primary navigation">

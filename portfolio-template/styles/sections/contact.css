@@ -53,6 +53,12 @@
   font-size: clamp(1.05rem, 1.5vw, 1.4rem);
 }
 
+.contact-response-note {
+  margin: 1rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+}
+
 .contact-link svg {
   width: 1.3rem;
   height: 1.3rem;

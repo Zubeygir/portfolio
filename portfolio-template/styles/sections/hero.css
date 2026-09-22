@@ -67,11 +67,11 @@
   }
 }
 
-.hero-kicker,
 .hero h1,
 .hero-description,
 .hero-enter,
-.hero-meta {
+.hero-meta,
+.hero-availability {
   animation: hero-rise 640ms var(--ease-portfolio) both;
 }
 
@@ -79,47 +79,37 @@
   animation: hero-rise-character 640ms var(--ease-portfolio) both;
 }
 
-.hero-kicker {
+.hero-availability {
   animation-delay: 0ms;
 }
 
 .hero h1 {
-  animation-delay: 90ms;
+  animation-delay: 80ms;
 }
 
 .hero-description {
-  animation-delay: 180ms;
+  animation-delay: 120ms;
 }
 
 .hero-enter {
-  animation-delay: 240ms;
+  animation-delay: 200ms;
 }
 
 .hero-character-wrap {
-  animation-delay: 320ms;
+  animation-delay: 280ms;
 }
 
 .hero-meta {
-  animation-delay: 420ms;
+  animation-delay: 380ms;
 }
 
-.hero-kicker {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.55rem;
-  margin: 0 0 1.75rem;
-  color: rgb(247 247 245 / 0.7);
+.hero-availability {
+  display: block;
+  margin-bottom: 1.1rem;
+  color: rgb(247 247 245 / 0.62);
   font-family: var(--font-mono-label), monospace;
   font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.hero-kicker svg {
-  width: 0.9rem;
-  height: 0.9rem;
-  color: #c6a759;
+  letter-spacing: 0.02em;
 }
 
 .hero h1 {
@@ -128,6 +118,16 @@
   font-weight: 480;
   line-height: 0.95;
   letter-spacing: -0.04em;
+}
+
+.hero-title-role {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--muted-foreground);
 }
 
 .hero-description {

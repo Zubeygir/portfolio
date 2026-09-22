@@ -41,6 +41,7 @@ export function ContactSection({ contactEmail }: { contactEmail: string }) {
         <a href={`mailto:${contactEmail}`} className="contact-link pill-button">
           {contactEmail} <ArrowUpRight aria-hidden="true" />
         </a>
+        <p className="contact-response-note">{t('responseNote')}</p>
         <ul className="contact-channels">
           <li>
             <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">

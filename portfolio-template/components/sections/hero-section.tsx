@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ArrowDown, Asterisk } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { CharacterStage } from '@/components/character/character-stage';
 
@@ -45,11 +45,11 @@ export function HeroSection() {
     >
       <div className="hero-grid shell">
         <div className="hero-copy">
-          <p className="hero-kicker">
-            <Asterisk aria-hidden="true" />
-            {t('eyebrow')}
-          </p>
-          <h1 id="hero-title">{t('title')}</h1>
+          <span className="hero-availability">{t('status')}</span>
+          <h1 id="hero-title">
+            {t('titleName')}
+            <span className="hero-title-role">{t('titleRole')}</span>
+          </h1>
           <p className="hero-description">{t('description')}</p>
           <button className="hero-enter pill-button" type="button" onClick={enterPortfolio}>
             <span>{t('enter')}</span>
@@ -62,9 +62,8 @@ export function HeroSection() {
           <p className="character-note">{t('characterNote')}</p>
         </div>
 
-        <div className="hero-meta" aria-hidden="true">
+        <div className="hero-meta">
           <span>{t('location')}</span>
-          <span>{t('status')}</span>
         </div>
       </div>
       <div className="hero-wipe" aria-hidden="true" />

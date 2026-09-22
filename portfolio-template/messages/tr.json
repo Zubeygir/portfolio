@@ -13,8 +13,8 @@
       "jumpToSection": "Bu sayfadaki bir bölüme geçin."
     },
     "hero": {
-      "eyebrow": "Software Developer",
-      "title": "Merhaba, ben Zübeyir.",
+      "titleName": "Merhaba, ben Zübeyir",
+      "titleRole": "bir yazılım geliştiricisi.",
       "description": "Düşünceli arayüzler, sağlam kod ve küçük ama akılda kalan etkileşimlerle dijital deneyimler geliştiriyorum.",
       "enter": "Projeleri keşfet",
       "characterLabel": "Zübeyir'i temsil eden, sürüklenebilen ve hareketlerinizi kafasıyla takip eden üç boyutlu karakter",
@@ -223,31 +223,12 @@
           "status": "Tamamlandı",
           "tone": "dark",
           "mark": "AW"
-        },
-        {
-          "number": "06",
-          "title": "BusTicketWebRazor",
-          "category": "Web Uygulaması · Backend",
-          "year": "2024",
-          "summary": "Otobüs bilet satışı ve sefer yönetimi için geliştirilen .NET Razor tabanlı web uygulaması.",
-          "description": ".NET Razor Pages mimarisiyle geliştirilen bu web uygulaması, otobüs firmalarının sefer planlaması, bilet satışı ve yolcu yönetimi işlemlerini dijital ortama taşır. SQL veritabanı ile tam CRUD (oluşturma, okuma, güncelleme, silme) işlemleri desteklenir. Sunucu taraflı render ile hızlı sayfa yükleme sağlanmıştır.",
-          "role": "Full-Stack Geliştirici",
-          "highlights": [
-            ".NET Razor Pages ile sunucu taraflı web uygulaması",
-            "SQL veritabanı tasarımı ve tam CRUD işlemleri",
-            "Sefer planlaması ve bilet satış yönetim paneli",
-            "C# ile iş mantığı katmanı ve veri doğrulama",
-            "Yolcu kayıt ve bilet sorgulama sistemleri"
-          ],
-          "technologies": [".NET", "C#", "Razor Pages", "SQL", "Entity Framework"],
-          "status": "Tamamlandı",
-          "tone": "accent",
-          "mark": "BT"
         }
       ]
     },
     "contact": {
       "title": "Şu an freelance olarak yeni projelere açığım, aklında bir fikir varsa yaz, konuşalım.",
+      "responseNote": "Genellikle 1-2 iş günü içinde dönüş yapıyorum.",
       "email": "zubeyirad@gmail.com",
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
@@ -256,6 +237,15 @@
     "footer": {
       "backToTop": "Yukarı çık ↑",
       "copyright": "© 2026"
+    },
+    "loading": {
+      "text": "Yükleniyor..."
+    },
+    "error": {
+      "title": "Bir şeyler ters gitti!",
+      "description": "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin, sorun devam ederse benimle iletişime geçin.",
+      "tryAgain": "Tekrar dene",
+      "returnHome": "Ana Sayfaya Dön"
     }
   }
 }

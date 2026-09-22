@@ -25,12 +25,34 @@ export function ProjectDetailModal({
 }: ProjectDetailModalProps) {
   const t = useTranslations('Site.projects.modalLabels');
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!project) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusables = contentRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        );
+        if (!focusables || focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
 
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -71,6 +93,7 @@ export function ProjectDetailModal({
           transition={{ duration: 0.22, ease: MORPH_EASE }}
         >
           <motion.div
+            ref={contentRef}
             className="project-modal-content"
             onClick={(e) => e.stopPropagation()}
             initial={contentInitial}

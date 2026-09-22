@@ -13,8 +13,8 @@
       "jumpToSection": "Jump to a section of this page."
     },
     "hero": {
-      "eyebrow": "Software Developer",
-      "title": "Hi, I'm Zübeyir.",
+      "titleName": "Hi, I'm Zübeyir",
+      "titleRole": "a software developer.",
       "description": "I build digital experiences with thoughtful interfaces, reliable code and small interactions that leave a lasting impression.",
       "enter": "Explore the projects",
       "characterLabel": "A three-dimensional draggable character representing Zübeyir that tracks your pointer",
@@ -264,37 +264,12 @@
           "status": "Completed",
           "tone": "dark",
           "mark": "AW"
-        },
-        {
-          "number": "06",
-          "title": "BusTicketWebRazor",
-          "category": "Web App · Backend",
-          "year": "2024",
-          "summary": "A .NET Razor-based web application for bus ticket sales and route management.",
-          "description": "Built with .NET Razor Pages architecture, this web application brings bus company operations — route planning, ticket sales, and passenger management — into the digital space. Full CRUD (create, read, update, delete) operations are supported with SQL database integration. Server-side rendering ensures fast page load times.",
-          "role": "Full-Stack Developer",
-          "highlights": [
-            "Server-side web application with .NET Razor Pages",
-            "SQL database design and full CRUD operations",
-            "Route planning and ticket sales management panel",
-            "Business logic layer and data validation with C#",
-            "Passenger registration and ticket inquiry systems"
-          ],
-          "technologies": [
-            ".NET",
-            "C#",
-            "Razor Pages",
-            "SQL",
-            "Entity Framework"
-          ],
-          "status": "Completed",
-          "tone": "accent",
-          "mark": "BT"
         }
       ]
     },
     "contact": {
       "title": "I'm currently freelancing and open to new projects, so if you've got an idea, write to me.",
+      "responseNote": "I usually reply within 1–2 business days.",
       "email": "zubeyirad@gmail.com",
       "linkedinLabel": "LinkedIn",
       "githubLabel": "GitHub",
@@ -303,6 +278,15 @@
     "footer": {
       "backToTop": "Back to top ↑",
       "copyright": "© 2026"
+    },
+    "loading": {
+      "text": "Loading..."
+    },
+    "error": {
+      "title": "Something went wrong!",
+      "description": "An unexpected error occurred. Please try again or reach out if the problem persists.",
+      "tryAgain": "Try again",
+      "returnHome": "Return Home"
     }
   }
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 export default function Error({
@@ -10,6 +11,8 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const t = useTranslations('Site.error');
+
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -17,24 +20,23 @@ export default function Error({
   return (
     <main className="shell flex flex-col items-center justify-center min-h-[70vh] text-center pt-32">
       <h1 className="text-3xl md:text-5xl font-medium mb-6">
-        Something went wrong!
+        {t('title')}
       </h1>
       <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-        An unexpected error occurred. Please try again or contact support if the
-        problem persists.
+        {t('description')}
       </p>
       <div className="flex gap-4">
         <button
           onClick={() => reset()}
           className="header-cta hover:bg-primary transition-colors cursor-pointer"
         >
-          Try again
+          {t('tryAgain')}
         </button>
         <Link
           href="/"
           className="header-cta bg-primary text-primary-foreground hover:opacity-80 transition-opacity"
         >
-          Return Home
+          {t('returnHome')}
         </Link>
       </div>
     </main>
