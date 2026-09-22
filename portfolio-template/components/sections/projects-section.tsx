@@ -105,7 +105,8 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
         </p>
       </div>
 
-      <ul className="project-index" aria-labelledby="work-title">
+      <h3 id="project-index-title" className="project-index-title-heading">{t('allProjectsTitle')}</h3>
+      <ul className="project-index" aria-labelledby="project-index-title">
         {projects.map((project) => (
           <li key={project._id ?? project.title}>
             <button

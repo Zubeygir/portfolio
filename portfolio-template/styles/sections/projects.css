@@ -162,6 +162,14 @@
 
 /* ─── Project index (keyboard and touch path to every project) ───── */
 
+.project-index-title-heading {
+  margin: 0 0 1rem;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  letter-spacing: 0.02em;
+}
+
 .project-index {
   width: 100%;
   max-width: 72rem;

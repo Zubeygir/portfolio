@@ -43,6 +43,66 @@
     opacity 420ms ease;
 }
 
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-rise-character {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: var(--hero-character-opacity, 1);
+    transform: translateY(0);
+  }
+}
+
+.hero-kicker,
+.hero h1,
+.hero-description,
+.hero-enter,
+.hero-meta {
+  animation: hero-rise 640ms var(--ease-portfolio) both;
+}
+
+.hero-character-wrap {
+  animation: hero-rise-character 640ms var(--ease-portfolio) both;
+}
+
+.hero-kicker {
+  animation-delay: 0ms;
+}
+
+.hero h1 {
+  animation-delay: 90ms;
+}
+
+.hero-description {
+  animation-delay: 180ms;
+}
+
+.hero-enter {
+  animation-delay: 240ms;
+}
+
+.hero-character-wrap {
+  animation-delay: 320ms;
+}
+
+.hero-meta {
+  animation-delay: 420ms;
+}
+
 .hero-kicker {
   display: flex;
   justify-content: center;
@@ -225,7 +285,7 @@
 
   .hero-character-wrap {
     grid-column: 7 / -1;
-    opacity: 0.82;
+    --hero-character-opacity: 0.82;
   }
 }
 

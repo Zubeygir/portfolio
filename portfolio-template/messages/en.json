@@ -119,6 +119,7 @@
     "projects": {
       "title": "Featured Projects",
       "description": "Projects I've built across different scales — from academic thesis work to enterprise production, mobile apps to 3D web experiences.",
+      "allProjectsTitle": "All Projects",
       "viewProject": "Open project",
       "deskLabels": {
         "projectPrefix": "PROJECT",

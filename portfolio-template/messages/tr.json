@@ -108,6 +108,7 @@
     "projects": {
       "title": "Öne çıkan projeler",
       "description": "Akademik tez çalışmasından kurumsal üretime, mobil uygulamalardan 3D web deneyimlerine kadar farklı ölçeklerde geliştirdiğim projeler.",
+      "allProjectsTitle": "Tüm Projeler",
       "viewProject": "Projeyi aç",
       "deskLabels": {
         "projectPrefix": "PROJE",
