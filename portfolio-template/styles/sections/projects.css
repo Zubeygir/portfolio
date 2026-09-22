@@ -512,3 +512,39 @@
     overflow-y: auto;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes desk-rise {
+      from {
+        transform: translateY(28px);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes index-row-slide {
+      from {
+        transform: translateX(-16px);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .project-desk-section-container {
+      animation: desk-rise 1s linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+
+    .project-index-row {
+      animation: index-row-slide 1s linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 20%;
+    }
+  }
+}

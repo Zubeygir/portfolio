@@ -290,3 +290,25 @@
     padding-bottom: 5rem;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes about-rise {
+      from {
+        transform: translateY(24px);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .about-copy,
+    .experience-item,
+    .toolkit-group {
+      animation: about-rise 1s linear both;
+      animation-timeline: view();
+      animation-range: entry;
+    }
+  }
+}
