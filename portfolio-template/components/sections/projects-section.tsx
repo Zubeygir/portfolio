@@ -21,7 +21,6 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
   const closeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Memoize labels with primitive string dependencies to ensure reference stability
-  const projectPrefix = tDesk('projectPrefix');
   const clickForDetails = tDesk('clickForDetails');
   const clickToInspect = tDesk('clickToInspect');
   const instruction = tDesk('instruction');
@@ -29,13 +28,12 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
 
   const deskLabels: ProjectDeskLabels = useMemo(
     () => ({
-      projectPrefix,
       clickForDetails,
       clickToInspect,
       instruction,
       loading,
     }),
-    [projectPrefix, clickForDetails, clickToInspect, instruction, loading]
+    [clickForDetails, clickToInspect, instruction, loading]
   );
 
   // Desk papers lift toward the camera, then the modal opens.

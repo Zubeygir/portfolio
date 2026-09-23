@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import type { Project } from '@/lib/types';
 
 export interface PaperTextureLabels {
-  projectPrefix?: string;
   clickForDetails?: string;
   brand?: string;
 }
@@ -34,6 +33,16 @@ function getGrainTile(): HTMLCanvasElement | null {
   return grainTileCache;
 }
 
+export const PAPER_BRAND = 'ZUBEYIR ALI DEMIR // PORTFOLIO';
+
+// The same grain tile as a data URL, so the DOM detail sheet matches the desk papers.
+let grainDataUrlCache: string | null = null;
+export function getGrainDataUrl(): string | null {
+  if (grainDataUrlCache) return grainDataUrlCache;
+  grainDataUrlCache = getGrainTile()?.toDataURL() ?? null;
+  return grainDataUrlCache;
+}
+
 function getMonoFamily(): string {
   const name = getComputedStyle(document.body).getPropertyValue('--font-mono-label').trim();
   return name || 'monospace';
@@ -49,9 +58,8 @@ export function createPaperTexture(
   }
 
   const monoFamily = getMonoFamily();
-  const projectPrefix = labels?.projectPrefix || 'PROJE';
   const clickForDetails = labels?.clickForDetails || 'DETAYLAR İÇİN TIKLA ↗';
-  const brand = labels?.brand || 'ZUBEYIR ALI DEMIR // PORTFOLIO';
+  const brand = labels?.brand || PAPER_BRAND;
 
   const canvas = window.document.createElement('canvas');
   canvas.width = 1024;
@@ -103,25 +111,20 @@ export function createPaperTexture(
   ctx.lineTo(w - 48, 40);
   ctx.stroke();
 
-  // Project Number / Kicker
-  ctx.fillStyle = '#7d5f22';
-  ctx.font = `600 34px ${monoFamily}, monospace`;
-  ctx.fillText(`${projectPrefix} ${project.number}`, 48, 86);
-
   // Status Badge on Top-Right
   if (project.status || project.year) {
     const badgeText = `${project.status || 'PROJECT'} · ${project.year || '2025'}`;
-    ctx.font = `500 24px ${monoFamily}, monospace`;
-    const badgeW = ctx.measureText(badgeText).width + 36;
+    ctx.font = `500 30px ${monoFamily}, monospace`;
+    const badgeW = ctx.measureText(badgeText).width + 40;
     ctx.fillStyle = 'rgba(33, 29, 22, 0.05)';
     ctx.beginPath();
-    ctx.roundRect(w - 48 - badgeW, 58, badgeW, 38, 3);
+    ctx.roundRect(w - 48 - badgeW, 56, badgeW, 46, 3);
     ctx.fill();
     ctx.strokeStyle = 'rgba(33, 29, 22, 0.28)';
     ctx.lineWidth = 1.5;
     ctx.stroke();
     ctx.fillStyle = 'rgba(33, 29, 22, 0.85)';
-    ctx.fillText(badgeText, w - 48 - badgeW + 18, 85);
+    ctx.fillText(badgeText, w - 48 - badgeW + 20, 89);
   }
 
   // Divider line
@@ -134,10 +137,10 @@ export function createPaperTexture(
 
   // Project Title (with wrapping)
   ctx.fillStyle = '#201c14';
-  ctx.font = 'bold 50px Inter, system-ui, sans-serif';
+  ctx.font = 'bold 66px Inter, system-ui, sans-serif';
   const titleWords = project.title.split(' ');
   let line = '';
-  let lineY = 190;
+  let lineY = 200;
   const maxTitleWidth = w - 100;
   let titleLines = 0;
 
@@ -147,7 +150,7 @@ export function createPaperTexture(
     if (metrics.width > maxTitleWidth && n > 0) {
       ctx.fillText(line.trim(), 48, lineY);
       line = titleWords[n] + ' ';
-      lineY += 60;
+      lineY += 76;
       titleLines++;
       if (titleLines >= 2) break; // max 2 lines
     } else {
@@ -159,23 +162,23 @@ export function createPaperTexture(
   // Role / Category badge
   const roleText = project.role || project.category || 'Software Developer';
   ctx.fillStyle = '#6f5420';
-  ctx.font = `500 28px ${monoFamily}, monospace`;
-  ctx.fillText(`◆ ${roleText}`, 48, lineY + 65);
+  ctx.font = `500 34px ${monoFamily}, monospace`;
+  ctx.fillText(`◆ ${roleText}`, 48, lineY + 80);
 
   // Summary / Description Snippet
   ctx.fillStyle = 'rgba(33, 29, 22, 0.82)';
-  ctx.font = 'normal 26px Inter, system-ui, sans-serif';
+  ctx.font = 'normal 32px Inter, system-ui, sans-serif';
   const summary = project.summary || (project.description ? project.description.slice(0, 110) + '...' : '');
   const words = summary.split(' ');
   let sLine = '';
-  let sY = lineY + 125;
+  let sY = lineY + 150;
   let sLines = 0;
   for (let n = 0; n < words.length; n++) {
     const test = sLine + words[n] + ' ';
     if (ctx.measureText(test).width > maxTitleWidth && n > 0) {
       ctx.fillText(sLine.trim(), 48, sY);
       sLine = words[n] + ' ';
-      sY += 40;
+      sY += 46;
       sLines++;
       if (sLines >= 2) break;
     } else {
@@ -189,28 +192,28 @@ export function createPaperTexture(
   // Technologies pill preview
   if (project.technologies && project.technologies.length > 0) {
     let tagX = 48;
-    const tagY = h - 130;
-    ctx.font = `500 22px ${monoFamily}, monospace`;
+    const tagY = h - 140;
+    ctx.font = `500 28px ${monoFamily}, monospace`;
     project.technologies.slice(0, 3).forEach((tech: string) => {
-      const tagWidth = ctx.measureText(tech).width + 24;
+      const tagWidth = ctx.measureText(tech).width + 30;
       ctx.fillStyle = 'rgba(33, 29, 22, 0.09)';
       ctx.beginPath();
-      ctx.roundRect(tagX, tagY, tagWidth, 34, 3);
+      ctx.roundRect(tagX, tagY, tagWidth, 42, 3);
       ctx.fill();
       ctx.fillStyle = 'rgba(33, 29, 22, 0.84)';
-      ctx.fillText(tech, tagX + 12, tagY + 24);
-      tagX += tagWidth + 12;
+      ctx.fillText(tech, tagX + 15, tagY + 30);
+      tagX += tagWidth + 14;
     });
   }
 
   // Bottom action bar
   ctx.fillStyle = isHovered ? '#5f4a1c' : '#7d5f22';
-  ctx.font = `600 28px ${monoFamily}, monospace`;
+  ctx.font = `600 32px ${monoFamily}, monospace`;
   ctx.fillText(clickForDetails, w - ctx.measureText(clickForDetails).width - 48, h - 50);
 
   // Subtle watermark in bottom left
   ctx.fillStyle = 'rgba(33, 29, 22, 0.4)';
-  ctx.font = `500 20px ${monoFamily}, monospace`;
+  ctx.font = `500 24px ${monoFamily}, monospace`;
   ctx.fillText(brand, 48, h - 50);
 
   const texture = new THREE.CanvasTexture(canvas);

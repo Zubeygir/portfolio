@@ -20,7 +20,7 @@
       "characterLabel": "Zübeyir'i temsil eden, sürüklenebilen ve hareketlerinizi kafasıyla takip eden üç boyutlu karakter",
       "characterNote": "Karakteri çevirmek için sürükle — bırakınca geri döner.",
       "location": "İstanbul, Türkiye · UTC+3",
-      "status": "Yeni fikirlere açık"
+      "status": "Freelance projelere açığım"
     },
     "about": {
       "title": "Hakkımda",
@@ -111,7 +111,6 @@
       "allProjectsTitle": "Tüm Projeler",
       "viewProject": "Projeyi aç",
       "deskLabels": {
-        "projectPrefix": "PROJE",
         "clickForDetails": "DETAYLAR İÇİN TIKLA ↗",
         "clickToInspect": "İncelemek için tıkla ↗",
         "instruction": "Masa üzerindeki belgelere veya projelere tıklayarak inceleyebilirsiniz.",

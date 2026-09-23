@@ -56,5 +56,7 @@ export interface Project {
   mark: string;
   href?: string;
   image?: SanityImageSource;
+  /** Local photo under /public (e.g. "/projects/ai-thesis.jpg"); takes precedence over `image`. */
+  imageSrc?: string;
 }
 

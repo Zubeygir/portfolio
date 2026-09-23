@@ -20,7 +20,7 @@
       "characterLabel": "A three-dimensional draggable character representing Zübeyir that tracks your pointer",
       "characterNote": "Drag to spin the character — release to snap back.",
       "location": "Istanbul, Türkiye · UTC+3",
-      "status": "Open to new ideas"
+      "status": "Available for freelance work"
     },
     "about": {
       "title": "About Me",
@@ -122,7 +122,6 @@
       "allProjectsTitle": "All Projects",
       "viewProject": "Open project",
       "deskLabels": {
-        "projectPrefix": "PROJECT",
         "clickForDetails": "CLICK FOR DETAILS ↗",
         "clickToInspect": "Click to inspect ↗",
         "instruction": "Click on documents on the desk or projects below to explore.",

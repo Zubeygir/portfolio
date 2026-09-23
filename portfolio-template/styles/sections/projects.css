@@ -6,7 +6,9 @@
 }
 
 .work-section .section-heading h2 {
+  max-width: none;
   font-size: clamp(3rem, 5.5vw, 5.5rem);
+  line-height: 1;
   color: #ffffff;
 }
 
@@ -106,16 +108,6 @@
     opacity: 1;
     transform: translate(-50%, 0);
   }
-}
-
-.desk-pill-number {
-  font-family: var(--font-mono-label), monospace;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #f2d488;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 .desk-pill-title {
@@ -259,38 +251,65 @@
   backdrop-filter: blur(24px);
 }
 
+/* The detail sheet is the desk paper, enlarged: same ivory stock and ink colors
+   as the canvas texture in project-desk-paper-texture.ts. */
 .project-modal-content {
+  --paper: #efe6cf;
+  --paper-ink: #201c14;
+  --paper-ink-soft: rgba(33, 29, 22, 0.82);
+  --paper-ink-faint: rgba(33, 29, 22, 0.4);
+  --paper-gold: #a8823a;
+  --paper-kicker: #7d5f22;
+  --paper-role: #6f5420;
+  --paper-line: rgba(33, 29, 22, 0.22);
+  --paper-tint: rgba(33, 29, 22, 0.09);
+
   position: relative;
-  display: grid;
-  grid-template-columns: 0.42fr 0.58fr;
-  width: min(100%, 60rem);
-  height: min(88vh, 42rem);
-  overflow: hidden;
-  border-radius: 1rem;
-  background: #0f1118;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 56rem);
+  max-height: min(88vh, 46rem);
+  border-radius: 6px;
+  background:
+    radial-gradient(ellipse at center, transparent 55%, rgba(60, 48, 24, 0.1) 100%),
+    var(--paper);
+  color: var(--paper-ink);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9);
+}
+
+/* Paper-fiber grain, multiplied over the stock like on the desk papers. */
+.project-modal-content::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: var(--paper-grain, none);
+  background-size: 160px;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
 }
 
 .project-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 10;
+  top: -0.9rem;
+  right: -0.9rem;
+  z-index: 3;
   display: grid;
   place-items: center;
   width: 2.5rem;
   height: 2.5rem;
   border: 0;
   border-radius: 50%;
-  background: rgba(8, 9, 12, 0.85);
-  color: #ffffff;
+  background: var(--paper-ink);
+  color: var(--paper);
   cursor: pointer;
-  transition: background 200ms ease, transform 200ms ease;
+  transition: background 200ms ease, color 200ms ease, transform 200ms ease;
 }
 
 .project-modal-close:hover {
   background: #d4af37;
-  color: #08090c;
+  color: var(--paper-ink);
   transform: scale(1.08);
 }
 
@@ -299,134 +318,143 @@
   height: 1.1rem;
 }
 
-.project-modal-visual {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.project-visual {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  background: var(--card);
-}
-
-.project-mark {
-  font-family: var(--font-cabinet-grotesk), var(--font-body), sans-serif;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  color: var(--primary);
-}
-
-.project-status {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  padding: 0.3rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(8, 9, 12, 0.85);
-  color: var(--foreground);
-  font-family: var(--font-mono-label), monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-}
-
 .project-modal-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: clamp(0.6rem, 1.5vh, 1.1rem);
-  padding: clamp(1.4rem, 3vw, 2.2rem);
-  overflow: visible;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: inherit;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(33, 29, 22, 0.28) transparent;
+}
+
+.project-modal-body:hover {
+  scrollbar-color: rgba(33, 29, 22, 0.45) transparent;
+}
+
+/* Safari ignores scrollbar-color; Chromium/Firefox use the rules above instead. */
+.project-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-modal-body::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(33, 29, 22, 0.28);
+  background-clip: padding-box;
+}
+
+.project-modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(33, 29, 22, 0.45);
+}
+
+.project-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding: 1rem 0;
+  border-top: 2px solid var(--paper-gold);
+  border-bottom: 1.5px solid var(--paper-line);
 }
 
 .project-modal-kicker {
-  margin: 0 0 0.15rem;
+  margin: 0;
   font-family: var(--font-mono-label), monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
-  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--paper-kicker);
 }
 
-.project-modal-header h2 {
+.project-modal-badge {
+  flex-shrink: 0;
+  padding: 0.3rem 0.7rem;
+  border: 1.5px solid rgba(33, 29, 22, 0.28);
+  border-radius: 3px;
+  background: rgba(33, 29, 22, 0.05);
+  color: rgba(33, 29, 22, 0.85);
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.8rem;
+}
+
+.project-modal-body h2 {
   margin: 0;
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
-  font-weight: 520;
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.04em;
-  color: #ffffff;
+  letter-spacing: -0.03em;
+  color: var(--paper-ink);
+  text-wrap: balance;
+}
+
+.project-modal-role {
+  margin: 0.9rem 0 0;
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--paper-role);
 }
 
 .project-modal-summary {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  max-width: 65ch;
+  margin: 1.25rem 0 0;
+  color: var(--paper-ink-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.project-modal-highlights,
+.project-modal-toolkit {
+  margin-top: 1.75rem;
 }
 
 .project-modal-label {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.6rem;
   font-family: var(--font-mono-label), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  color: var(--muted-foreground);
-}
-
-/* Role */
-.project-modal-role {
-  padding-bottom: 0;
-}
-
-.project-modal-role-value {
-  margin: 0;
-  color: var(--primary);
-  font-size: 0.88rem;
-  font-weight: 520;
-  letter-spacing: -0.01em;
-}
-
-/* Highlights */
-.project-modal-highlights {
-  padding-top: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--paper-kicker);
 }
 
 .project-modal-highlight-list {
+  display: grid;
+  gap: 0.45rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  gap: clamp(0.2rem, 0.5vh, 0.4rem);
 }
 
 .project-modal-highlight-list li {
   position: relative;
+  max-width: 65ch;
   padding-left: 1.1rem;
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-  line-height: 1.45;
+  color: var(--paper-ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .project-modal-highlight-list li::before {
-  content: '';
   position: absolute;
+  top: 0.55em;
   left: 0;
-  top: 0.5em;
   width: 0.35rem;
   height: 0.35rem;
+  content: '';
   border-radius: 50%;
-  background: var(--primary);
-  opacity: 0.75;
+  background: var(--paper-gold);
 }
 
 .project-modal-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.4rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -434,33 +462,88 @@
 
 .project-modal-tags li {
   padding: 0.3rem 0.65rem;
-  border-radius: 0.4rem;
-  background: rgba(255, 255, 255, 0.05);
-  color: #e2e5ec;
-  font-size: 0.78rem;
+  border-radius: 3px;
+  background: var(--paper-tint);
+  color: var(--paper-ink);
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.85rem;
 }
 
 .project-modal-actions {
-  margin-top: 0.25rem;
+  margin-top: 2rem;
 }
 
 .project-modal-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.65rem 1.2rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 999px;
-  background: #d4af37;
-  color: #08090c;
-  font-size: 0.72rem;
+  background: var(--paper-ink);
+  color: var(--paper);
+  font-size: 0.85rem;
   font-weight: 650;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  transition: background 200ms var(--ease-portfolio);
+  transition: opacity 200ms var(--ease-portfolio);
 }
 
 .project-modal-cta:hover {
-  background: #e3c15a;
+  opacity: 0.85;
+}
+
+.project-modal-watermark {
+  margin: 2.5rem 0 0;
+  color: var(--paper-ink-faint);
+  font-family: var(--font-mono-label), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+/* Photo print held on the sheet with a paperclip (only when the project has an image). */
+.paper-photo {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 30rem);
+  margin: 0.5rem 0 2rem;
+  transform: rotate(-1.5deg);
+}
+
+.paper-photo-print {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem;
+  background: #faf7f0;
+  box-shadow: 0 2px 6px rgba(33, 29, 22, 0.28);
+}
+
+.paper-photo-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--paper-tint);
+}
+
+.paper-clip {
+  position: absolute;
+  top: -0.85rem;
+  left: 1.75rem;
+  width: 1.25rem;
+  height: 3.75rem;
+  overflow: visible;
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  transform: rotate(4deg);
+}
+
+.paper-clip.is-back {
+  z-index: 0;
+}
+
+.paper-clip.is-front {
+  z-index: 2;
+  filter: drop-shadow(0 1px 1px rgba(33, 29, 22, 0.35));
 }
 
 /* ─── Responsive ────────────────────────────────────────────────── */
@@ -498,18 +581,13 @@
     display: none;
   }
 
-  /* Modal: stack vertically on mobile */
+  /* Modal: full-width sheet on mobile */
   .project-modal-content {
-    grid-template-columns: 1fr;
-    grid-template-rows: 10rem 1fr;
-    height: min(92vh, 40rem);
-    width: min(100%, 28rem);
+    max-height: 92vh;
   }
 
   .project-modal-body {
-    padding: 1.2rem;
-    gap: 0.5rem;
-    overflow-y: auto;
+    padding: 1.25rem;
   }
 }
 

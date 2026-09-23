@@ -1,12 +1,46 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type CSSProperties } from 'react';
+import Image from 'next/image';
 import { AnimatePresence, motion } from 'motion/react';
 import { ArrowUpRight, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { SanityImage } from '@/components/shared/sanity-image';
 import type { Project } from '@/lib/types';
 import type { MorphOrigin } from '@/components/projects/project-desk-model';
+import { PAPER_BRAND, getGrainDataUrl } from '@/components/projects/project-desk-paper-texture';
+
+// One continuous Gem-clip wire, split in two so the back loop can sit behind the
+// photo print and the front loop over it — that's what makes it read as clipped on.
+const CLIP_BACK_PATH = 'M9 24V56a3.5 3.5 0 0 0 7 0V11';
+const CLIP_FRONT_PATH = 'M16 11a5.5 5.5 0 0 0-11 0V61a7.5 7.5 0 0 0 15 0V22';
+
+function PaperClip() {
+  return (
+    <>
+      <svg className="paper-clip is-back" viewBox="0 0 24 72" aria-hidden="true">
+        <defs>
+          <linearGradient id="paper-clip-metal-back" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stopColor="#8e949c" />
+            <stop offset="0.5" stopColor="#c9cdd3" />
+            <stop offset="1" stopColor="#7d838b" />
+          </linearGradient>
+        </defs>
+        <path d={CLIP_BACK_PATH} stroke="url(#paper-clip-metal-back)" />
+      </svg>
+      <svg className="paper-clip is-front" viewBox="0 0 24 72" aria-hidden="true">
+        <defs>
+          <linearGradient id="paper-clip-metal-front" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stopColor="#a7adb5" />
+            <stop offset="0.45" stopColor="#eef0f3" />
+            <stop offset="1" stopColor="#959ba3" />
+          </linearGradient>
+        </defs>
+        <path d={CLIP_FRONT_PATH} stroke="url(#paper-clip-metal-front)" />
+      </svg>
+    </>
+  );
+}
 
 interface ProjectDetailModalProps {
   project: Project | null;
@@ -78,6 +112,11 @@ export function ProjectDetailModal({
     ? { x: originOffset.x, y: originOffset.y, scale: 0.15, opacity: 0 }
     : { x: 0, y: 16, scale: 0.95, opacity: 0 };
 
+  const grainUrl = project ? getGrainDataUrl() : null;
+  const sheetStyle = grainUrl
+    ? ({ '--paper-grain': `url(${grainUrl})` } as CSSProperties)
+    : undefined;
+
   return (
     <AnimatePresence>
       {project ? (
@@ -95,6 +134,7 @@ export function ProjectDetailModal({
           <motion.div
             ref={contentRef}
             className="project-modal-content"
+            style={sheetStyle}
             onClick={(e) => e.stopPropagation()}
             initial={contentInitial}
             animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
@@ -111,36 +151,50 @@ export function ProjectDetailModal({
           <X aria-hidden="true" />
         </button>
 
-        <div className="project-modal-visual">
-          {project.image ? (
-            <SanityImage
-              image={project.image}
-              alt={project.image.alt ?? project.title}
-              fill
-              priority
-              className="project-modal-image"
-            />
-          ) : (
-            <div className="project-visual">
-              <span className="project-mark">{project.mark}</span>
-            </div>
-          )}
-          <span className="project-status">{project.status}</span>
-        </div>
-
         <div className="project-modal-body">
-          <div className="project-modal-header">
-            <p className="project-modal-kicker">
-              {project.number} / {project.category} · {project.year}
-            </p>
-            <h2 id="modal-project-title">{project.title}</h2>
+          <div className="project-modal-head">
+            <p className="project-modal-kicker">{project.category}</p>
+            <span className="project-modal-badge">
+              {project.status} · {project.year}
+            </span>
           </div>
 
+          {project.imageSrc || project.image ? (
+            <figure className="paper-photo">
+              <div className="paper-photo-print">
+                <div className="paper-photo-image">
+                  {project.imageSrc ? (
+                    <Image
+                      src={project.imageSrc}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 820px) 90vw, 30rem"
+                      priority
+                      style={{ objectFit: 'cover' }}
+                    />
+                  ) : project.image ? (
+                    <SanityImage
+                      image={project.image}
+                      alt={project.image.alt ?? project.title}
+                      fill
+                      sizes="(max-width: 820px) 90vw, 30rem"
+                      priority
+                    />
+                  ) : null}
+                </div>
+              </div>
+              <PaperClip />
+            </figure>
+          ) : null}
+
+          <h2 id="modal-project-title">{project.title}</h2>
+
           {project.role ? (
-            <div className="project-modal-role">
-              <p className="project-modal-label">{t('role')}</p>
-              <p className="project-modal-role-value">{project.role}</p>
-            </div>
+            <p className="project-modal-role">
+              <span className="sr-only">{t('role')}: </span>
+              <span aria-hidden="true">◆ </span>
+              {project.role}
+            </p>
           ) : null}
 
           <p className="project-modal-summary">
@@ -180,6 +234,10 @@ export function ProjectDetailModal({
               </a>
             </div>
           ) : null}
+
+          <p className="project-modal-watermark" aria-hidden="true">
+            {PAPER_BRAND}
+          </p>
         </div>
           </motion.div>
         </motion.div>

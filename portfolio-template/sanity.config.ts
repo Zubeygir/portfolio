@@ -31,10 +31,6 @@ export default defineConfig({
             S.divider(),
             // Projeler
             S.documentTypeListItem('project').title('Projeler'),
-            // Hizmetler
-            S.documentTypeListItem('service').title('Hizmetler'),
-            // Süreç Adımları
-            S.documentTypeListItem('processStep').title('Süreç Adımları'),
           ]),
     }),
     visionTool({ defaultApiVersion: '2024-01-01' }),

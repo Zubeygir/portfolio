@@ -133,7 +133,6 @@ export function ProjectDeskScene({
     };
   }, [mounted]);
 
-  const projectPrefix = labels?.projectPrefix || 'PROJE';
   const clickToInspect = labels?.clickToInspect || 'İncelemek için tıkla ↗';
   const loadingText = labels?.loading || '3D Proje Masası Hazırlanıyor...';
 
@@ -209,9 +208,6 @@ export function ProjectDeskScene({
       {/* Floating Hover Indicator Badge at bottom of canvas */}
       {hoveredIndex !== null && projects[hoveredIndex] && !isInspecting && (
         <div className="desk-hover-overlay-pill" aria-live="polite">
-          <span className="desk-pill-number">
-            {projectPrefix} {projects[hoveredIndex].number}
-          </span>
           <span className="desk-pill-title">
             {projects[hoveredIndex].title}
           </span>

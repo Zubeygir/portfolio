@@ -20,6 +20,7 @@ Token kaynağı: `app/globals.css` `:root`. Yeni renk **eklenmeyecek**, mevcut t
 - **Strateji**: near-black zemin + tek saturated accent (gold). Bu "committed, tek renk" stratejisi korunacak — yeni bir ikinci/üçüncü accent rengi eklenmeyecek (onay alınmadan).
 - **Kontrast**: body metin ≥4.5:1, büyük metin/başlık ≥3:1. Gerçek zemin rengine göre hesapla — `--primary`'nin kendisi düşük opaklıkla glow/gradient olarak kullanıldığında (ör. `rgba(212,175,55,0.18)`) bunun üstündeki metnin kontrastını **alfa-bileşik piksele göre** değerlendir, token'ın tam-opak değerine göre değil (kritikte tam bu yüzden bir yanlış-pozitif çıktı).
 - **Yasak**: gradient text (`background-clip: text` + gradient arkaplan).
+- **Onaylı istisna — kağıt paleti**: Proje detay modal'ı masadaki 3D kağıdın büyütülmüş hali olduğu için kağıt dokusunun (`project-desk-paper-texture.ts`) renklerini kullanır: zemin `#efe6cf`, mürekkep `#201c14`, altın çizgi `#a8823a`, kicker `#7d5f22`, rol `#6f5420`. Bunlar `projects.css`'te `.project-modal-content` içinde `--paper-*` değişkenleri olarak tanımlı, sadece o kapsamda kullanılır; sitenin geri kalanına taşınmaz. Ataçın gümüş metal tonları da bu istisnaya dahildir.
 
 ## 2. Tipografi
 
@@ -51,6 +52,7 @@ Token kaynağı: `app/globals.css` `:root`. Yeni renk **eklenmeyecek**, mevcut t
 - **Buton/pill**: Şu an `header-cta`, `hero-enter`, `contact-link`, `desk-project-tab`, `mobile-menu-cta` 5 ayrı yerde bağımsız tanımlı — teknik borç. Yeni buton eklerken **mevcut stillerden biri yeniden kullanılır**, yenisi icat edilmez. Fırsat bulundukça ortak bir class/component'e çıkarılır.
 - **Kart**: nested card (kart içinde kart) yasak. Kart sadece gerçekten en iyi afordans olduğunda kullanılır — liste/grid için önce `flex`/`grid` + sade satır düşünülür.
 - **Modal**: backdrop-blur + giriş animasyonu deseni korunur. Projects modal'ı shared-element morph'a geçse de (bkz. `docs/redesign/02-projects.md`), ileride yeni bir modal eklenirse bu genel yaklaşım (backdrop-blur, `Escape`/backdrop-click ile kapanma, `aria-modal`) temel alınır.
+- **Proje detay modal'ı = kağıt belge**: Koyu kart değil, masadaki kağıdın büyütülmüş hali (krem zemin + aynı lif dokusu, üstte altın çizgi, kategori + durum·yıl etiketi, filigran). Proje görseli varsa (`imageSrc` → `public/projects/`, ya da Sanity `image`) ince beyaz çerçeveli, hafif yamuk basılı fotoğraf olarak gümüş ataçla tutturulmuş gösterilir; ataç iki parçalı SVG'dir (arka bacak fotoğrafın arkasında, ön bacak önünde). Bu, madde 11'deki el-çizimi/sketchy SVG yasağına girmez — temiz, geometrik bir nesne çizimidir.
 
 ## 6. Numaralandırma / scaffolding yasağı
 

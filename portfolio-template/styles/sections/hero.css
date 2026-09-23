@@ -145,13 +145,13 @@
   margin-top: 2.5rem;
   padding: 0.75rem 1.65rem;
   font: inherit;
-  font-size: 0.74rem;
+  font-size: 0.95rem;
   cursor: pointer;
 }
 
 .hero-enter svg {
-  width: 0.95rem;
-  height: 0.95rem;
+  width: 1.05rem;
+  height: 1.05rem;
   transition: transform 260ms ease;
 }
 
