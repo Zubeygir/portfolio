@@ -125,23 +125,25 @@
       "items": [
         {
           "number": "01",
-          "title": "360° Performans Değerlendirme Sistemi",
-          "category": "Yapay Zekâ · Lisans Tezi",
-          "year": "2025",
-          "summary": "LightGBM ve XGBoost ile çalışan performans tahminleme ve kişiselleştirilmiş gelişim planlama sistemi.",
-          "description": "Lisans tezi olarak geliştirilen bu proje, çalışan performansını çok yönlü (360°) olarak değerlendiren ve makine öğrenmesi modelleriyle gelecek performansı tahmin eden bir sistemdir. Yönetici, akran ve öz değerlendirme verilerini birleştirerek her çalışana özel gelişim planları oluşturur. Model eğitimi ve karşılaştırma süreçleri Python ekosistemiyle yürütülmüştür.",
-          "role": "Proje Sahibi & Geliştirici",
+          "title": "360° Çalışan Değerlendirme ve Gelişim Platformu",
+          "category": "Yapay Zekâ · Bitirme Projesi",
+          "year": "2026",
+          "summary": "360° yetkinlik değerlendirmelerini, multi-label bir ML modeliyle kişiye özel gelişim planlarına dönüştüren İK platformu.",
+          "description": "İstanbul Üniversitesi-Cerrahpaşa bitirme projesi. 360° değerlendirmedeki öz, yönetici, akran ve ast skorları multi-label bir modele girer; model 47 aksiyonluk kütüphaneden uygun olanları önerir. İK uzmanı taslak planı düzenleyip onaylar, çalışan da görevlerini Kanban panosunda takip eder: model önerir, karar insanda kalır. Next.js, ASP.NET Core, PostgreSQL ve FastAPI model servisinden oluşan full-stack bir sistem olarak geliştirildi.",
+          "role": "ML & Veritabanı · 3 kişilik ekip",
           "highlights": [
-            "LightGBM ve XGBoost modelleriyle performans tahmini",
-            "Pandas ve NumPy ile veri ön işleme ve özellik mühendisliği",
-            "360° değerlendirme metrikleri: yönetici, akran, öz değerlendirme",
-            "Kişiselleştirilmiş gelişim planı üretimi",
-            "Model karşılaştırma ve hiperparametre optimizasyonu"
+            "47 aksiyon için multi-label LightGBM modeli (Micro-F1 0.896, ROC-AUC 0.956)",
+            "12.278 kayıt ve 77 özellikli veri seti; XGBoost ve Random Forest ile karşılaştırma",
+            "Tahmin ve top-k endpoint'leri sunan FastAPI model servisi",
+            "Soft delete, kısıtlı ilişkiler, migration ve seed verileriyle PostgreSQL veri modeli",
+            "Model çıktısının, İK'nın düzenlediği plandan ve çalışan görevlerinden ayrı tutulması"
           ],
-          "technologies": ["Python", "LightGBM", "XGBoost", "Pandas", "NumPy", "Scikit-learn"],
+          "technologies": ["Python", "LightGBM", "XGBoost", "FastAPI", "PostgreSQL", "Next.js", "ASP.NET Core"],
           "status": "Tamamlandı",
           "tone": "warm",
-          "mark": "AI"
+          "mark": "AI",
+          "imageSrc": "/projects/360.png",
+          "href": "https://ai-employee-development-system.vercel.app/"
         },
         {
           "number": "02",

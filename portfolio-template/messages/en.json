@@ -136,30 +136,33 @@
       "items": [
         {
           "number": "01",
-          "title": "360° Performance Evaluation System",
-          "category": "Artificial Intelligence · Thesis",
-          "year": "2025",
-          "summary": "A performance prediction and personalized development planning system powered by LightGBM and XGBoost.",
-          "description": "Developed as an undergraduate thesis, this project evaluates employee performance from multiple perspectives (360°) and predicts future performance using machine learning models. It combines manager, peer, and self-assessment data to generate individualized development plans. Model training and comparison were conducted using the Python ecosystem.",
-          "role": "Project Owner & Developer",
+          "title": "360° Employee Evaluation & Development Platform",
+          "category": "AI · Capstone Project",
+          "year": "2026",
+          "summary": "An HR platform that turns 360° competency evaluations into personalized development plans using a multi-label ML model.",
+          "description": "A senior capstone project at Istanbul University-Cerrahpaşa. Self, manager, peer and subordinate scores from a 360° evaluation feed a multi-label model that recommends suitable actions from a library of 47. An HR specialist edits and approves the draft plan, and the employee tracks their tasks on a Kanban board: the model proposes, a human decides. Built as a full-stack system with Next.js, ASP.NET Core, PostgreSQL and a FastAPI model service.",
+          "role": "ML & Database · Team of 3",
           "highlights": [
-            "Performance prediction with LightGBM and XGBoost models",
-            "Data preprocessing and feature engineering with Pandas and NumPy",
-            "360° evaluation metrics: manager, peer, self-assessment",
-            "Personalized development plan generation",
-            "Model comparison and hyperparameter optimization"
+            "Multi-label LightGBM model for 47 actions (Micro-F1 0.896, ROC-AUC 0.956)",
+            "Dataset of 12,278 records and 77 features; compared against XGBoost and Random Forest",
+            "FastAPI model service with predict and top-k endpoints",
+            "PostgreSQL data model with soft deletes, restricted relations, migrations and seed data",
+            "Model output kept separate from the HR-edited plan and the employee's tasks"
           ],
           "technologies": [
             "Python",
             "LightGBM",
             "XGBoost",
-            "Pandas",
-            "NumPy",
-            "Scikit-learn"
+            "FastAPI",
+            "PostgreSQL",
+            "Next.js",
+            "ASP.NET Core"
           ],
           "status": "Completed",
           "tone": "warm",
-          "mark": "AI"
+          "mark": "AI",
+          "imageSrc": "/projects/360.png",
+          "href": "https://ai-employee-development-system.vercel.app/"
         },
         {
           "number": "02",
