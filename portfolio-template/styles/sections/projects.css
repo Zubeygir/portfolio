@@ -524,6 +524,20 @@
   background: var(--paper-tint);
 }
 
+a.paper-photo-image {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a.paper-photo-image img {
+    transition: transform 300ms ease;
+  }
+
+  a.paper-photo-image:hover img {
+    transform: scale(1.03);
+  }
+}
+
 .paper-clip {
   position: absolute;
   top: -0.85rem;

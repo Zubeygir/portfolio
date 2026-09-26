@@ -241,28 +241,32 @@
         },
         {
           "number": "05",
-          "title": "Airline Website",
-          "category": "Automation · Web Project",
-          "year": "2024",
-          "summary": "A comprehensive web automation project covering airline ticket sales, flight management and customer operations.",
-          "description": "A comprehensive web automation project digitizing airline operations. It includes flight search, ticket purchasing, reservation management, and customer profile operations. A modern and responsive user interface was built with React and TypeScript, while Node.js powered the backend API services.",
-          "role": "Frontend Developer",
+          "title": "Zubo Cafe",
+          "category": "Web Experience · 3D",
+          "year": "2026",
+          "summary": "A single-page site for a fictional Istanbul coffee shop, where a 3D takeaway cup travels down the page as you scroll.",
+          "description": "A single-page site for a fictional Istanbul coffee shop, built around one idea: a 3D takeaway cup carried down the page by the scroll. It drops into the hero, the headline breaks around it, and as you scroll it travels into the story section, spins to show its logo, lifts its lid and lets the text wrap its silhouette. Built with Next.js 16, React Three Fiber and Lenis.",
+          "role": "Designer & Developer",
           "highlights": [
-            "Flight search, filtering, and ticket purchase flows",
-            "Component-based and reusable UI with React",
-            "Type-safe development process with TypeScript",
-            "RESTful API integration with Node.js backend",
-            "Mobile-compatible responsive design"
+            "Cup position derived from invisible layout slots, with no hard-coded coordinates",
+            "Pure choreography module with no React or three.js dependency",
+            "Single frame loop with Lenis, so the cup never shakes against the text",
+            "Paragraph text wraps the cup silhouette via shape-outside",
+            "Reduced-motion and no-WebGL fallbacks, WCAG 2.2 AA"
           ],
           "technologies": [
-            "React",
+            "Next.js",
             "TypeScript",
-            "Node.js",
-            "REST API"
+            "React Three Fiber",
+            "Three.js",
+            "Tailwind CSS",
+            "Lenis"
           ],
           "status": "Completed",
           "tone": "dark",
-          "mark": "AW"
+          "mark": "ZC",
+          "imageSrc": "/projects/zubo-cafe.png",
+          "href": "https://zubo-cafe.vercel.app/"
         }
       ]
     },

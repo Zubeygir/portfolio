@@ -205,23 +205,25 @@
         },
         {
           "number": "05",
-          "title": "Airline Website",
-          "category": "Otomasyon · Web Projesi",
-          "year": "2024",
-          "summary": "Havayolu bilet satışı, uçuş yönetimi ve müşteri işlemlerini kapsayan tam kapsamlı web otomasyon projesi.",
-          "description": "Havayolu şirketi operasyonlarını dijitalleştiren kapsamlı web otomasyon projesi. Uçuş arama, bilet satın alma, rezervasyon yönetimi ve müşteri profili işlemlerini içerir. React ve TypeScript ile modern ve responsive bir kullanıcı arayüzü, Node.js ile backend API servisleri geliştirilmiştir.",
-          "role": "Frontend Geliştirici",
+          "title": "Zubo Cafe",
+          "category": "Web Deneyimi · 3D",
+          "year": "2026",
+          "summary": "Kaydırdıkça sayfa boyunca ilerleyen 3D bir karton bardak etrafında kurgulanmış, İstanbul'daki hayali bir kahveci için tek sayfalık site.",
+          "description": "İstanbul'daki hayali bir kahveci için tek bir fikir etrafında kurgulanmış tek sayfalık site: sayfayı kaydırdıkça aşağı taşınan 3D bir karton bardak. Bardak hero'ya düşer, başlık onun etrafında ikiye ayrılır; kaydırdıkça hikâye bölümüne geçer, dönüp logosunu gösterir, kapağını kaldırır ve metnin kendi silüetini sarmasına izin verir. Next.js 16, React Three Fiber ve Lenis ile geliştirilmiştir.",
+          "role": "Tasarımcı & Geliştirici",
           "highlights": [
-            "Uçuş arama, filtreleme ve bilet satın alma akışları",
-            "React ile bileşen tabanlı ve yeniden kullanılabilir UI",
-            "TypeScript ile tip güvenli geliştirme süreci",
-            "Node.js backend ile RESTful API entegrasyonu",
-            "Responsive tasarım ile mobil uyumluluk"
+            "Konumunu layout'taki görünmez slotlardan alan, hiçbir koordinatı elle sabitlemeyen bardak",
+            "React ve three.js'ten bağımsız, saf koreografi modülü",
+            "Lenis ile tek frame loop sayesinde bardak metne göre titremiyor",
+            "shape-outside ile paragrafın bardak silüetini sarması",
+            "Reduced motion ve WebGL olmayan ortamlar için fallback, WCAG 2.2 AA"
           ],
-          "technologies": ["React", "TypeScript", "Node.js", "REST API"],
+          "technologies": ["Next.js", "TypeScript", "React Three Fiber", "Three.js", "Tailwind CSS", "Lenis"],
           "status": "Tamamlandı",
           "tone": "dark",
-          "mark": "AW"
+          "mark": "ZC",
+          "imageSrc": "/projects/zubo-cafe.png",
+          "href": "https://zubo-cafe.vercel.app/"
         }
       ]
     },

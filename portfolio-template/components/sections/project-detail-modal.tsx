@@ -117,6 +117,25 @@ export function ProjectDetailModal({
     ? ({ '--paper-grain': `url(${grainUrl})` } as CSSProperties)
     : undefined;
 
+  const photo = project?.imageSrc ? (
+    <Image
+      src={project.imageSrc}
+      alt={project.title}
+      fill
+      sizes="(max-width: 820px) 90vw, 30rem"
+      priority
+      style={{ objectFit: 'cover' }}
+    />
+  ) : project?.image ? (
+    <SanityImage
+      image={project.image}
+      alt={project.image.alt ?? project.title}
+      fill
+      sizes="(max-width: 820px) 90vw, 30rem"
+      priority
+    />
+  ) : null;
+
   return (
     <AnimatePresence>
       {project ? (
@@ -162,26 +181,21 @@ export function ProjectDetailModal({
           {project.imageSrc || project.image ? (
             <figure className="paper-photo">
               <div className="paper-photo-print">
-                <div className="paper-photo-image">
-                  {project.imageSrc ? (
-                    <Image
-                      src={project.imageSrc}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 820px) 90vw, 30rem"
-                      priority
-                      style={{ objectFit: 'cover' }}
-                    />
-                  ) : project.image ? (
-                    <SanityImage
-                      image={project.image}
-                      alt={project.image.alt ?? project.title}
-                      fill
-                      sizes="(max-width: 820px) 90vw, 30rem"
-                      priority
-                    />
-                  ) : null}
-                </div>
+                {project.href ? (
+                  // Duplicate of the CTA below, so it stays out of the tab order and a11y tree.
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="paper-photo-image"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                  >
+                    {photo}
+                  </a>
+                ) : (
+                  <div className="paper-photo-image">{photo}</div>
+                )}
               </div>
               <PaperClip />
             </figure>
